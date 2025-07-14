@@ -1,0 +1,1149 @@
+{
+	"backtrace" : 4,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"qt6_target_qml_sources",
+			"qt6_add_qml_module",
+			"qt_add_qml_module",
+			"target_sources"
+		],
+		"files" : 
+		[
+			"/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 1
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 150,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 717,
+				"parent" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 633,
+				"parent" : 2
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2443,
+				"parent" : 3
+			},
+			{
+				"command" : 4,
+				"file" : 0,
+				"line" : 2446,
+				"parent" : 3
+			}
+		]
+	},
+	"folder" : 
+	{
+		"name" : "QtInternalTargets"
+	},
+	"id" : "appmeego_tooling::@6890427a1f51a3e7e1df",
+	"name" : "appmeego_tooling",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "",
+			"sourceIndexes" : 
+			[
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30,
+				31,
+				32,
+				33,
+				34,
+				35,
+				36,
+				37,
+				38,
+				39,
+				40,
+				41,
+				42,
+				43,
+				44,
+				45,
+				46,
+				47,
+				48,
+				49,
+				50,
+				51,
+				52,
+				53,
+				54,
+				55,
+				56,
+				57,
+				58,
+				59,
+				60,
+				61,
+				62,
+				63,
+				64,
+				65,
+				66,
+				67,
+				68,
+				69,
+				70,
+				71,
+				72,
+				73,
+				74,
+				75
+			]
+		},
+		{
+			"name" : "CMake Rules",
+			"sourceIndexes" : 
+			[
+				76,
+				77,
+				78,
+				79,
+				80,
+				81,
+				82,
+				83,
+				84,
+				85,
+				86,
+				87,
+				88,
+				89,
+				90,
+				91,
+				92,
+				93,
+				94,
+				95,
+				96,
+				97,
+				98,
+				99,
+				100,
+				101,
+				102,
+				103,
+				104,
+				105,
+				106,
+				107,
+				108,
+				109,
+				110,
+				111,
+				112,
+				113,
+				114,
+				115,
+				116,
+				117,
+				118,
+				119,
+				120,
+				121,
+				122,
+				123,
+				124,
+				125,
+				126,
+				127,
+				128,
+				129,
+				130,
+				131,
+				132,
+				133,
+				134,
+				135,
+				136,
+				137,
+				138,
+				139,
+				140,
+				141,
+				142,
+				143,
+				144,
+				145,
+				146,
+				147,
+				148,
+				149,
+				150,
+				151
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/Main.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Dialog.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/DialogStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStackWindow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolItemStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolItem.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStackWindowStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SoftwareInputPanel.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolIcon.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/StatusBar.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/StatusBarStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabBarLayout.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBar.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarLayout.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarLayout.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Window2.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/WindowStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Fader.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Popup.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonColumn.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonRow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonGroup.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/QueryDialogStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/QueryDialog.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecorator.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecoratorSizer.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecoratorStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScroller.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionDialog.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionDialogStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScroller.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScrollerLabel.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScrollerStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/CommonDialog.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/UIConstants.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Button.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/LabelStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Label.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Page.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Style.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/InfoBanner.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/constants.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStack.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStack.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabButton.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabGroup.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabButtonStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Menu.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuItem.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuLayout.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/AbstractMenu.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuItemStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButton.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButtonRow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButtonStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionHandles.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Utils.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubble.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubble.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextAreaHelper.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextField.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleButton.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextFieldStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/BasicRow.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/BasicRow.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/NotificationBanner.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Magnifier.js",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Slider.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SliderStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SliderTemplate.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleButtonStyle.qml",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 5,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/images.qrc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/Main.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Dialog.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/DialogStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStackWindow.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolItemStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolItem.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStackWindowStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SoftwareInputPanel.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolIcon.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/StatusBar.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/StatusBarStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabBarLayout.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBar.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarLayout.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarLayout.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolBarStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Window2.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/WindowStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Fader.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Popup.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonColumn.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonRow.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonGroup.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/QueryDialogStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/QueryDialog.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecorator.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecoratorSizer.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ScrollDecoratorStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScroller.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionDialog.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionDialogStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScroller.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScrollerLabel.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SectionScrollerStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/CommonDialog.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/UIConstants.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Button.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ButtonStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/LabelStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Label.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Page.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Style.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/InfoBanner.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/constants.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStack.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/PageStack.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabButton.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabGroup.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TabButtonStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Menu.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuItem.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuLayout.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/AbstractMenu.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuItemStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/MenuStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButton.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButtonRow.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/ToolButtonStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SelectionHandles.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Utils.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubble.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubble.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextAreaHelper.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextField.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleButton.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/TextFieldStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/BasicRow.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/BasicRow.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/NotificationBanner.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Magnifier.js.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/Slider.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SliderStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/SliderTemplate.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/components/EditBubbleButtonStyle.qml.rule",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 0,
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/images.qrc.rule",
+			"sourceGroupIndex" : 1
+		}
+	],
+	"type" : "INTERFACE_LIBRARY"
+}

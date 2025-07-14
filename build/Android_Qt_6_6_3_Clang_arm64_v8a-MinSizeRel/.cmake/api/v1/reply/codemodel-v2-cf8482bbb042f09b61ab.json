@@ -1,0 +1,232 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-MinSizeRel-f6b888f3b1181729218f.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"name" : "MinSizeRel",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "meego",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "_qt_internal_apk_dependencies::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-_qt_internal_apk_dependencies-MinSizeRel-851441c24fce7dbc1e60.json",
+					"name" : "_qt_internal_apk_dependencies",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-aab-MinSizeRel-264e7231f90c03058ea9.json",
+					"name" : "aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-MinSizeRel-84a0fb63b85146fecc8e.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-MinSizeRel-5455a3272b0e9233eacd.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-MinSizeRel-5a1051b0b474b0fb0fa3.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-MinSizeRel-99a0c5e1c5e44e686d63.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk-MinSizeRel-adb738423660596935db.json",
+					"name" : "apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apk_all::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apk_all-MinSizeRel-4e00e8c83a859ac25a22.json",
+					"name" : "apk_all",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego-MinSizeRel-ec9aae7cdc2ee004999a.json",
+					"name" : "appmeego",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_autogen-MinSizeRel-37bb004b1c346d68fa0a.json",
+					"name" : "appmeego_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_autogen_timestamp_deps-MinSizeRel-b125140180c2587722f0.json",
+					"name" : "appmeego_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_make_aab::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_make_aab-MinSizeRel-44743f4fb43c70db2962.json",
+					"name" : "appmeego_make_aab",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_make_apk::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_make_apk-MinSizeRel-823ee47be6371906c990.json",
+					"name" : "appmeego_make_apk",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_prepare_apk_dir::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_prepare_apk_dir-MinSizeRel-286c2e1a25a46bff9f82.json",
+					"name" : "appmeego_prepare_apk_dir",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_qmllint-MinSizeRel-31a146e1f32ffc0fbe0b.json",
+					"name" : "appmeego_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_qmllint_json-MinSizeRel-da228c2458fd5de77eea.json",
+					"name" : "appmeego_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_qmllint_module-MinSizeRel-082c3f06a92a6864c0ed.json",
+					"name" : "appmeego_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_qmltyperegistration-MinSizeRel-82d2a03c9d027c5cfffb.json",
+					"name" : "appmeego_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmeego_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmeego_tooling-MinSizeRel-3eac58b644b53fd90556.json",
+					"name" : "appmeego_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "qt_internal_plugins::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-qt_internal_plugins-MinSizeRel-45ae4d901828709eb251.json",
+					"name" : "qt_internal_plugins",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel",
+		"source" : "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

@@ -1,0 +1,2929 @@
+{
+	"inputs" : 
+	[
+		{
+			"path" : "CMakeLists.txt"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/.qtc/package-manager/auto-setup.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/android.toolchain.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/adjust_api_level.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/platforms.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Determine.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/pre/Android-Determine.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/platforms.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/abis.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/post/Android-Determine.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystem.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/3.29.3/CMakeSystem.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/android.toolchain.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeNinjaFindMake.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInitialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Initialize.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/pre/Android-Initialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux-Initialize.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Determine-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android/Determine-Compiler.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/pre/Determine-Compiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android/Determine-Compiler-NDK.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/post/Determine-Compiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCompilerIdDetection.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/ADSP-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/ARMCC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/ARMClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/AppleClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Borland-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang-DetermineCompilerInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Compaq-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Cray-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CrayClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Embarcadero-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Fujitsu-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/FujitsuClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GHS-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/HP-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IAR-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IBMClang-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Intel-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IntelLLVM-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/LCC-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/MSVC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/NVHPC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/NVIDIA-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/OpenWatcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/OrangeC-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/PGI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/PathScale-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/SCO-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/SunPro-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/TI-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/TIClang-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Tasking-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/VisualAge-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Watcom-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/XL-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/XLClang-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/zOS-CXX-DetermineCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/IBMCPP-CXX-DetermineVersionInternal.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang-FindBinUtils.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeSystemSpecificInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeGenericSystem.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeInitializeConfigs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/pre/Android.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Linux.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/UnixPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/post/Android.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeLanguageInformation.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/GNU.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Clang-CXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Clang.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/pre/Android-Clang.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/flags.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Platform/Android-Common.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/build/cmake/hooks/post/Android-Clang.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCommonLanguageInclude.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeParseImplicitIncludeInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeParseImplicitLinkInfo.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeParseLibraryArchitecture.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCompilerCommon.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompileFeatures.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/FeatureTesting.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompiler.cmake.in"
+		},
+		{
+			"isGenerated" : true,
+			"path" : "build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/3.29.3/CMakeCXXCompiler.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FetchContent.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/ExternalProject/shared_internal_commands.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6ConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6ConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6ConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Targets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6VersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtFeature.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckCompilerFlag.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckFlagCommonConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtFeatureCommon.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicAppleHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicCMakeHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicExternalProjectHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicFinalizerHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicFindPackageHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicPluginHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicTargetHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicTestHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicToolHelpers.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicWalkLibsHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Dependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6HostInfo/Qt6HostInfoConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckLibraryExists.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckIncludeFileCXX.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindWrapAtomic.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6CoreTools/Qt6CoreToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6AndroidMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindGLESv2.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindEGL.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/ECMFindModuleHelpersStub.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/modules/ECMFindModuleHelpers.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakePushCheckState.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPkgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FeatureSummary.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindVulkan.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QAndroidIntegrationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QAndroidIntegrationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QAndroidIntegrationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QAndroidIntegrationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QGifPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QGifPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QGifPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QGifPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QICOPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QICOPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QICOPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QICOPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QJpegPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QJpegPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QJpegPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgIconPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgIconPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgIconPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6QSvgPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/gcc_64/lib/cmake/Qt6QmlTools/Qt6QmlToolsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlIntegration/Qt6QmlIntegrationVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6NetworkPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QAndroidNetworkInformationPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QAndroidNetworkInformationPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QAndroidNetworkInformationPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QAndroidNetworkInformationPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendCertOnlyPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Network/Qt6QTlsBackendOpenSSLPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlMacros.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlConfigExtras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlFindQmlscInternal.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6AndroidQmlMacros.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QmlMetaConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickControlsTestUtilsPrivatepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6QuickTestpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6SensorsQuickpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6declarative_locationConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6effectspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsanimationpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6labsmodelspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6modelspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6particlespluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlfolderlistmodelpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmllocalstoragepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlsettingspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlshapespluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlwavefrontmeshpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qmlxmllistmodelpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qquicklayoutspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectsprivateConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtlabsplatformpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtqmlcorepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquick2pluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstyleimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2basicstylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstyleimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2fusionstylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestyleimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2imaginestylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2implpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstyleimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2materialstylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2nativestylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2pluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstyleimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickcontrols2universalstylepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogs2quickimplpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquickdialogspluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktemplates2pluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quick3dspatialaudioConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickmultimediaConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quicktoolingConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6quickwindowConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6sharedimagepluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/QmlPlugins/Qt6workerscriptpluginConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QDebugMessageServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QLocalClientConnectionFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebugServerFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlDebuggerServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlInspectorServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugConnectorFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlNativeDebugServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlPreviewServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQmlProfilerServiceFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QQuickProfilerAdapterFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QTcpServerConnectionFactoryPluginAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6QmlModels/Qt6QmlModelsVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindWrapVulkanHeaders.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6OpenGL/Qt6OpenGLVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickVersionlessTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickPlugins.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgConfigVersion.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgTargets.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgTargets-relwithdebinfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgAdditionalTargetInfo.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6QmlModuleDirMappingTemplate.qrc.in"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/GNUInstallDirs.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Qml/Qt6qmldirTemplate.cmake.in"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/ExternalProject.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/ExternalProject/shared_internal_commands.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/QtInstallPaths.cmake"
+		},
+		{
+			"path" : "images.qrc"
+		}
+	],
+	"kind" : "cmakeFiles",
+	"paths" : 
+	{
+		"build" : "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel",
+		"source" : "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6"
+	},
+	"version" : 
+	{
+		"major" : 1,
+		"minor" : 0
+	}
+}

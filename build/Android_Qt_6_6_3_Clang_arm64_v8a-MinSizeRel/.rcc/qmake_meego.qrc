@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="qmldir">/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/meego/qmldir</file>
+  </qresource>
+</RCC>
+

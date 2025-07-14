@@ -1,0 +1,99 @@
+{
+	"backtrace" : 8,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_custom_target",
+			"_qt_internal_create_global_apk_all_target_if_needed",
+			"qt6_android_add_apk_target",
+			"_qt_internal_android_executable_finalizer",
+			"cmake_language",
+			"_qt_internal_finalize_executable",
+			"qt6_finalize_target",
+			"add_dependencies"
+		],
+		"files" : 
+		[
+			"/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6AndroidMacros.cmake",
+			"/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreMacros.cmake",
+			"/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreMacros.cmake:742:EVAL",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 3
+			},
+			{
+				"file" : 3,
+				"line" : -1,
+				"parent" : 0
+			},
+			{
+				"command" : 6,
+				"file" : 2,
+				"line" : 1,
+				"parent" : 1
+			},
+			{
+				"command" : 5,
+				"file" : 1,
+				"line" : 772,
+				"parent" : 2
+			},
+			{
+				"command" : 4,
+				"file" : 1,
+				"line" : 678,
+				"parent" : 3
+			},
+			{
+				"command" : 3,
+				"file" : 1,
+				"line" : 678,
+				"parent" : 4
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 1387,
+				"parent" : 5
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 386,
+				"parent" : 6
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 807,
+				"parent" : 7
+			},
+			{
+				"command" : 7,
+				"file" : 0,
+				"line" : 808,
+				"parent" : 7
+			}
+		]
+	},
+	"dependencies" : 
+	[
+		{
+			"backtrace" : 9,
+			"id" : "apk::@6890427a1f51a3e7e1df"
+		}
+	],
+	"id" : "apk_all::@6890427a1f51a3e7e1df",
+	"name" : "apk_all",
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	},
+	"sources" : [],
+	"type" : "UTILITY"
+}

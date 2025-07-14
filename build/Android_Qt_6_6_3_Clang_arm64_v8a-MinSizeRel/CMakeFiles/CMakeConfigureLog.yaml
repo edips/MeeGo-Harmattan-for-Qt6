@@ -1,0 +1,473 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineSystem.cmake:200 (message)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      The target system is: Android - 23 - aarch64
+      The host system is: Linux - 6.11.0-29-generic - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ 
+      Build flags: 
+      Id flags: -c;--target=aarch64-none-linux-android23 
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CMakeCXXCompilerId.o"
+      
+      The CXX compiler identification is Clang, found in:
+        /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/3.29.3/CompilerIdCXX/CMakeCXXCompilerId.o
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:67 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_CXX_SCAN_FOR_MODULES: "OFF"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_00f98
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -fPIE -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -c /home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
+        Android (8490178, based on r450784d) clang version 14.0.6 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6)
+        Target: aarch64-none-linux-android23
+        Thread model: posix
+        InstalledDir: /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin
+         (in-process)
+         "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple aarch64-none-linux-android23 -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj -resource-dir /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6 -dependency-file CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -isysroot /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -O2 -Wformat -fdeprecated-macro -fdebug-compilation-dir=/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fcolor-diagnostics -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp
+        clang -cc1 version 14.0.6 based upon LLVM 14.0.6git default target x86_64-unknown-linux-gnu
+        ignoring nonexistent directory "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1
+         /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include
+         /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include
+         /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android
+         /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include
+        End of search list.
+        [2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections -v CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_00f98  -latomic -lm && :
+        Android (8490178, based on r450784d) clang version 14.0.6 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6)
+        Target: aarch64-none-linux-android23
+        Thread model: posix
+        InstalledDir: /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin
+         "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_00f98 /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtbegin_dynamic.o -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64 -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23 -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -latomic -lm -lc++ -lm /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtend_android.o
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:137 (message)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+          add: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include]
+          add: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include]
+          add: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+          add: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        end of search list found
+        collapse include dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+        collapse include dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include]
+        collapse include dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include]
+        collapse include dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        collapse include dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        implicit include dirs: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:173 (message)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld[0-9]*(\\.[a-z]+)?|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(\\.[a-z]+)?))("|,| |$)]
+        ignore line: [Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj']
+        ignore line: []
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_00f98]
+        ignore line: [[1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -fPIE -fcolor-diagnostics   -v -MD -MT CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -MF CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o.d -o CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -c /home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Android (8490178  based on r450784d) clang version 14.0.6 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6)]
+        ignore line: [Target: aarch64-none-linux-android23]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        ignore line: [ (in-process)]
+        ignore line: [ "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++" -cc1 -triple aarch64-none-linux-android23 -emit-obj --mrelax-relocations -disable-free -clear-ast-before-backend -disable-llvm-verifier -discard-value-names -main-file-name CMakeCXXCompilerABI.cpp -mrelocation-model pic -pic-level 2 -pic-is-pie -mframe-pointer=non-leaf -ffp-contract=on -fno-rounding-math -mconstructor-aliases -funwind-tables=2 -target-cpu generic -target-feature +neon -target-feature +v8a -target-feature +fix-cortex-a53-835769 -target-abi aapcs -fallow-half-arguments-and-returns -mllvm -treat-scalable-fixed-error-as-warning -debug-info-kind=constructor -dwarf-version=4 -debugger-tuning=gdb -v -ffunction-sections -fdata-sections -fcoverage-compilation-dir=/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj -resource-dir /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6 -dependency-file CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o.d -MT CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -sys-header-deps -D ANDROID -D _FORTIFY_SOURCE=2 -D NDEBUG -isysroot /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1 -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include -internal-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include -internal-externc-isystem /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include -O2 -Wformat -fdeprecated-macro -fdebug-compilation-dir=/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-lfrWVj -ferror-limit 19 -stack-protector 2 -fno-signed-char -fgnuc-version=4.2.1 -fcxx-exceptions -fexceptions -fcolor-diagnostics -vectorize-loops -vectorize-slp -target-feature +outline-atomics -D__GCC_HAVE_DWARF2_CFI_ASM=1 -o CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -x c++ /home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [clang -cc1 version 14.0.6 based upon LLVM 14.0.6git default target x86_64-unknown-linux-gnu]
+        ignore line: [ignoring nonexistent directory "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/c++/v1]
+        ignore line: [ /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/include]
+        ignore line: [ /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/local/include]
+        ignore line: [ /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include/aarch64-linux-android]
+        ignore line: [ /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/include]
+        ignore line: [End of search list.]
+        ignore line: [[2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl --build-id=sha1 -Wl --no-rosegment -Wl --fatal-warnings -Wl --gc-sections -Qunused-arguments -Wl --no-undefined  -Wl --gc-sections -v CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_00f98  -latomic -lm && :]
+        ignore line: [Android (8490178  based on r450784d) clang version 14.0.6 (https://android.googlesource.com/toolchain/llvm-project 4c603efb0cca074e9238af8b4106c30add4418f6)]
+        ignore line: [Target: aarch64-none-linux-android23]
+        ignore line: [Thread model: posix]
+        ignore line: [InstalledDir: /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin]
+        link line: [ "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -pie -EL --fix-cortex-a53-843419 --warn-shared-textrel -z now -z relro -z max-page-size=4096 --hash-style=gnu --enable-new-dtags --eh-frame-hdr -m aarch64linux -dynamic-linker /system/bin/linker64 -o cmTC_00f98 /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtbegin_dynamic.o -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64 -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23 -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android -L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib --build-id=sha1 --no-rosegment --fatal-warnings --gc-sections --no-undefined --gc-sections CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o -latomic -lm -lc++ -lm /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl -lc /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a -l:libunwind.a -ldl /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtend_android.o]
+          arg [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/ld] ==> ignore
+          arg [--sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot] ==> ignore
+          arg [-pie] ==> ignore
+          arg [-EL] ==> ignore
+          arg [--fix-cortex-a53-843419] ==> ignore
+          arg [--warn-shared-textrel] ==> ignore
+          arg [-znow] ==> ignore
+          arg [-zrelro] ==> ignore
+          arg [-zmax-page-size=4096] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [--enable-new-dtags] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [-m] ==> ignore
+          arg [aarch64linux] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/system/bin/linker64] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_00f98] ==> ignore
+          arg [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtbegin_dynamic.o] ==> obj [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtbegin_dynamic.o]
+          arg [-L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64] ==> dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64]
+          arg [-L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23] ==> dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23]
+          arg [-L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+          arg [-L/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+          arg [--build-id=sha1] ==> ignore
+          arg [--no-rosegment] ==> ignore
+          arg [--fatal-warnings] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [--no-undefined] ==> ignore
+          arg [--gc-sections] ==> ignore
+          arg [CMakeFiles/cmTC_00f98.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-latomic] ==> lib [atomic]
+          arg [-lm] ==> lib [m]
+          arg [-lc++] ==> lib [c++]
+          arg [-lm] ==> lib [m]
+          arg [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [-lc] ==> lib [c]
+          arg [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a] ==> lib [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a]
+          arg [-l:libunwind.a] ==> lib [-l:libunwind.a]
+          arg [-ldl] ==> lib [dl]
+          arg [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtend_android.o] ==> obj [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtend_android.o]
+        linker tool for 'CXX': /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/ld
+        remove lib [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        remove lib [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/libclang_rt.builtins-aarch64-android.a]
+        collapse library dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64]
+        collapse library dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23]
+        collapse library dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android]
+        collapse library dir [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib] ==> [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit libs: [atomic;m;c++;m;-l:libunwind.a;dl;c;-l:libunwind.a;dl]
+        implicit objs: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtbegin_dynamic.o;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/crtend_android.o]
+        implicit dirs: [/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/lib64/clang/14.0.6/lib/linux/aarch64;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android;/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CMakeDetermineLinkerId.cmake:40 (message)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeDetermineCompilerABI.cmake:210 (cmake_determine_linker_id)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:2 (project)"
+    message: |
+      Running the CXX compiler's linker: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/ld" "-v"
+      LLD 14.0.6 (compatible with GNU linkers)
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake:99 (CHECK_CXX_SOURCE_COMPILES)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Dependencies.cmake:24 (_qt_internal_find_third_party_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake:119 (include)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_04dcf
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DCMAKE_HAVE_LIBC_PTHREAD  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_04dcf.dir/src.cxx.o -MF CMakeFiles/cmTC_04dcf.dir/src.cxx.o.d -o CMakeFiles/cmTC_04dcf.dir/src.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit/src.cxx
+        \x1b[31mFAILED: \x1b[0mCMakeFiles/cmTC_04dcf.dir/src.cxx.o 
+        /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DCMAKE_HAVE_LIBC_PTHREAD  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_04dcf.dir/src.cxx.o -MF CMakeFiles/cmTC_04dcf.dir/src.cxx.o.d -o CMakeFiles/cmTC_04dcf.dir/src.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit/src.cxx
+        \x1b[1m/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-F78Bit/src.cxx:13:3: \x1b[0m\x1b[0;1;31merror: \x1b[0m\x1b[1muse of undeclared identifier 'pthread_cancel'\x1b[0m
+          pthread_cancel(thread);
+        \x1b[0;1;32m  ^
+        \x1b[0m1 error generated.
+        ninja: build stopped: subcommand failed.
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake:136 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/FindThreads.cmake:169 (_threads_check_flag_pthread)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Dependencies.cmake:24 (_qt_internal_find_third_party_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake:119 (include)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Check if compiler accepts -pthread"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-HQexmT"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-HQexmT"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "THREADS_HAVE_PTHREAD_ARG"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-HQexmT'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_5f6bd
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot   -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_5f6bd.dir/CheckForPthreads.cxx.o -MF CMakeFiles/cmTC_5f6bd.dir/CheckForPthreads.cxx.o.d -o CMakeFiles/cmTC_5f6bd.dir/CheckForPthreads.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-HQexmT/CheckForPthreads.cxx
+        [2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_5f6bd.dir/CheckForPthreads.cxx.o -o cmTC_5f6bd  -pthread   -latomic -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindWrapAtomic.cmake:36 (check_cxx_source_compiles)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreDependencies.cmake:30 (_qt_internal_find_third_party_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Core/Qt6CoreConfig.cmake:41 (include)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:111 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:39 (_qt_internal_find_qt_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:40 (include)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake:164 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_STDATOMIC"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-x2bli3"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-x2bli3"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_STDATOMIC"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-x2bli3'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_f5cc5
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_STDATOMIC  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_f5cc5.dir/src.cxx.o -MF CMakeFiles/cmTC_f5cc5.dir/src.cxx.o.d -o CMakeFiles/cmTC_f5cc5.dir/src.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-x2bli3/src.cxx
+        [2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_f5cc5.dir/src.cxx.o -o cmTC_f5cc5  -latomic -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules/FindEGL.cmake:127 (check_cxx_source_compiles)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindGLESv2.cmake:13 (find_package)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:30 (_qt_internal_find_third_party_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:111 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:39 (_qt_internal_find_qt_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:40 (include)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake:164 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_EGL"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-A0hBI5"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-A0hBI5"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_EGL"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-A0hBI5'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_e8fcd
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_EGL  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_e8fcd.dir/src.cxx.o -MF CMakeFiles/cmTC_e8fcd.dir/src.cxx.o.d -o CMakeFiles/cmTC_e8fcd.dir/src.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-A0hBI5/src.cxx
+        [2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_e8fcd.dir/src.cxx.o -o cmTC_e8fcd  /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/libEGL.so   -latomic -lm && :
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CheckCXXSourceCompiles.cmake:52 (cmake_check_source_compiles)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/FindGLESv2.cmake:27 (check_cxx_source_compiles)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:36 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiDependencies.cmake:30 (_qt_internal_find_third_party_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Gui/Qt6GuiConfig.cmake:40 (include)"
+      - "/home/edip/Qt/Tools/CMake/share/cmake-3.29/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/QtPublicDependencyHelpers.cmake:111 (find_dependency)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickDependencies.cmake:39 (_qt_internal_find_qt_dependencies)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6Quick/Qt6QuickConfig.cmake:40 (include)"
+      - "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/Qt6Config.cmake:164 (find_package)"
+      - "CMakeLists.txt:13 (find_package)"
+    checks:
+      - "Performing Test HAVE_GLESv2"
+    directories:
+      source: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-h3tdgJ"
+      binary: "/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-h3tdgJ"
+    cmakeVariables:
+      ANDROID_ABI: "arm64-v8a"
+      ANDROID_ARM_MODE: "thumb"
+      ANDROID_ARM_NEON: "TRUE"
+      ANDROID_PLATFORM: "android-23"
+      ANDROID_STL: "c++_shared"
+      ANDROID_TOOLCHAIN: "clang"
+      ANDROID_USE_LEGACY_TOOLCHAIN_FILE: "OFF"
+      CMAKE_ANDROID_STL_TYPE: "c++_shared"
+      CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS: "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-NOTFOUND"
+      CMAKE_CXX_COMPILER_EXTERNAL_TOOLCHAIN: ""
+      CMAKE_CXX_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_CXX_FLAGS: "-DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++"
+      CMAKE_CXX_FLAGS_DEBUG: "-g  -fno-limit-debug-info"
+      CMAKE_C_COMPILER_TARGET: "aarch64-none-linux-android23"
+      CMAKE_EXE_LINKER_FLAGS: "-Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections"
+      CMAKE_MODULE_PATH: "/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/extra-cmake-modules/find-modules;/home/edip/Qt/6.6.3/android_arm64_v8a/lib/cmake/Qt6/3rdparty/kwin"
+      CMAKE_POSITION_INDEPENDENT_CODE: "TRUE"
+      CMAKE_SYSROOT: "/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot"
+    buildResult:
+      variable: "HAVE_GLESv2"
+      cached: true
+      stdout: |
+        Change Dir: '/home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-h3tdgJ'
+        
+        Run Build Command(s): /usr/bin/ninja -v cmTC_0006a
+        [1/2] /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DHAVE_GLESv2  -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -std=gnu++17 -fPIE -fcolor-diagnostics -MD -MT CMakeFiles/cmTC_0006a.dir/src.cxx.o -MF CMakeFiles/cmTC_0006a.dir/src.cxx.o.d -o CMakeFiles/cmTC_0006a.dir/src.cxx.o -c /home/edip/Desktop/MeeGo/MeeGo-Harmattan-for-Qt6/build/Android_Qt_6_6_3_Clang_arm64_v8a-MinSizeRel/CMakeFiles/CMakeScratch/TryCompile-h3tdgJ/src.cxx
+        [2/2] : && /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++ --target=aarch64-none-linux-android23 --sysroot=/home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security -fexceptions -frtti -stdlib=libc++  -O2 -g -DNDEBUG -Wl,--build-id=sha1 -Wl,--no-rosegment -Wl,--fatal-warnings -Wl,--gc-sections -Qunused-arguments -Wl,--no-undefined  -Wl,--gc-sections CMakeFiles/cmTC_0006a.dir/src.cxx.o -o cmTC_0006a  /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/libGLESv2.so  /home/edip/Desktop/Surveying_Calculator_Qt6/Dependencies/android-ndk-r25b/toolchains/llvm/prebuilt/linux-x86_64/sysroot/usr/lib/aarch64-linux-android/23/libEGL.so   -latomic -lm && :
+        
+      exitCode: 0
+...
