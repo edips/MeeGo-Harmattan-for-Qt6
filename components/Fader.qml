@@ -153,6 +153,7 @@ Rectangle {
                         faderBackground.parent = originalParent;
                     }
                 }
+                onFinished: faderBackground.parent.visible = false
             }
         }
     ]

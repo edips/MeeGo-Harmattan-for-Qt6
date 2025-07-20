@@ -30,6 +30,7 @@ set(HEADERS
     mInverseMouseArea.h
     models/qRangeModel.h
     models/qRangeModel_p.h
+    mOrientationHelper.h
     #themedaemon/mAbstractThemeDaemonClient.h
     #themedaemon/mLocalThemeDaemonClient.h
     #themedaemon/mRemoteThemeDaemonClient.h
@@ -41,6 +42,7 @@ set(SOURCES
     main.cpp
     mDeclarativeImObserver.cpp
     mInverseMouseArea.cpp
+    mOrientationHelper.cpp
     mDeclarativeMouseFilter.cpp
     #mDeclarativeImageprovider.cpp
     mDeclarativeScreen.cpp
@@ -182,8 +184,3 @@ install(TARGETS appmeego
     LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
 )
 
-
-# Enable Android support
-if(ANDROID)
-    set(CMAKE_ANDROID_ARCH_ABI arm64-v8a)
-endif()

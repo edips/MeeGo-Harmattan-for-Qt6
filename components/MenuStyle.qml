@@ -3,12 +3,9 @@ import QtQuick 2.1
 Style {
     id: root
 
-    property real leftMargin: ( (screen.currentOrientation === 1) ||
-                                 (screen.currentOrientation === 4) ) ? 0 : 427 * ScaleFactor
-    property real rightMargin: ( (screen.currentOrientation === 1) ||
-                                 (screen.currentOrientation === 4) ) ? 0 : 0
-    property real topMargin: ( (screen.currentOrientation === 1) ||
-                               (screen.currentOrientation === 4) ) ? 246 * ScaleFactor : 0
+    property real leftMargin: orientation.orientation === "Portrait" ? 0 : 427 * ScaleFactor
+    property real rightMargin: orientation.orientation === "Portrait" ? 0 : 0
+    property real topMargin: orientation.orientation === "Portrait" ? 246 * ScaleFactor : 0
 
     property real bottomMargin: 0
 

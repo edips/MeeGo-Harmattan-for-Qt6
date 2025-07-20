@@ -14,7 +14,8 @@
 #include "mDeclarativeMouseFilter.h"
 #include "mDeclarativeImObserver.h"
 #include "models/qRangeModel.h"
-
+#include <QQuickWindow>
+#include "mOrientationHelper.h"
 
 
 QQmlPropertyMap *uiConstants(MLocaleWrapper *locale = nullptr, qreal scaleFactor = 1.0)
@@ -96,13 +97,31 @@ QQmlPropertyMap *uiConstants(MLocaleWrapper *locale = nullptr, qreal scaleFactor
 
 int main(int argc, char *argv[])
 {
-    QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
+    //QGuiApplication::setHighDpiScaleFactorRoundingPolicy(Qt::HighDpiScaleFactorRoundingPolicy::PassThrough);
 
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-    qreal scaleFactor = std::min(QGuiApplication::primaryScreen()->size().width() / 480.0,
-                                 QGuiApplication::primaryScreen()->size().height() / 854.0);
+
+    // Create OrientationMonitor on the heap and set its parent to &app.
+    // This ensures it's deleted automatically when the QGuiApplication exits,
+    // thereby outliving the QML engine's cleanup phase and preventing null pointer access.
+    OrientationMonitor *orientationMonitor = new OrientationMonitor(&app);
+    engine.rootContext()->setContextProperty("orientation", orientationMonitor);
+
+
+
+
+    qreal dpi = QGuiApplication::primaryScreen()->logicalDotsPerInch();
+
+    // Material Design baseline: 160 dpi = 1.0 scale
+    qreal scaleFactor = dpi / 160.0;
+
+    // Optional: clamp the scale factor to avoid extremes
+    scaleFactor = std::clamp(scaleFactor, 0.85, 1.5);
+
+    engine.rootContext()->setContextProperty("ScaleFactor", scaleFactor);
+
 
     // Expose scaleFactor to QML
     engine.rootContext()->setContextProperty("ScaleFactor", scaleFactor);
@@ -175,5 +194,32 @@ int main(int argc, char *argv[])
                      &app, []() { QCoreApplication::exit(-1); }, Qt::QueuedConnection);
 
     engine.load(url);
+
+
+
+    // Fix for clazy-detaching-temporary: Store the temporary QList in a reference
+    const QList<QObject*>& rootObjects = engine.rootObjects();
+
+    QObject *rootObject = rootObjects.first(); // Now calling first() on a stable reference
+    QQuickWindow *window = qobject_cast<QQuickWindow*>(rootObject);
+
+    if (!window) {
+        // Ensure that rootObjects is not empty before accessing parent()
+        if (!rootObjects.isEmpty()) {
+            window = qobject_cast<QQuickWindow*>(rootObjects.first()->parent());
+        }
+        if (!window) {
+            qWarning("Could not find QQuickWindow from root object or its parent. Orientation monitoring may not work.");
+        }
+    }
+
+    if (window) {
+        orientationMonitor->setWindow(window);
+    }
+
+
+
+
+
     return app.exec();
 }

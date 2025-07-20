@@ -534,6 +534,9 @@
         <file>images/meegotouch-slider-received-inverted-background-vertical.png</file>
         <file>images/meegotouch-slider-received-inverted-background-vertical-disabled.png</file>
         <file>images/icon-m-toolbar-image-edit-dimmed-white.png</file>
+        <file>images/icon-m-toolbar-view-menu.png</file>
+        <file>images/icon-m-toolbar-view-menu-dimmed.png</file>
+        <file>images/icon-m-toolbar-view-menu-selected.png</file>
         <file>images/NokiaN9.jpg</file>
     </qresource>
 </RCC>

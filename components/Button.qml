@@ -94,5 +94,5 @@ Item {
         onClicked: if (button.checkable)
             button.checked = !button.checked
     }
-    Component.onCompleted: mouseArea.clicked.connect(clicked)
+    Component.onCompleted: mouseArea.clicked.connect(() => clicked())
 }

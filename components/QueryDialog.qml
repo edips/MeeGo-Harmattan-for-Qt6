@@ -169,8 +169,8 @@ Dialog {
             anchors.topMargin: root.platformStyle.buttonTopMargin
             spacing: root.platformStyle.buttonsColumnSpacing
 
-            height: (acceptButton.text  == "" ? 0 : acceptButton.height)
-                    + (rejectButton.text == "" ? 0 : rejectButton.height)
+            height: (acceptButton.text  === "" ? 0 : acceptButton.height)
+                    + (rejectButton.text === "" ? 0 : rejectButton.height)
                     + anchors.buttonTopMargin  + spacing
 
             anchors.horizontalCenter: parent.horizontalCenter
@@ -179,7 +179,7 @@ Dialog {
                 id: acceptButton
                 text: ""
                 onClicked: accept()
-                visible: text != ""
+                visible: text !== ""
                 __dialogButton: true
                 platformStyle: ButtonStyle {inverted: true}
             }
@@ -187,7 +187,7 @@ Dialog {
                 id: rejectButton
                 text: ""
                 onClicked: reject()
-                visible: text != ""
+                visible: text !== ""
                 __dialogButton: true
                 platformStyle: ButtonStyle {inverted: true}
             }

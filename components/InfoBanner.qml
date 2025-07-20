@@ -10,6 +10,8 @@ import "constants.js" as UI
 Item {
     id: root
 
+    visible: false
+
     /*
      * Property: iconSource
      * [url] The path to the icon image
@@ -38,19 +40,24 @@ Item {
      * Property: topMargin
      * [int=8 pix] Allows user to customize top margin if needed
      */
-    property alias topMargin: root.y
+
+
+    property int topMargin: parseInt(8 * ScaleFactor)
+    y: topMargin
 
     /*
      * Property: leftMargin
      * [int=8 pix] Allows user to customize left margin if needed
      */
-    property alias leftMargin: root.x
-
+    //property alias leftMargin: root.x
+    property int leftMargin: parseInt(8 * ScaleFactor)
+    x: leftMargin
     /*
      * Function: show
      * Show InfoBanner
      */
     function show() {
+        root.visible = true
         animationShow.running = true;
         if (root.timerEnabled)
             sysBannerTimer.restart();
@@ -66,8 +73,8 @@ Item {
 
     implicitHeight: internal.getBannerHeight()
     implicitWidth: internal.getBannerWidth()
-    x: parseInt(8 * ScaleFactor)
-    y: parseInt(8 * ScaleFactor)
+    //x: parseInt(8 * ScaleFactor)
+    //y: parseInt(8 * ScaleFactor)
     scale: 0
 
     BorderImage {
@@ -93,7 +100,7 @@ Item {
             topMargin: parseInt(16 * ScaleFactor)
         }
         source: root.iconSource
-        visible: root.iconSource != ""
+        visible: root.iconSource !== ""
     }
 
     Text {
@@ -103,7 +110,7 @@ Item {
             left: (image.visible ? image.right : parent.left)
             leftMargin: (image.visible ? parseInt(14 * ScaleFactor) : parseInt(16 * ScaleFactor) )
             top: parent.top
-            topMargin: internal.getTopMargin()
+            topMargin: (text.lineCount <= 1 && !image.visible ? parseInt(16 * ScaleFactor) : parseInt(18 * ScaleFactor))//internal.getTopMargin()
             bottom: parent.bottom
         }
         color: "white"
@@ -138,12 +145,14 @@ Item {
         function getBannerWidth() {
             return parent.width - root.x * 2;
         }
-
+        // gives error: QML QQuickAnchors: Binding loop detected for property "topMargin"
         function getTopMargin() {
             if (text.lineCount <= 1 && !image.visible) {
+                console.log("Look here1")
                 // If there's only one line of text and no icon image, top and bottom margins are equal.
                 return (root.height - text.paintedHeight) / 2;
             } else {
+                console.log("Look here2")
                 // In all other cases, top margin is 4 px more than bottom margin.
                 return (root.height - text.paintedHeight) / 2 + 2;
             }
@@ -173,8 +182,10 @@ Item {
     }
 
     MouseArea {
+        id: mouseInfo
         anchors.fill: parent
         onClicked: hide()
+        enabled: root.visible
     }
 
     SequentialAnimation {
@@ -203,5 +214,8 @@ Item {
         to: 0
         duration: 200
         easing.type: Easing.InExpo
+        onFinished: {
+            root.visible = false
+        }
     }
 }

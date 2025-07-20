@@ -14,6 +14,7 @@ PageStackWindow {
         notification.text = text;
         notification.show()
     }
+
     QueryDialog {
         id: quDialog
         onPrivateClicked: {}
@@ -38,7 +39,8 @@ PageStackWindow {
                 anchors.fill : parent
                 spacing : 16
                 Text {
-                    text: "<h1>MeeGo is coming!</h1>"
+                    id: orientationText
+                    text: orientation.orientation
                     anchors.horizontalCenter: parent.horizontalCenter
                 }
                 Text {
@@ -92,6 +94,7 @@ PageStackWindow {
             iconId: "icon-m-toolbar-add"
             onClicked: {
                 console.log("Add clicked")
+                //rootWindow.notify("entry field content:<br><b>" + entryField.text + "</b>")
                 quDialog.open()
             }
         }
@@ -133,7 +136,7 @@ PageStackWindow {
             }
         }
         ToolIcon {
-            platformIconId: "toolbar-view-menu"
+            platformIconId: "icon-m-toolbar-view-menu"
             anchors.right: (parent === undefined) ? undefined : parent.right
             onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close()
         }
@@ -142,6 +145,16 @@ PageStackWindow {
         id: myMenu
         visualParent: pageStack
         MenuLayout {
+            MenuItem { text: qsTr("Sample menu item 1") }
+            MenuItem { text: qsTr("Sample menu item 2") }
+            MenuItem { text: qsTr("Sample menu item 3") }
+            MenuItem { text: qsTr("Sample menu item 4") }
+            MenuItem { text: qsTr("Sample menu item 5") }
+            MenuItem { text: qsTr("Sample menu item 1") }
+            MenuItem { text: qsTr("Sample menu item 2") }
+            MenuItem { text: qsTr("Sample menu item 3") }
+            MenuItem { text: qsTr("Sample menu item 4") }
+            MenuItem { text: qsTr("Sample menu item 5") }
             MenuItem { text: qsTr("Sample menu item 1") }
             MenuItem { text: qsTr("Sample menu item 2") }
             MenuItem { text: qsTr("Sample menu item 3") }

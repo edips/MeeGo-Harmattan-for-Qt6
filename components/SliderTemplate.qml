@@ -7,12 +7,11 @@ Item {
     //
     // Common API
     //
-    property int orientation: Qt.Horizontal
+    property int orientationSlider: Qt.Horizontal
     property alias minimumValue: range.minimumValue
     property alias maximumValue: range.maximumValue
     property alias pressed: mouseArea.pressed
     property alias stepSize: range.stepSize
-    property alias platformMouseAnchors: mouseArea.anchors
 
     // NOTE: this property is in/out, the user can set it, create bindings to it, and
     // at the same time the slider wants to update. There's no way in QML to do this kind
@@ -50,13 +49,13 @@ Item {
     property Item __handleItem
     property Item __valueIndicatorItem
 
-    property bool __isVertical: orientation == Qt.Vertical
+    property bool __isVertical: orientationSlider === Qt.Vertical
 
-    width: parseInt(400 * ScaleFactor)
-    height: handle.height
+    property int impWidth: parseInt(400 * ScaleFactor)
+    property int impHeight: handle.height
 
-    //width: __isVertical ? implicitHeight : implicitWidth
-    //height: __isVertical ? implicitWidth : implicitHeight
+    width: __isVertical ? impHeight : impWidth
+    height: __isVertical ? impWidth : impHeight
 
     // This is a template slider, so every piece can be modified by passing a
     // different Component. The main elements in the implementation are
@@ -171,13 +170,8 @@ Item {
 
         MouseArea {
             id: mouseArea
-            property real oldPosition: 0
             anchors {
                 fill: parent
-                rightMargin: platformStyle.mouseMarginRight
-                leftMargin: platformStyle.mouseMarginLeft
-                topMargin: platformStyle.mouseMarginTop
-                bottomMargin: platformStyle.mouseMarginBottom
             }
 
             drag.target: fakeHandle
@@ -185,21 +179,28 @@ Item {
             drag.minimumX: range.positionAtMinimum
             drag.maximumX: range.positionAtMaximum
 
-            onPressed: mouse=> {
-                oldPosition = range.position;
-                // Clamp the value
-                var newX = Math.max(mouse.x + anchors.leftMargin, drag.minimumX);
-                newX = Math.min(newX, drag.maximumX);
-
-                // Debounce the press: a press event inside the handler will not
-                // change its position, the user needs to drag it.
-                if (Math.abs(newX - fakeHandle.x) > handle.width / 2)
-                    range.position = newX;
+            onClicked: mouse => {
+                var clickXInContents = mouseArea.mapToItem(contents, mouse.x, 0).x;
+                var targetX = Math.max(clickXInContents, drag.minimumX);
+                targetX = Math.min(targetX, drag.maximumX);
+                fakeHandle.x = targetX;
+                range.position = fakeHandle.x; // Explicitly set range.position after a click
             }
 
-            onCanceled: {
-                range.position = oldPosition;
+            onReleased: mouse => {
+                range.position = fakeHandle.x; // Ensure the final position of fakeHandle is committed to range.position
             }
+
+            // --- CHANGE START ---
+            // Added onPositionChanged to update range.position in real-time during drag
+            onPositionChanged: mouse => {
+                if (mouseArea.drag.active) {
+                    // Update range.position based on the current fakeHandle.x
+                    // This ensures the value indicator updates in real-time during drag
+                    range.position = fakeHandle.x;
+                }
+            }
+            // --- CHANGE END ---
         }
 
         Item {
@@ -277,11 +278,12 @@ Item {
         value: range.position
     }
 
-    // when the slider is dragged, the value binds to the handle's position
-    Binding {
-        when: mouseArea.drag.active
-        target: range
-        property: "position"
-        value: fakeHandle.x
-    }
+    // This binding was removed in the previous iteration and remains removed.
+    // The real-time update is now handled by mouseArea.onPositionChanged.
+    // Binding {
+    //     when: mouseArea.drag.active
+    //     target: range
+    //     property: "position"
+    //     value: fakeHandle.x
+    // }
 }

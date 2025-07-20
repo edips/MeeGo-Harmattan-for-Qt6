@@ -23,7 +23,7 @@ Item {
 
     width: parent ? parent.width: 0
     height: ( root.platformStyle.height === 0 ) ?
-            root.platformStyle.topMargin + menuText.contentHeight + root.platformStyle.bottomMargin :
+            root.platformStyle.topMargin + menuText.paintedHeight + root.platformStyle.bottomMargin :
             root.platformStyle.topMargin + root.platformStyle.height + root.platformStyle.bottomMargin
 
     function __isOnlyVisibleChild() {
@@ -67,10 +67,14 @@ Item {
 */
     BorderImage {
        id: backgroundImage
-       source:   // !enabled ? root.platformStyle.disabledBackground :
-                 !pressed ? root.platformStyle.background :
-                 (root.platformStyle.__colorString === "") ? root.platformStyle.pressedBackground : root.platformStyle.selectedBackground;
+       source: // !enabled ? root.platformStyle.disabledBackground :
+       pressed ? root.platformStyle.pressedBackground
+     : root.platformStyle.background
 
+    /*// !enabled ? root.platformStyle.disabledBackground :
+        !pressed ? root.platformStyle.background :
+        (root.platformStyle.__colorString === "") ? root.platformStyle.pressedBackground : root.platformStyle.selectedBackground;
+    */
        anchors.fill : root
        border { left: parseInt(22 * ScaleFactor); top: parseInt(22 * ScaleFactor);
                 right: parseInt(22 * ScaleFactor); bottom: parseInt(22 * ScaleFactor) }
@@ -106,5 +110,5 @@ Item {
         onClicked: { if (parent.enabled) parent.clicked();}
     }
 
-    onClicked: if (parent) parent.closeLayout();
+    onClicked:{ if (parent) parent.closeLayout();}
 }

@@ -33,10 +33,10 @@ AbstractMenu {
                 ScriptAction {script: __beginTransformationToHidden()}
 
                 NumberAnimation {target: __menuPane;
-                                 property: "anchors.bottomMargin" //screen.currentOrientation === Screen.Portrait ? "anchors.bottomMargin" : "anchors.rightMargin";
+                                 property: orientation.orientation === "Portrait" ? "anchors.bottomMargin" : "anchors.rightMargin";
                                  easing.type: Easing.InOutQuint;
-                                 to: -__menuPane.height // screen.currentOrientation === Screen.Portrait ? -__menuPane.height : -__menuPane.width;
-                                 from: 0; duration: parseInt(350 * ScaleFactor) }
+                                 to: orientation.orientation === "Portrait" ? -__menuPane.height : -__menuPane.width;
+                                 from: 0; duration: 350 }
 
                 NumberAnimation {target: __menuPane; property: "opacity";
                                  from: 1.0; to: 0.0; duration: 0}
@@ -50,10 +50,10 @@ AbstractMenu {
                 ScriptAction {script: __beginTransformationToVisible()}
 
                 NumberAnimation {target: __menuPane;
-                                 property: "anchors.bottomMargin" //screen.currentOrientation === Screen.Portrait ? "anchors.bottomMargin" : "anchors.rightMargin";
+                                 property: orientation.orientation === "Portrait" ? "anchors.bottomMargin" : "anchors.rightMargin";
                                  easing.type: Easing.InOutQuint;
-                                 from: -__menuPane.height//screen.currentOrientation === Screen.Portrait ? -__menuPane.height : -__menuPane.width;
-                                 to: 0; duration: parseInt(350 * ScaleFactor) }
+                                 from: orientation.orientation === "Portrait" ? -__menuPane.height : -__menuPane.width;
+                                 to: 0; duration: 350 }
 
                 ScriptAction {script: status = DialogStatus.Open }
             }

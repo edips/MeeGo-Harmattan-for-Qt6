@@ -4,6 +4,7 @@ import "."
 
 Item {
     id: root
+    visible: false
 
     // api
     property alias visualParent: fader.visualParent
@@ -25,20 +26,23 @@ Item {
     property bool __platformModal: false
 
     function open() {
-        if (status === DialogStatus.Closed)
+        if (status === DialogStatus.Closed) {
             status = DialogStatus.Opening;
+            root.visible = true
+        }
     }
 
     function close() {
-        if (status === DialogStatus.Open)
+        if (status === DialogStatus.Open) {
             status = DialogStatus.Closing;
+        }
     }
 
     signal privateClicked
 
     //Deprecated, TODO Remove the following two lines on w13
    signal clicked
-   onClicked: privateClicked()
+   onClicked: {privateClicked();}
 
     QtObject {
         id: parentCache
@@ -49,7 +53,7 @@ Item {
         parentCache.oldParent = parent;
         fader.parent = parent;
         parent = fader;
-        fader.privateClicked.connect(privateClicked)
+        //fader.privateClicked.connect(privateClicked) // it was disabled from simulator's SDK
     }
 
     //if this is not given, application may crash in some cases
@@ -69,6 +73,7 @@ Item {
         fadeOutDelay: root.__fadeOutDelay
         fadeInEasingType: root.__fadeInEasingType
         fadeOutEasingType: root.__fadeOutEasingType
+        onPrivateClicked: {root.privateClicked();}
 
 
         background: root.__faderBackground
@@ -83,5 +88,4 @@ Item {
     function __fader() {
         return fader;
     }
-
 }

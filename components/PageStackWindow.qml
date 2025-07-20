@@ -15,21 +15,22 @@ Window2 {
     //private api
     property int __statusBarHeight: showStatusBar ? statusBar.height : 0
 
-    //objectName: "pageStackWindow"
+    objectName: "pageStackWindow"
 
     StatusBar {
         id: statusBar
         anchors.top: parent.top
         width: parent.width
         showStatusBar: window.showStatusBar
+        height: 0
     }
 
     Rectangle {
         id: background
         visible: platformStyle.background === ""
         color: platformStyle.backgroundColor
-        width: parent.width//window.inPortrait ? screen.displayHeight : screen.displayWidth
-        height: parent.height//window.inPortrait ? screen.displayWidth : screen.displayHeight
+        width: orientation.orientation === "Portrait" ? screen.displayHeight : screen.displayWidth
+        height: orientation.orientation === "Portrait" ? screen.displayWidth : screen.displayHeight
         anchors {
             top: statusBar.bottom
             left: parent.left
@@ -41,8 +42,8 @@ Window2 {
         visible: platformStyle.background !== ""
         source: window.inPortrait ? platformStyle.portraitBackground : platformStyle.landscapeBackground
         fillMode: platformStyle.backgroundFillMode
-        width: parent.width//window.inPortrait ? screen.displayHeight : screen.displayWidth
-        height: parent.height//window.inPortrait ? screen.displayWidth : screen.displayHeight
+        width: orientation.orientation === "Portrait" ? screen.displayHeight : screen.displayWidth
+        height: orientation.orientation === "Portrait" ? screen.displayWidth : screen.displayHeight
         anchors {
             top: statusBar.bottom
             left: parent.left

@@ -1,4 +1,4 @@
-import QtQuick 2.1
+import QtQuick
 import com.meego.components 1.0
 
 Popup {
@@ -26,7 +26,7 @@ Popup {
     // private api
     property int __statusBarDelta: visualParent ? 0 :
                  __findItem( "appWindowContent") !== null ? 0 :
-                 __findItem( "pageStackWindow") !== null && __findItem( "pageStackWindow").showStatusBar ? 36 : 0
+                 __findItem( "pageStackWindow") !== null && __findItem( "pageStackWindow").showStatusBar ? 36 * ScaleFactor : 0
 
     property string __animationChief: "abstractMenu"
     property int __pressDelay: platformStyle.pressDelay
@@ -62,7 +62,6 @@ Popup {
     anchors.fill: parent
 
     // When application is minimized menu is closed.
-    // TODO: Do it for Qt6 QML, figure it out if it is a necessary thing
     /*Connections {
         target: platformWindow
         function onActiveChanged() {
@@ -80,7 +79,7 @@ Popup {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        height: parent.height - __statusBarDelta - 2
+        height: parent.height - __statusBarDelta - parseInt(2 * ScaleFactor)
         z: 10001
 
         // compensate for the widening of the edges of the fader (which avoids artefacts during rotation)
@@ -146,18 +145,10 @@ Popup {
         //ToDo: add support for layoutDirection Qt::RightToLeft
         x: platformStyle.leftMargin
 
-        width:  parent.width
-        height: titleBar.height + flickableContent.height + footerBar.height
-
-        //*************************************************************************************************
-        // We use Portrait mode to make the menu work. It doesnt recognize portrait or landscape when the screen size changes.
-        // TODO: Make it compatible with Landscape as well. old code is here:
-
-        /*width:  parent.width  - platformStyle.leftMargin - platformStyle.rightMargin  // ToDo: better width heuristic
-        height: (screen.currentOrientation === 1) || (screen.currentOrientation === 4) ? */
-                /* Portrait  */ //titleBar.height + flickableContent.height + footerBar.height :
-                /* Landscape */ //parent.height - platformStyle.topMargin - platformStyle.bottomMargin - __statusBarDelta
-        //*************************************************************************************************
+        width:  parent.width - platformStyle.leftMargin - platformStyle.rightMargin  // ToDo: better width heuristic
+        height: orientation.orientation === "Portrait" ?
+                /* Portrait  */ titleBar.height + flickableContent.height + footerBar.height :
+                /* Landscape */ parent.height - platformStyle.topMargin - platformStyle.bottomMargin - __statusBarDelta
         anchors.bottom: parent.bottom
         anchors.right: parent.right
         visible: opacity !== 0.0
