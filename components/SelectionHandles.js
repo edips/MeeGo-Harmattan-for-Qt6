@@ -10,14 +10,21 @@ function init(item)
     if (popup != null)
         return true;
 
-    var root = findRootItem(item);
+    // --- CHANGE START ---
+    // Explicitly find the root window (PageStackWindow with objectName "rootWindow")
+    var root = Utils.findRootWindow(item);
+    if (!root) {
+        console.error("SelectionHandles.js: Failed to find root window. Cannot initialize SelectionHandles.");
+        return false;
+    }
+    // --- CHANGE END ---
 
     // create root popup
     var component = Qt.createComponent("SelectionHandles.qml");
 
     // due the pragma we cannot access Component.Ready
     if (component)
-        popup = component.createObject(root);
+        popup = component.createObject(root); // Create popup as child of the found root window
 
     return popup != null;
 }

@@ -72,7 +72,7 @@ Item {
                 id: buttonCut
                 objectName: "cutButton";
                 // Assuming textTranslator is globally available or provided by a specific import
-                text:"cut"// textTranslator.translate("qtn_comm_cut");
+                text:"qtn_comm_cut"// textTranslator.translate("qtn_comm_cut");
                 visible: rect.canCut
                 onClicked: {
                     rect.changingText = true;
@@ -87,7 +87,7 @@ Item {
                 id: buttonCopy
                 objectName: "copyButton";
                 // Assuming textTranslator is globally available
-                text: "copy"//textTranslator.translate("qtn_comm_copy");
+                text: "qtn_comm_copy"//textTranslator.translate("qtn_comm_copy");
                 visible: rect.canCopy
                 onClicked: {
                     if (bubble.textInput) bubble.textInput.copy(); // Added null check
@@ -100,7 +100,7 @@ Item {
                 id: buttonPaste
                 objectName: "pasteButton";
                 // Assuming textTranslator is globally available
-                text: "paste"//textTranslator.translate("qtn_comm_paste");
+                text: "qtn_comm_paste"//textTranslator.translate("qtn_comm_paste");
                 visible: rect.canPaste
                 onClicked: {
                     rect.changingText = true;
@@ -132,7 +132,7 @@ Item {
                 NotificationBanner{
                     id: errorBannerPrivate
                     // Assuming textTranslator is globally available
-                    text: "cantpaste"//textTranslator.translate("qtn_comm_cantpaste");
+                    text: "qtn_comm_cantpaste"//textTranslator.translate("qtn_comm_cantpaste");
                     timerShowTime: 5*1000
                     topMargin: 8
                     leftMargin: 8

@@ -126,24 +126,16 @@ set(QML_SOURCES
     components/ToolButton.qml
     components/ToolButtonRow.qml
     components/ToolButtonStyle.qml
-    components/SelectionHandles.js
     components/Utils.js
-    components/EditBubble.js
-    components/EditBubble.qml
     components/TextAreaHelper.js
     components/TextField.qml
-    components/EditBubbleStyle.qml
-    components/EditBubbleButton.qml
     components/TextFieldStyle.qml
     components/BasicRow.js
     components/BasicRow.qml
     components/NotificationBanner.qml
-    components/Magnifier.js
     components/Slider.qml
     components/SliderStyle.qml
     components/SliderTemplate.qml
-    components/EditBubbleButtonStyle.qml
-    components/Magnifier.qml
 )
 
 

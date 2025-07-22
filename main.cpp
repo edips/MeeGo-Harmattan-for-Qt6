@@ -27,7 +27,6 @@
 #include "models/qRangeModel.h"
 #include <QQuickWindow>
 #include "mOrientationHelper.h"
-#include "androidViewControl.h"
 
 
 
@@ -232,14 +231,6 @@ int main(int argc, char *argv[])
     qmlRegisterType<QRangeModel>("com.meego.components", 1, 0, "RangeModel");
 
     qmlRegisterType<MScrollDecoratorSizer>("com.meego.components", 1, 0, "ScrollDecoratorSizerCPP");
-    // --- NEW: Register AndroidViewControl as a singleton ---
-    qmlRegisterSingletonType<AndroidViewControl>("com.meego.components", 1, 0, "AndroidViewControl",
-                                                 [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
-                                                     Q_UNUSED(engine);
-                                                     Q_UNUSED(scriptEngine);
-                                                     return new AndroidViewControl();
-                                                 });
-    // --- END NEW ---
 
     // Register enums from MDeclarativeScreen under "Screen" type (non-creatable)
     qmlRegisterSingletonInstance<MDeclarativeScreen>(
