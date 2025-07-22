@@ -24,13 +24,17 @@ set(HEADERS
     mDeclarativeScreen.h
     mPageStatus.h
     mPageOrientation.h
-    MLocaleWrapper.h
+    #MLocaleWrapper.h
     mDeclarativeImObserver.h
     mDeclarativeMouseFilter.h
     mInverseMouseArea.h
     models/qRangeModel.h
     models/qRangeModel_p.h
     mOrientationHelper.h
+    mWindowState.h
+    mWindowState_p.h
+    mDeclarativeInputContext.h
+    androidViewControl.h
     #themedaemon/mAbstractThemeDaemonClient.h
     #themedaemon/mLocalThemeDaemonClient.h
     #themedaemon/mRemoteThemeDaemonClient.h
@@ -48,6 +52,9 @@ set(SOURCES
     mDeclarativeScreen.cpp
     mScrollDecoratorSizer.cpp
     models/qRangeModel.cpp
+    mWindowState.cpp
+    androidViewControl.cpp
+    mDeclarativeInputContext.cpp
     #themedaemon/mAbstractThemeDaemonClient.cpp
     #themedaemon/mLocalThemeDaemonClient.cpp
     #themedaemon/mRemoteThemeDaemonClient.cpp
@@ -136,6 +143,7 @@ set(QML_SOURCES
     components/SliderStyle.qml
     components/SliderTemplate.qml
     components/EditBubbleButtonStyle.qml
+    components/Magnifier.qml
 )
 
 
@@ -175,6 +183,7 @@ target_link_libraries(appmeego
     PRIVATE
     Qt6::Quick
     Qt::Svg
+
 )
 
 include(GNUInstallDirs)

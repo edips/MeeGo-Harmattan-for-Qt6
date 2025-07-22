@@ -1,3 +1,43 @@
+/****************************************************************************
+**
+** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
+** All rights reserved.
+** Contact: Nokia Corporation (qt-info@nokia.com)
+**
+** This file is part of the Qt Components project.
+**
+** $QT_BEGIN_LICENSE:BSD$
+** You may use this file under the terms of the BSD license as follows:
+**
+** "Redistribution and use in source and binary forms, with or without
+** modification, are permitted provided that the following conditions are
+** met:
+**   * Redistributions of source code must retain the above copyright
+**     notice, this list of conditions and the following disclaimer.
+**   * Redistributions in binary form must reproduce the above copyright
+**     notice, this list of conditions and the following disclaimer in
+**     the documentation and/or other materials provided with the
+**     distribution.
+**   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
+**     the names of its contributors may be used to endorse or promote
+**     products derived from this software without specific prior written
+**     permission.
+**
+** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+** "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
 /// Helper code that is needed by ToolBarLayout.
 
 var connectedItems = [];
@@ -48,111 +88,32 @@ function cleanup() {
     this.parentChanged.disconnect(arguments.callee);
 }
 
-
-
-function layout() {
-    if (parent === null || width === 0)
-        return;
-
-    const items = [];           // Visible items
-    const expandingItems = []; // Expanding tab items
-    let widthOthers = 0;
-
-    // Collect visible items, center vertically, and identify expanding items
-    for (let j = 0; j < children.length; j++) {
-        const child = children[j];
-        if (!child.visible)
-            continue;
-
-        items.push(child);
-        child.y = height / 2 - child.height / 2;
-
-        if (child.__expanding) {
-            expandingItems.push(child);
-        } else {
-            widthOthers += child.width;
-        }
-    }
-
-    if (items.length === 0)
-        return;
-
-    // Optional paddings (e.g. for landscape adjustment)
-    let leftPadding = 0;
-    let rightPadding = 0;
-
-    // Adjust left/right padding if in landscape mode with 2 items
-    if (items.length === 2 && screen.currentOrientation === Screen.Landscape) {
-        const first = items[0];
-        const last = items[1];
-
-        if (first.__expanding && !last.__expanding)
-            leftPadding += last.width;
-
-        if (last.__expanding && !first.__expanding)
-            rightPadding += first.width;
-    }
-
-    const availableWidth = toolbarLayout.width - leftPadding - rightPadding;
-
-    // Allocate space for expanding items
-    const expandingWidth = (availableWidth - widthOthers) / expandingItems.length;
-    for (let k = 0; k < expandingItems.length; k++) {
-        expandingItems[k].width = expandingWidth;
-    }
-
-    // Determine remaining space and spacing
-    const firstItem = items[0];
-    const lastItem = items[items.length - 1];
-    const toolBoxWidth = availableWidth - (firstItem ? firstItem.width : 0) - (lastItem ? lastItem.width : 0);
-
-    let spacingBetween = toolBoxWidth;
-    for (let h = 1; h < items.length - 1; h++) {
-        spacingBetween -= items[h].width;
-    }
-
-    // Prevent divide-by-zero
-    spacingBetween /= (items.length > 1) ? (items.length - 1) : 1;
-
-    // Position items
-    firstItem.x = leftPadding;
-    let currentX = firstItem.width + spacingBetween;
-
-    for (let i = 1; i < items.length; i++) {
-        items[i].x = currentX + leftPadding;
-        currentX += items[i].width + spacingBetween;
-    }
-}
-
-
-
-
-
 // Main layout function
-/*
 function layout() {
-
-    if (parent === null || width === 0)
+    if (parent === null || toolbarLayout.width === 0 || children === undefined)
         return;
 
     var i;
-    var items = new Array();          // Keep track of visible items
-    var expandingItems = new Array(); // Keep track of expandingItems for tabs
+    var items = [];          // Keep track of visible items
+    var expandingItems = []; // Keep track of expandingItems for tabs
     var widthOthers = 0;
 
     for (i = 0; i < children.length; i++) {
-        if (children[i].visible) {
-            items.push(children[i])
+        var child = children[i];
 
+        if (child.visible) {
             // Center all items vertically
-            items[0].y = (function() {return height / 2 - items[0].height / 2})
+            child.anchors.verticalCenter = verticalCenter;
+
             // Find out which items are expanding
-            if (children[i].__expanding) {
-                expandingItems.push(children[i])
+            if (child.__expanding) {
+                expandingItems.push(child)
             } else {
                 // Calculate the space that fixed size items take
-                widthOthers += children[i].width;
+                widthOthers += child.width;
             }
+
+            items.push(child);
         }
     }
 
@@ -161,11 +122,11 @@ function layout() {
 
     // Extra padding is applied if the leftMost or rightmost widget is expanding (note** removed on new design)
     var leftPadding = 0
-    var rightPadding = 0 
+    var rightPadding = 0
 
     // In LandScape mode we add extra margin to keep contents centered
     // for two basic cases
-    if (items.length == 2 && screen.currentOrientation == Screen.Landscape) {
+    if (items.length === 2 && screen.currentOrientation === Screen.Landscape) {
         // expanding item on left
         if (expandingItems.length > 0 && items[0].__expanding && !items[items.length-1].__expanding)
             leftPadding += items[items.length-1].width
@@ -203,4 +164,4 @@ function layout() {
         dX += spacingBetween + items[i].width;
     }
 }
-*/
+

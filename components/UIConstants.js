@@ -2,6 +2,11 @@ var FONT_FAMILY = "Nokia Pure Text";
 var FONT_FAMILY_LIGHT = "Nokia Pure Text Light";
 var FONT_DEFAULT_SIZE = Math.round(24 * ScaleFactor); // DEPRECATED
 
+
+var DefaultFontFamilyLight = "Open Sans";
+var DefaultFontFamily = "Nokia Pure Text";
+var DefaultFontFamilyBold = "Nokia Pure Text Bold"
+
 var FONT_XLARGE  = parseInt(32 * ScaleFactor);
 var FONT_LARGE   = parseInt(28 * ScaleFactor);
 var FONT_SLARGE  = parseInt(26 * ScaleFactor);

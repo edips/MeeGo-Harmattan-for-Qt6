@@ -2,26 +2,30 @@
 
 Qt.include("Utils.js");
 
-var popup = null;
+var popup = null; // This will now hold the pre-instantiated Magnifier QML object
 
-function init(item)
+// Modified init: now receives the already created QML object
+function init(qmlMagnifierObject)
 {
-    if (popup != null)
+    if (popup !== null) {
+        // Already initialized, or a different object was passed previously.
+        if (popup === qmlMagnifierObject) {
+            return true;
+        } else {
+            console.warn("Magnifier.js: Attempted to re-initialize with a different Magnifier object. Ignoring.");
+            return false;
+        }
+    }
+
+    if (qmlMagnifierObject) {
+        popup = qmlMagnifierObject;
+        popup.__rootElement = findRootItem(qmlMagnifierObject); // Set root element for mapping
+        console.log("Magnifier.js: Initialized with pre-instantiated Magnifier QML object.");
         return true;
-
-    var root = findRootItem(item);
-
-    // create root popup
-    var component = Qt.createComponent("Magnifier.qml");
-
-    // due the pragma we cannot access Component.Ready
-    if (component)
-        popup = component.createObject(root);
-
-    if (popup)
-        popup.__rootElement = root;
-
-    return popup != null;
+    } else {
+        console.error("Magnifier.js: init received a null QML object.");
+        return false;
+    }
 }
 
 /*
@@ -32,14 +36,20 @@ function init(item)
 */
 function open(input)
 {
-    if (!input)
+    if (!popup) {
+        console.error("Magnifier.js: Magnifier not initialized. Call init() first.");
         return false;
+    }
 
-    if (!init(input))
+    if (!input) {
+        console.warn("Magnifier.js: Input item is null.");
         return false;
+    }
 
     popup.sourceItem = input;
     popup.active = true;
+    popup.visible = true; // Explicitly make visible
+    console.log("Magnifier.js: Magnifier opened successfully.");
     return true;
 }
 
@@ -48,7 +58,7 @@ function open(input)
 */
 function isOpened()
 {
-    return (popup && popup.active);
+    return (popup && popup.active && popup.visible);
 }
 
 /*
@@ -59,6 +69,8 @@ function close()
     if (popup && popup.active){
         popup.active = false;
         popup.sourceItem = null;
+        popup.visible = false; // Explicitly hide
+        console.log("Magnifier.js: Magnifier closed.");
     }
 }
 
@@ -71,8 +83,9 @@ function clean()
     if (popup){
         popup.active = false;
         popup.sourceItem = null;
+        popup.visible = false; // Ensure it's hidden before destruction
         popup.destroy();
         popup = null;
+        console.log("Magnifier.js: Magnifier cleaned.");
     }
 }
-

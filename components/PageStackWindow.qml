@@ -1,4 +1,7 @@
-import QtQuick
+import QtQuick 2.15 // Ensure QtQuick 2.15 or higher for modern QML features
+import com.meego.components 1.0
+import "EditBubble.js" as PopupJS // Import JS for functions
+import "Magnifier.js" as MagnifierJS // Import JS for functions
 
 Window2 {
     id: window
@@ -22,15 +25,14 @@ Window2 {
         anchors.top: parent.top
         width: parent.width
         showStatusBar: window.showStatusBar
-        height: 0
     }
 
     Rectangle {
         id: background
         visible: platformStyle.background === ""
         color: platformStyle.backgroundColor
-        width: orientation.orientation === "Portrait" ? screen.displayHeight : screen.displayWidth
-        height: orientation.orientation === "Portrait" ? screen.displayWidth : screen.displayHeight
+        width: parent.width
+        height: parent.height
         anchors {
             top: statusBar.bottom
             left: parent.left
@@ -42,8 +44,8 @@ Window2 {
         visible: platformStyle.background !== ""
         source: window.inPortrait ? platformStyle.portraitBackground : platformStyle.landscapeBackground
         fillMode: platformStyle.backgroundFillMode
-        width: orientation.orientation === "Portrait" ? screen.displayHeight : screen.displayWidth
-        height: orientation.orientation === "Portrait" ? screen.displayWidth : screen.displayHeight
+        width: parent.width
+        height: parent.height
         anchors {
             top: statusBar.bottom
             left: parent.left
@@ -77,7 +79,7 @@ Window2 {
             id: roundedCorners
             visible: platformStyle.cornersVisible
             anchors.fill: parent
-            z: 10001
+            z: 0
 
             Image {
                 anchors.top: parent.top
@@ -104,9 +106,26 @@ Window2 {
         ToolBar {
             id: toolBar
             anchors.bottom: parent.bottom
-            privateVisibility: 0// (inputContext.softwareInputPanelVisible==true || inputContext.customSoftwareInputPanelVisible == true)
-            //? ToolBarVisibility.HiddenImmediately : (window.showToolBar ? ToolBarVisibility.Visible : ToolBarVisibility.Hidden)
+            privateVisibility: 0
         }
+
+        // --- CHANGE START: Moved EditBubble and Magnifier inside appWindowContent ---
+        EditBubble {
+            id: globalEditBubble
+            // Initially hidden, will be made visible by EditBubble.js
+            visible: false
+            // Parent is now implicitly appWindowContent
+            z: 100 // Ensure it's above other content but below other specific popups
+        }
+
+        Magnifier {
+            id: globalMagnifier
+            // Initially hidden, will be made visible by Magnifier.js
+            visible: false
+            // Parent is now implicitly appWindowContent
+            z: 101 // Ensure it's above the edit bubble
+        }
+        // --- CHANGE END ---
     }
 
     // event preventer when page transition is active
@@ -118,5 +137,9 @@ Window2 {
     Component.onCompleted: {
         if (initialPage)
             pageStack.push(initialPage);
+
+        // Initialize JS singletons with pre-instantiated QML objects
+        PopupJS.init(globalEditBubble);
+        MagnifierJS.init(globalMagnifier);
     }
 }

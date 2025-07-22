@@ -538,5 +538,38 @@
         <file>images/icon-m-toolbar-view-menu-dimmed.png</file>
         <file>images/icon-m-toolbar-view-menu-selected.png</file>
         <file>images/NokiaN9.jpg</file>
+        <file>images/meegotouch-text-editor-top-tail.png</file>
+        <file>images/meegotouch-seattle-handle-frame.png</file>
+        <file>images/meegotouch-seattle-handle-frame-mask.png</file>
+        <file>images/meegotouch-seattle-magnifier-frame.png</file>
+        <file>images/meegotouch-seattle-magnifier-frame-mask.png</file>
+        <file>images/meegotouch-text-editor.png</file>
+        <file>images/meegotouch-text-editor-bottom-tail.png</file>
+        <file>images/meegotouch-text-editor-horizontal-center.png</file>
+        <file>images/meegotouch-text-editor-horizontal-left.png</file>
+        <file>images/meegotouch-text-editor-horizontal-right.png</file>
+        <file>images/meegotouch-text-editor-mode-horizontal-right.png</file>
+        <file>images/meegotouch-text-editor-pressed.png</file>
+        <file>images/meegotouch-text-editor-pressed-horizontal-left.png</file>
+        <file>images/meegotouch-text-selection-handle.png</file>
+        <file>images/meegotouch-text-selection-handle-left.png</file>
+        <file>images/meegotouch-text-selection-handle-left-pressed.png</file>
+        <file>images/meegotouch-text-selection-handle-right.png</file>
+        <file>images/meegotouch-text-selection-handle-right-pressed.png</file>
+        <file>images/meegotouch-wordtracker.png</file>
+        <file>images/meegotouch-wordtracker-background.png</file>
+        <file>images/meegotouch-richtext-background-left.png</file>
+        <file>images/meegotouch-richtext-background-left-pressed.png</file>
+        <file>images/meegotouch-richtext-background-middle.png</file>
+        <file>images/meegotouch-richtext-background-middle-pressed.png</file>
+        <file>images/meegotouch-richtext-background-right.png</file>
+        <file>images/meegotouch-richtext-background-right-pressed.png</file>
+        <file>images/meegotouch-text-editor-mode-pressed-horizontal-right.png</file>
+        <file>images/meegotouch-text-editor-mode-selected-horizontal-right.png</file>
+        <file>images/meegotouch-text-editor-pressed-horizontal-center.png</file>
+        <file>images/meegotouch-text-editor-pressed-horizontal-right.png</file>
+        <file>images/meegotouch-text-editor-selected-horizontal-center.png</file>
+        <file>images/meegotouch-text-editor-selected-horizontal-left.png</file>
+        <file>images/meegotouch-text-editor-selected-horizontal-right.png</file>
     </qresource>
 </RCC>

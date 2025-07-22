@@ -16,6 +16,6 @@ Style {
     property int arrowMargin: parseInt(16 * ScaleFactor) // XXX: need to crop images
 
     // Images
-    property url topTailBackground: "image://theme/meegotouch-text-editor-top-tail"
-    property url bottomTailBackground: "image://theme/meegotouch-text-editor-bottom-tail"
+    property url topTailBackground: "qrc:/images/meegotouch-text-editor-top-tail.png"
+    property url bottomTailBackground: "qrc:/images/meegotouch-text-editor-bottom-tail.png"
 }

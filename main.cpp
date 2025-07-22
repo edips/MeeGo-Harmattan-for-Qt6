@@ -1,6 +1,16 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QScreen>
+#include <QDebug>
+// --- CHANGE START ---
+#include <QJniObject> // Use QJniObject for Qt 6.6 Android JNI calls
+// --- CHANGE END ---
+#include <QCoreApplication>
+#include <QtMath>
+#include <QFont> // Include QFont for font scaling
+#include <QColor> // Include QColor for colors
+
 #include "mPageOrientation.h"
 //#include "mDeclarativeImageprovider.h"
 #include "mDialogStatus.h"
@@ -9,16 +19,25 @@
 //#include "mThemePlugin.h"
 #include "mDeclarativeScreen.h"
 #include <QQmlPropertyMap>
-#include "MLocaleWrapper.h" // your class
+//#include "MLocaleWrapper.h" // your class
 #include "mInverseMouseArea.h"
 #include "mDeclarativeMouseFilter.h"
 #include "mDeclarativeImObserver.h"
+#include "mDeclarativeInputContext.h"
 #include "models/qRangeModel.h"
 #include <QQuickWindow>
 #include "mOrientationHelper.h"
+#include "androidViewControl.h"
 
 
-QQmlPropertyMap *uiConstants(MLocaleWrapper *locale = nullptr, qreal scaleFactor = 1.0)
+
+
+
+
+
+// Reference DPI from Nokia N9 (approximate) - This is the DPI for which the original QML components were designed.
+const qreal NOKIA_N9_REFERENCE_DPI = 251.0; // ppi
+/*QQmlPropertyMap *uiConstants(MLocaleWrapper *locale = nullptr, qreal scaleFactor = 1.0)
 {
     QString defaultFontFamily      = QLatin1String("Open Sans");
     QString defaultFontFamilyLight = QLatin1String("Open Sans");
@@ -87,13 +106,45 @@ QQmlPropertyMap *uiConstants(MLocaleWrapper *locale = nullptr, qreal scaleFactor
 
     return uiConstantsData;
 }
+*/
 
-/*qreal calculateScaleFactor(const QSize &screenSize) {
-    const qreal refWidth = 480.0;
-    const qreal refHeight = 854.0;
-    return std::min(screenSize.width() / refWidth, screenSize.height() / refHeight);
-}*/
+// Your getAndroidDpi function (updated to use QJniObject)
+qreal getAndroidDpi()
+{
+#ifdef Q_OS_ANDROID
+    // Access: android.content.Context.getResources().getDisplayMetrics()
+    QJniObject activity = QJniObject::callStaticObjectMethod(
+        "org/qtproject/qt/android/QtNative",
+        "activity",
+        "()Landroid/app/Activity;"
+        );
 
+    if (!activity.isValid()) {
+        qWarning() << "Invalid Activity";
+        return -1;
+    }
+
+    QJniObject resources = activity.callObjectMethod("getResources", "()Landroid/content/res/Resources;");
+    QJniObject metrics = resources.callObjectMethod("getDisplayMetrics", "()Landroid/util/DisplayMetrics;");
+
+    int widthPixels = metrics.getField<jint>("widthPixels");
+    int heightPixels = metrics.getField<jint>("heightPixels");
+    float xdpi = metrics.getField<jfloat>("xdpi");
+    float ydpi = metrics.getField<jfloat>("ydpi");
+
+    qreal dpi = (xdpi + ydpi) / 2.0;
+
+    qDebug() << "Android widthPixels:" << widthPixels;
+    qDebug() << "Android heightPixels:" << heightPixels;
+    qDebug() << "Android xdpi:" << xdpi;
+    qDebug() << "Android ydpi:" << ydpi;
+    qDebug() << "Android calculated DPI:" << dpi;
+
+    return dpi;
+#else
+    return QGuiApplication::primaryScreen()->logicalDotsPerInch();
+#endif
+}
 
 int main(int argc, char *argv[])
 {
@@ -112,37 +163,64 @@ int main(int argc, char *argv[])
 
 
 
+
+
+    qreal scaleFactor = 1.0; // Default initialization
+
+#ifdef Q_OS_ANDROID
+    qreal avgDpi = getAndroidDpi();
+
+    qreal rawScale = avgDpi / NOKIA_N9_REFERENCE_DPI; // Use the defined constant
+    // --- CHANGE START ---
+    // Further adjusted the perceptualScale factor to make components smaller.
+    // Changed from 0.6 to 0.45 based on your feedback that 0.6 was still too big.
+    qreal perceptualScale = rawScale * 0.45;
+    // --- CHANGE END ---
+
+    // Re-introducing clamping, but with values that are likely more appropriate
+    // for Android devices, allowing for a wider range of scaling.
+    // These values might still need fine-tuning based on your testing.
+    scaleFactor = std::clamp(perceptualScale, 0.5, 2.0);
+
+    qDebug() << "Android DPI (from JNI):" << avgDpi;
+    qDebug() << "MeeGo Raw Scale (avgDpi / N9_REF_DPI):" << rawScale;
+    qDebug() << "Perceptual Scale (rawScale * 0.45):" << perceptualScale; // Updated debug output
+    qDebug() << "Final ScaleFactor exposed to QML (clamped):" << scaleFactor;
+
+#else
     qreal dpi = QGuiApplication::primaryScreen()->logicalDotsPerInch();
+    qreal rawScale = dpi / NOKIA_N9_REFERENCE_DPI; // Use the defined constant
+    qreal perceptualScale = rawScale * 0.75; // Keep your perceptual adjustment
+    scaleFactor = std::clamp(perceptualScale, 0.85, 1.25); // Original clamp for desktop/non-Android
 
-    // Material Design baseline: 160 dpi = 1.0 scale
-    qreal scaleFactor = dpi / 160.0;
-
-    // Optional: clamp the scale factor to avoid extremes
-    scaleFactor = std::clamp(scaleFactor, 0.85, 1.5);
+    qDebug() << "Non-Android DPI (logical):" << dpi;
+    qDebug() << "MeeGo Raw Scale (dpi / N9_REF_DPI):" << rawScale;
+    qDebug() << "Perceptual Scale (rawScale * 0.75):" << perceptualScale;
+    qDebug() << "Final ScaleFactor exposed to QML:" << scaleFactor;
+#endif
 
     engine.rootContext()->setContextProperty("ScaleFactor", scaleFactor);
 
 
-    // Expose scaleFactor to QML
-    engine.rootContext()->setContextProperty("ScaleFactor", scaleFactor);
+
+
+
+
+
+
 
 
     // Add MDeclarativeScreen to QML as context property "screen"
     engine.rootContext()->setContextProperty("screen", MDeclarativeScreen::instance());
 
     // Set up theme data
-    MLocaleWrapper *locale = new MLocaleWrapper;
-    engine.rootContext()->setContextProperty("locale", locale);
-    engine.rootContext()->setContextProperty("UiConstants", uiConstants(locale, scaleFactor));
-    qmlRegisterUncreatableType<MLocaleWrapper>("com.meego.components", 1, 0, "Locale", "");
+    //MLocaleWrapper *locale = new MLocaleWrapper;
+    //engine.rootContext()->setContextProperty("locale", locale);
+    //engine.rootContext()->setContextProperty("UiConstants", uiConstants(locale, scaleFactor));
+    //qmlRegisterUncreatableType<MLocaleWrapper>("com.meego.components", 1, 0, "Locale", "");
 
-    // Assuming MDeclarativeInputContext inherits QObject
-    //MDeclarativeInputContext *declarativeInputContext = new MDeclarativeInputContext;
-    //engine.rootContext()->setContextProperty("inputContext", static_cast<QObject*>(declarativeInputContext));
-
-    // Register uncreatable type for QML so you can use InputContext as a type (but can't instantiate)
-    qmlRegisterUncreatableType<MDeclarativeInputContext>(
-        "com.meego.components", 1, 0, "InputContext", "Use the singleton inputContext instead");
+    engine.rootContext()->setContextProperty("inputContext", new MDeclarativeInputContext);
+    qmlRegisterUncreatableType<MDeclarativeInputContext>("com.meego.components", 1, 0, "InputContext", "");
 
 
     // Custom primitives
@@ -154,7 +232,14 @@ int main(int argc, char *argv[])
     qmlRegisterType<QRangeModel>("com.meego.components", 1, 0, "RangeModel");
 
     qmlRegisterType<MScrollDecoratorSizer>("com.meego.components", 1, 0, "ScrollDecoratorSizerCPP");
-
+    // --- NEW: Register AndroidViewControl as a singleton ---
+    qmlRegisterSingletonType<AndroidViewControl>("com.meego.components", 1, 0, "AndroidViewControl",
+                                                 [](QQmlEngine *engine, QJSEngine *scriptEngine) -> QObject* {
+                                                     Q_UNUSED(engine);
+                                                     Q_UNUSED(scriptEngine);
+                                                     return new AndroidViewControl();
+                                                 });
+    // --- END NEW ---
 
     // Register enums from MDeclarativeScreen under "Screen" type (non-creatable)
     qmlRegisterSingletonInstance<MDeclarativeScreen>(

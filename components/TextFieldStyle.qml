@@ -29,7 +29,7 @@ Item {
 
     Text {
         id: textProperties
-        font.family: UiConstants.DefaultFontFamilyLight
+        font.family: UI.DefaultFontFamilyLight
         font.pixelSize: UI.FONT_DEFAULT
         visible: false
     }

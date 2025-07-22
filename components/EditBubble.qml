@@ -2,10 +2,12 @@ import QtQuick 2.1
 import com.meego.components 1.0
 import "Utils.js" as Utils
 import "EditBubble.js" as Private
+import "UIConstants.js" as UI // Ensure this imports UIConstants.js
 
 Item {
     id: bubble
-    property Item textInput: null
+    property Item textFieldRoot: null
+    property Item textInput: null // This property is set by EditBubble.js
     property bool valid: rect.canCut || rect.canCopy || rect.canPaste
 
     property alias privateRect: rect
@@ -31,13 +33,12 @@ Item {
         property bool changingText: false
         property bool pastingText: false
 
-        property bool validInput: textInput != null
-        property bool canCut: rect.canCopy && !textInput.readOnly
+        property bool validInput: bubble.textInput != null
+        property bool canCut: rect.canCopy && bubble.textInput && !bubble.textInput.readOnly // Added null check for bubble.textInput
 
-        // TextEdit will have echoMode == null
-        property bool canCopy: textSelected && (textInput.echoMode === null || textInput.echoMode === TextInput.Normal)
-        property bool canPaste: validInput && (textInput.canPaste && !textInput.readOnly)
-        property bool textSelected: validInput && (textInput.selectedText !== "")
+        property bool canCopy: textSelected && bubble.textInput && (bubble.textInput.echoMode === null || bubble.textInput.echoMode === TextInput.Normal) // Added null check
+        property bool canPaste: validInput && bubble.textInput && (bubble.textInput.canPaste && !bubble.textInput.readOnly) // Added null check
+        property bool textSelected: validInput && bubble.textInput && (bubble.textInput.selectedText !== "") // Added null check
         property bool opened: false
         property bool outOfView: false
         property Item bannerInstance: null
@@ -50,7 +51,7 @@ Item {
 
         onHeightChanged: if (rect.visible) Private.adjustPosition(bubble)
 
-        onVisibleChanged: {                                                         
+        onVisibleChanged: {
             if (visible === true) {
                 if (buttonPaste.visible === true &&
                     buttonCut.visible === false &&
@@ -60,8 +61,8 @@ Item {
                 Private.adjustPosition(bubble)
             } else if (autoHideoutTimer.running === true) {
                 autoHideoutTimer.running = false
-            }                                                                       
-        }            
+            }
+        }
 
         BasicRow {
             id: row
@@ -70,11 +71,12 @@ Item {
             EditBubbleButton {
                 id: buttonCut
                 objectName: "cutButton";
-                text: textTranslator.translate("qtn_comm_cut");
+                // Assuming textTranslator is globally available or provided by a specific import
+                text:"cut"// textTranslator.translate("qtn_comm_cut");
                 visible: rect.canCut
                 onClicked: {
                     rect.changingText = true;
-                    textInput.cut();
+                    if (bubble.textInput) bubble.textInput.cut(); // Added null check
                     rect.changingText = false;
                     Private.closePopup(bubble);
                 }
@@ -84,10 +86,11 @@ Item {
             EditBubbleButton {
                 id: buttonCopy
                 objectName: "copyButton";
-                text: textTranslator.translate("qtn_comm_copy");
+                // Assuming textTranslator is globally available
+                text: "copy"//textTranslator.translate("qtn_comm_copy");
                 visible: rect.canCopy
                 onClicked: {
-                    textInput.copy();
+                    if (bubble.textInput) bubble.textInput.copy(); // Added null check
                     Private.closePopup(bubble);
                 }
                 onVisibleChanged: Private.updateButtons(row);
@@ -96,23 +99,21 @@ Item {
             EditBubbleButton {
                 id: buttonPaste
                 objectName: "pasteButton";
-                text: textTranslator.translate("qtn_comm_paste");
+                // Assuming textTranslator is globally available
+                text: "paste"//textTranslator.translate("qtn_comm_paste");
                 visible: rect.canPaste
                 onClicked: {
                     rect.changingText = true;
-                    if (textInput.inputMethodComposing) {
-                        //var cursorAdjust = textInput.preedit.length - textInput.preeditCursorPosition;
+                    if (bubble.textInput && bubble.textInput.inputMethodComposing) { // Added null check
                         inputContext.reset();
-                        //textInput.cursorPosition -= cursorAdjust;
                     }
                     rect.pastingText = true;
-                    var text = textInput.text;
-                    textInput.paste();
-                    // PastingText is set to false and clipboard is cleared if we catch onTextChanged
-                    if (rect.pastingText && text === textInput.text) {
+                    var text = bubble.textInput ? bubble.textInput.text : ""; // Added null check
+                    if (bubble.textInput) bubble.textInput.paste(); // Added null check
+
+                    if (rect.pastingText && text === (bubble.textInput ? bubble.textInput.text : "")) { // Added null check
                         if (rect.bannerInstance === null) {
-                            // create new notification banner
-                            var root = Utils.findRootItemNotificationBanner(textInput);
+                            var root = Utils.findRootItemNotificationBanner(bubble.textInput);
                             rect.bannerInstance = notificationBanner.createObject(root);
                         }
                         rect.bannerInstance.show();
@@ -130,7 +131,8 @@ Item {
                 id : notificationBanner
                 NotificationBanner{
                     id: errorBannerPrivate
-                    text: textTranslator.translate("qtn_comm_cantpaste");
+                    // Assuming textTranslator is globally available
+                    text: "cantpaste"//textTranslator.translate("qtn_comm_cantpaste");
                     timerShowTime: 5*1000
                     topMargin: 8
                     leftMargin: 8
@@ -161,26 +163,26 @@ Item {
         }
     }
 
-    Timer {                                                                 
-        id: autoHideoutTimer                                                
-        interval: 5000                                                      
-        onTriggered: {                                                      
-            running = false                                                 
-            state = "hidden"                                                
-        }                                                                   
-    }       
+    Timer {
+        id: autoHideoutTimer
+        interval: 5000
+        onTriggered: {
+            running = false
+            state = "hidden"
+        }
+    }
 
     state: "closed"
 
     states: [
         State {
             name: "opened"
-            ParentChange { target: rect; parent: Utils.findRootItem(textInput); }
+            ParentChange { target: rect; parent: Utils.findRootItem(bubble.textInput); }
             PropertyChanges { target: rect; opened: true; opacity: 1.0 }
         },
         State {
             name: "hidden"
-            ParentChange { target: rect; parent: Utils.findRootItem(textInput); }
+            ParentChange { target: rect; parent: Utils.findRootItem(bubble.textInput); }
             PropertyChanges { target: rect; opened: true; opacity: 0.0; }
         },
         State {
@@ -209,32 +211,11 @@ Item {
         }
     ]
 
-    Connections {
-        target: Utils.findFlickable(textInput)
-        onContentYChanged: {
-            if (rect.visible)
-                Private.adjustPosition(bubble);
-            rect.outOfView = ( ( rect.arrowDown === false // reduce flicker due to changing bubble orientation
-                  && Private.geometry().top < Utils.statusBarCoveredHeight( bubble ) )
-                  || Private.geometry().bottom > screen.platformHeight - Utils.toolBarCoveredHeight ( bubble ) );
-        }
-    }
-
-    Connections {
-        target: screen
-        onCurrentOrientationChanged: {
-            if (rect.visible)
-                Private.adjustPosition(bubble);
-            rect.outOfView = ( ( rect.arrowDown === false // reduce flicker due to changing bubble orientation
-                  && Private.geometry().top < Utils.statusBarCoveredHeight( bubble ) )
-                  || Private.geometry().bottom > screen.platformHeight - Utils.toolBarCoveredHeight ( bubble ) );
-        }
-    }
-
     function findWindowRoot() {
-        var item = Utils.findRootItem(bubble, "windowRoot");
-        if (item.objectName !== "windowRoot")
-            item = Utils.findRootItem(bubble, "pageStackWindow");
+        var item = Utils.findRootItem(bubble.textInput, "windowRoot");
+        if (item === null || item.objectName !== "windowRoot") {
+            item = Utils.findRootItem(bubble.textInput, "pageStackWindow");
+        }
         return item;
     }
 
@@ -243,9 +224,10 @@ Item {
        ignoreUnknownSignals: true
        onOrientationChangeFinished: {
            Private.adjustPosition(bubble);
-           rect.outOfView = ( ( rect.arrowDown === false // reduce flicker due to changing bubble orientation
+           rect.outOfView = ( ( rect.arrowDown === false
                  && Private.geometry().top < Utils.statusBarCoveredHeight( bubble ) )
                  || Private.geometry().bottom > screen.platformHeight - Utils.toolBarCoveredHeight ( bubble ) );
        }
     }
 }
+

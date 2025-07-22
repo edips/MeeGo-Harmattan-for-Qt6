@@ -24,7 +24,7 @@ function findFlickable(item)
 function findRootItem(item, objectName)
 {
     var next = item;
-    
+
     var rootItemName = "windowContent";
     if (typeof(objectName) != 'undefined') {
         rootItemName = objectName;

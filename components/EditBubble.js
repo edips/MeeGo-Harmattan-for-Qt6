@@ -3,165 +3,161 @@
 Qt.include("Utils.js");
 Qt.include("UIConstants.js");
 
-var popup = null;
+var popup = null; // This will now hold the pre-instantiated EditBubble QML object
 
-function init(item)
+// Modified init: now receives the already created QML object
+function init(qmlEditBubbleObject)
 {
-    if (popup != null)
+    if (popup !== null) {
+        // Already initialized, or a different object was passed previously.
+        // For a singleton pattern, we expect init to be called once with the global instance.
+        if (popup === qmlEditBubbleObject) {
+            return true;
+        } else {
+            console.warn("EditBubble.js: Attempted to re-initialize with a different EditBubble object. Ignoring.");
+            return false;
+        }
+    }
+
+    if (qmlEditBubbleObject) {
+        popup = qmlEditBubbleObject;
+        console.log("EditBubble.js: Initialized with pre-instantiated EditBubble QML object.");
         return true;
-
-    var root = findRootItem(item);
-
-    // create root popup
-    var component = Qt.createComponent("EditBubble.qml");
-
-    // due the pragma we cannot access Component.Ready
-    if (component)
-        popup = component.createObject(root);
-
-    return popup != null;
+    } else {
+        console.error("EditBubble.js: init received a null QML object.");
+        return false;
+    }
 }
 
-/*
-  Open a shared edit bubble for a given input item.
-
-  All operations and changes will be binded to the
-  given item.
-*/
-function open(input,position)
+function open(textFieldRoot, position)
 {
-    if (!input)
+    if (!popup) {
+        console.error("EditBubble.js: Popup not initialized. Call init() first.");
         return false;
+    }
 
-    // don't create an EditBubble when no EditBubble is needed
-    var canPaste = !input.readOnly && input.canPaste;
-    var textSelected = input.selectedText !== "";
-    var canCopy = textSelected && (input.echoMode === undefined || input.echoMode === 0 /* = TextInput.Normal */);
-    var canCut = !input.readOnly && canCopy;
-
-    if (!(canPaste || canCopy || canCut))
+    if (!textFieldRoot) {
+        console.warn("EditBubble.js: textFieldRoot is undefined, cannot open edit bubble.");
         return false;
+    }
 
-    if (!init(input))
+    var actualTextInput = textFieldRoot.internalTextInput;
+    if (!actualTextInput) {
+        console.warn("EditBubble.js: textFieldRoot.internalTextInput is undefined, cannot open edit bubble.");
         return false;
+    }
 
-    // Position when text not selected.
+    var canPaste = !actualTextInput.readOnly && actualTextInput.canPaste;
+    var textSelected = actualTextInput.selectedText !== "";
+    var canCopy = textSelected && (actualTextInput.echoMode === undefined || actualTextInput.echoMode === 0 /* = TextInput.Normal */);
+    var canCut = !actualTextInput.readOnly && canCopy;
+
+    if (!(canPaste || canCopy || canCut)) {
+        console.log("EditBubble.js: No operations (paste, copy, cut) possible, not opening bubble.");
+        return false;
+    }
+
     popup.position = position;
+    // --- CHANGE START ---
+    // Correctly assign the actual TextInput item to the 'textInput' property of the QML popup
+    popup.textInput = actualTextInput;
+    // --- CHANGE END ---
 
-    // need to set before checking capabilities
-    popup.textInput = input;
+    // Ensure the popup is made visible
+    popup.visible = true;
 
     if (popup.valid) {
         popup.state = "opened";
         popup.privateRect.outOfView = false;
+        console.log("EditBubble.js: Popup opened successfully at position:", position.x, position.y);
+        return true;
+    } else {
+        popup.textFieldRoot = null;
+        popup.textInput = null; // Clear textInput on invalid state
+        popup.visible = false; // Hide if not valid
+        console.warn("EditBubble.js: Popup is not valid, not opening.");
+        return false;
     }
-    else
-        popup.textInput = null;
-
-    return popup.textInput !== null;
 }
 
-/*
-  Close the shared edit bubble for a given input item.
-*/
-function close(input)
+function close(textFieldRoot)
 {
-    if (!popup || !input || popup.textInput !== input)
+    // Check if popup is initialized and if the request is for the currently active text field
+    if (!popup || !textFieldRoot || popup.textFieldRoot !== textFieldRoot) {
         return false;
-
+    }
+    console.log("EditBubble.js: Closing popup.");
     return closePopup(popup);
 }
 
-/*
-  Check if the shared edit bubble is opened for the
-  given input item.
-*/
-function isOpened(input)
+function isOpened(textFieldRoot)
 {
-    return (popup && popup.textInput === input);
+    return (popup && popup.visible && popup.textFieldRoot === textFieldRoot);
 }
 
-/*
-  Check if the bubble is in the middle of a text
-  change operation.
-*/
 function isChangingInput()
 {
     return (popup && popup.privateRect.changingText);
 }
 
-/*
-  Close a given edit bubble.
-*/
 function closePopup(bubble)
 {
-    if (bubble === null || bubble.textInput === null)
+    if (bubble === null || bubble.textFieldRoot === null) {
         return false;
-
+    }
     bubble.state = "closed";
-    bubble.textInput = null;
+    bubble.textFieldRoot = null;
+    bubble.textInput = null; // Clear textInput on close
+    bubble.visible = false; // Explicitly hide the QML object
+    console.log("EditBubble.js: Popup closed.");
     return true;
 }
 
-/*
-  Adjust EditBubble position to fit in the visible area.
-
-  If no argument is passed, it will adjust the shared
-  bubble position if already initialized.
-*/
 function adjustPosition(bubble)
 {
     if (bubble === undefined)
         bubble = popup;
 
-    if (bubble === null)
+    if (bubble === null || !bubble.textInput || !bubble.textInput.internalTextInput) { // Use bubble.textInput
+        console.warn("EditBubble.js: adjustPosition called with invalid bubble or textInput.");
         return;
+    }
 
-    var input = bubble.textInput;
+    var input = bubble.textInput; // Use bubble.textInput
     var rect = bubble.privateRect;
-    var viewport = rect.parent;
+    var viewport = rect.parent; // This is 'appWindowContent' from PageStackWindow.qml
 
-    if (viewport === null || input === null)
+    if (viewport === null || input === null) {
+        console.warn("EditBubble.js: adjustPosition: viewport or input is null.");
         return;
+    }
 
-    var irect = input.positionToRectangle(input.selectionStart);
-    var frect = input.positionToRectangle(input.selectionEnd);
-    var mid = rect.width / 2;
+    var px = popup.position.x - rect.width / 2;
+    var py = popup.position.y - rect.height; // Position above the cursor/selection
 
-    if (input.selectionStart === input.selectionEnd) {
-        irect.x = popup.position.x;
-        irect.y = popup.position.y;
-        frect.x = popup.position.x;
-        frect.y = popup.position.y;
-   }
+    var SHADOW_SIZE = 6 // From your QML styles
 
-    var ipoint = viewport.mapFromItem(input, irect.x, irect.y);
-    var fpoint = viewport.mapFromItem(input, frect.x, frect.y);
+    // Clamp x position within viewport bounds
+    rect.x = Math.min(Math.max(px, UI.MARGIN_XLARGE - SHADOW_SIZE), viewport.width - rect.width - (UI.MARGIN_XLARGE - SHADOW_SIZE));
 
-    var px = ipoint.x + (fpoint.x - ipoint.x) / 2 - mid;
-    var py = ipoint.y - rect.height;
+    var statusBarHeight = Utils.statusBarCoveredHeight(bubble);
+    var toolBarHeight = Utils.toolBarCoveredHeight(bubble);
 
-    var SHADOW_SIZE = 6
-
-    rect.x = Math.min(Math.max(px, MARGIN_XLARGE - SHADOW_SIZE), viewport.width - rect.width);
-
-    if (py > SHADOW_SIZE + statusBarCoveredHeight(bubble)) {
+    if (py > statusBarHeight + SHADOW_SIZE) { // If there's space above
         rect.y = py - SHADOW_SIZE;
         rect.arrowDown = true;
-    } else {
-        if (rect.positionOffset === 0) {
-            rect.y = Math.min(Math.max(ipoint.y + irect.height, 0),
-                              fpoint.y + frect.height);
-        }
-        else {
-            rect.y = Math.max(ipoint.y + irect.height, fpoint.y + frect.height) + rect.positionOffset;
-        }
+    } else { // Place below
+        rect.y = popup.position.y + input.height + SHADOW_SIZE; // Place below the input field
         rect.arrowDown = false;
     }
 
-    var boundX = mid - rect.arrowBorder;
-    rect.arrowOffset = Math.min(Math.max(-boundX, px - rect.x), boundX);
+    var mappedPopupXToRect = rect.mapFromItem(viewport, popup.position.x, 0).x;
+    var boundX = rect.width / 2 - rect.arrowBorder;
+    rect.arrowOffset = Math.min(Math.max(-boundX, mappedPopupXToRect - rect.width / 2), boundX);
+
+    console.log("EditBubble.js: Adjusted position to x:", rect.x, "y:", rect.y, "arrowDown:", rect.arrowDown);
 }
+
 function enableOffset(enabled){
     if (popup == null)
         return;
@@ -202,14 +198,16 @@ function updateButtons(row)
 
 function geometry()
 {
-    if (popup == null)
-      return;
+    if (popup == null || popup.privateRect == null)
+      return { "left": 0, "right": 0, "top": 0, "bottom": 0 }; // Return a default empty object
 
     var bubbleContent = popup.privateRect;
-    var rect = {"left": bubbleContent.pos.x,
-        "right": bubbleContent.pos.x + bubbleContent.width,
-        "top": bubbleContent.pos.y,
-        "bottom": bubbleContent.pos.y + bubbleContent.height};
+    var rect = {
+        "left": bubbleContent.x,
+        "right": bubbleContent.x + bubbleContent.width,
+        "top": bubbleContent.y,
+        "bottom": bubbleContent.y + bubbleContent.height
+    };
 
     return rect;
 }
@@ -223,5 +221,18 @@ function clearPastingText()
 {
     if (popup !== null && popup.privateRect.pastingText) {
         popup.privateRect.pastingText = false;
+    }
+}
+
+function findWindowRoot(item) {
+    var root = findRootItem(item, "windowRoot");
+    if (root && root.objectName !== "windowRoot")
+        root = findRootItem(item, "pageStackWindow");
+    return root;
+}
+
+function setPastingText(value) {
+    if (popup !== null) {
+        popup.privateRect.pastingText = value;
     }
 }

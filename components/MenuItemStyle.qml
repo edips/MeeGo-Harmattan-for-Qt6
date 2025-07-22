@@ -4,7 +4,7 @@ import "UIConstants.js" as UI
 Style {
     id: root
     // Font
-    property string fontFamily: UiConstants.DefaultFontFamily
+    property string fontFamily: UI.DefaultFontFamily
     property int fontPixelSize: UI.FONT_DEFAULT_SIZE
     property int fontCapitalization: Font.MixedCase
     property int fontWeight: Font.Bold

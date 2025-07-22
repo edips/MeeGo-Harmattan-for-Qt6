@@ -3,7 +3,10 @@ import "UIConstants.js" as UI
 
 Style {
     // Font
-    property string fontFamily: UiConstants.DefaultFontFamily
+    // --- CHANGE START ---
+    // Changed UiConstants.DefaultFontFamily to UI.FONT_FAMILY
+    property string fontFamily: UI.FONT_FAMILY
+    // --- CHANGE END ---
     property int fontPixelSize: UI.FONT_DEFAULT_SIZE
     property int fontCapitalization: Font.MixedCase
     property int fontWeight: Font.Normal
@@ -37,7 +40,7 @@ Style {
 
     property string __suffix: (position ? "-" + position : "")
 
-    property url background: "image://theme/meegotouch-text-editor" + __suffix
-    property url pressedBackground: "image://theme/meegotouch-text-editor-pressed" + __suffix
-    property url checkedBackground: "image://theme/meegotouch-text-editor-selected" + __suffix
+    property url background: "qrc:/images/meegotouch-text-editor" + __suffix + ".png"
+    property url pressedBackground: "qrc:/images/meegotouch-text-editor-pressed" + __suffix + ".png"
+    property url checkedBackground: "qrc:/images/meegotouch-text-editor-selected" + __suffix + ".png"
 }

@@ -2,36 +2,36 @@ import QtQuick 2.1
 import com.meego.components 1.0
 import "Utils.js" as Utils
 import "UIConstants.js" as UI
-import "EditBubble.js" as Popup
+import "EditBubble.js" as Popup // Now refers to the JS functions
 import "TextAreaHelper.js" as TextAreaHelper
-import "Magnifier.js" as MagnifierPopup
-import "SelectionHandles.js" as SelectionHandles
+import "Magnifier.js" as MagnifierPopup // Now refers to the JS functions
+import "SelectionHandles.js" as SelectionHandlesJS // --- CHANGE: Added JS alias ---
 
 FocusScope {
     id: root
 
-    // Common public API
-    property alias text: textInput.text
+    // Common API
+    property alias text: actualTextInput.text
     property alias placeholderText: prompt.text
 
-    property alias inputMethodHints: textInput.inputMethodHints
-    property alias font: textInput.font
-    property alias cursorPosition: textInput.cursorPosition
-    property alias maximumLength: textInput.maximumLength
-    property alias readOnly: textInput.readOnly
-    property alias acceptableInput: textInput.acceptableInput
-    property alias inputMask: textInput.inputMask
-    property alias validator: textInput.validator
+    property alias inputMethodHints: actualTextInput.inputMethodHints
+    property alias font: actualTextInput.font
+    property alias cursorPosition: actualTextInput.cursorPosition
+    property alias maximumLength: actualTextInput.maximumLength
+    property alias readOnly: actualTextInput.readOnly
+    property alias acceptableInput: actualTextInput.acceptableInput
+    property alias inputMask: actualTextInput.inputMask
+    property alias validator: actualTextInput.validator
 
-    property alias selectedText: textInput.selectedText
-    property alias selectionStart: textInput.selectionStart
-    property alias selectionEnd: textInput.selectionEnd
+    property alias selectedText: actualTextInput.selectedText
+    property alias selectionStart: actualTextInput.selectionStart
+    property alias selectionEnd: actualTextInput.selectionEnd
 
-    property alias echoMode: textInput.echoMode // ### TODO: declare own enum { Normal, Password }
+    property alias echoMode: actualTextInput.echoMode
 
     property bool errorHighlight: !acceptableInput
-    // Property enableSoftwareInputPanel is DEPRECATED
-    property alias enableSoftwareInputPanel: textInput.activeFocusOnPress
+
+    property alias enableSoftwareInputPanel: actualTextInput.activeFocusOnPress
 
     property Item platformSipAttributes
 
@@ -48,14 +48,16 @@ FocusScope {
 
     property alias platformPreedit: inputMethodObserver.preedit
 
-    //force a western numeric input panel even when vkb is set to arabic
-    property alias platformWesternNumericInputEnforced: textInput.westernNumericInputEnforced
+    property alias platformWesternNumericInputEnforced: actualTextInput.westernNumericInputEnforced
     property bool platformSelectable: true
+
+    // Expose the actual TextInput item for external components like EditBubble.js
+    property alias internalTextInput: actualTextInput
 
     signal accepted
 
     onPlatformSipAttributesChanged: {
-        platformSipAttributes.registerInputElement(textInput)
+        platformSipAttributes.registerInputElement(actualTextInput)
     }
 
     onCustomSoftwareInputPanelChanged: {
@@ -64,103 +66,28 @@ FocusScope {
     }
 
     onPlatformCustomSoftwareInputPanelChanged: {
-        textInput.activeFocusOnPress = platformCustomSoftwareInputPanel == null
+        actualTextInput.activeFocusOnPress = platformCustomSoftwareInputPanel == null
     }
 
-    function copy() {
-        textInput.copy()
-    }
-
-    /*Connections {
-        target: platformWindow
-        ignoreUnknownSignals: true
-
-        function  onActive() {
-            if(platformWindow.active) {
-                if (__hadFocusBeforeMinimization) {
-                    __hadFocusBeforeMinimization = false
-                    textInput.select( __priorSelectionStart, __priorSelectionEnd )
-                    if (root.parent)
-                        root.focus = true
-                    else
-                        textInput.focus = true
-                }
-
-                if (activeFocus) {
-                    if ( Popup.isOpened() && platformEnableEditBubble )
-                        Popup.open(textInput, textInput.positionToRectangle(textInput.cursorPosition));
-                    if (textInput.selectionStart != textInput.selectionEnd && platformEnableEditBubble)
-                        SelectionHandles.open(textInput);
-                    if (!readOnly && platformCustomSoftwareInputPanel != null) {
-                        platformOpenSoftwareInputPanel();
-                    } else {
-                        inputContext.simulateSipOpen();
-                    }
-
-                    repositionTimer.running = true;
-                }
-            } else {
-                if (activeFocus) {
-                    __priorSelectionStart = selectionStart
-                    __priorSelectionEnd = selectionEnd
-                    platformCloseSoftwareInputPanel();
-                    Popup.close(textInput);
-                    SelectionHandles.close(textInput);
-                    if (textInput.selectionStart != textInput.selectionEnd)
-                        textInput.deselect();
-
-                    __hadFocusBeforeMinimization = true
-                    if (root.parent)
-                        root.parent.focus = true
-                    else
-                        textInput.focus = false
-                }
-                MagnifierPopup.clean(textInput);
-            }
-        }
-
-        function onAnimating() {
-            if (!platformWindow.animating && root.activeFocus) {
-                TextAreaHelper.repositionFlickable(contentMovingAnimation);
-            }
-        }
-    }*/
-
-    function paste() {
-        textInput.paste()
-    }
-
-    function cut() {
-        textInput.cut()
-    }
-
-    function select(start, end) {
-        textInput.select(start, end)
-    }
-
-    function selectAll() {
-        textInput.selectAll()
-    }
-
-    function selectWord() {
-        textInput.selectWord()
-    }
+    function copy() { actualTextInput.copy() }
+    function paste() { actualTextInput.paste() }
+    function cut() { actualTextInput.cut() }
+    function select(start, end) { actualTextInput.select(start, end) }
+    function selectAll() { actualTextInput.selectAll() }
+    function selectWord() { actualTextInput.selectWord() }
 
     function positionAt(x) {
-        var p = mapToItem(textInput, x, 0);
-        return textInput.positionAt(p.x)
+        var p = mapToItem(actualTextInput, x, 0);
+        return actualTextInput.positionAt(p.x)
     }
 
     function positionToRectangle(pos) {
-        var rect = textInput.positionToRectangle(pos)
-        rect.x = mapFromItem(textInput, rect.x, 0).x
+        var rect = actualTextInput.positionToRectangle(pos)
+        rect.x = mapFromItem(actualTextInput, rect.x, 0).x
         return rect;
     }
 
-    // ensure propagation of forceActiveFocus
-    function forceActiveFocus() {
-        textInput.forceActiveFocus()
-    }
+    function forceActiveFocus() { actualTextInput.forceActiveFocus() }
 
     function closeSoftwareInputPanel() {
         console.log("TextField's function closeSoftwareInputPanel is deprecated. Use function platformCloseSoftwareInputPanel instead.")
@@ -194,36 +121,35 @@ FocusScope {
         }
     }
 
-    // private
-    property bool __expanding: true // Layout hint used but ToolBarLayout
     property int __preeditDisabledMask: Qt.ImhHiddenText|
                                         Qt.ImhNoPredictiveText|
                                         Qt.ImhDigitsOnly|
                                         Qt.ImhFormattedNumbersOnly|
                                         Qt.ImhDialableCharactersOnly|
                                         Qt.ImhEmailCharactersOnly|
-                                        Qt.ImhUrlCharactersOnly 
-
-    property bool __hadFocusBeforeMinimization: false
-    property int __priorSelectionStart
-    property int __priorSelectionEnd
+                                        Qt.ImhUrlCharactersOnly
 
     width: platformStyle.defaultWidth
     height: UI.FIELD_DEFAULT_HEIGHT
 
     onActiveFocusChanged: {
         if (activeFocus) {
-            if (!readOnly && platformCustomSoftwareInputPanel != null) {
+            AndroidViewControl.disableNativeTextSelection(); // Use AndroidViewControl directly
+
+            if (root.platformEnableEditBubble || root.platformEnableMagnifier) {
+                // Do nothing here, our custom dialogs will open on press/hold
+                // or via other logic in MouseFilter.
+            } else if (!readOnly && platformCustomSoftwareInputPanel != null) {
                 platformOpenSoftwareInputPanel();
             } else {
                 inputContext.simulateSipOpen();
             }
-
             repositionTimer.running = true;
-        } else {                
-            platformCloseSoftwareInputPanel();
-            Popup.close(textInput);
-            SelectionHandles.close(textInput);
+        } else {
+            // --- CHANGE: Use SelectionHandlesJS alias ---
+            Popup.close(root);
+            SelectionHandlesJS.close(actualTextInput);
+            // --- END CHANGE ---
         }
 
         if (!activeFocus)
@@ -235,7 +161,7 @@ FocusScope {
         if (errorHighlight) {
             return platformStyle.backgroundError;
         }
-        if (textInput.activeFocus) {
+        if (actualTextInput.activeFocus) {
             return platformStyle.backgroundSelected;
         }
         if (readOnly) {
@@ -254,7 +180,6 @@ FocusScope {
 
     Text {
         id: prompt
-
         anchors {
             verticalCenter: parent.verticalCenter
             left: parent.left
@@ -263,25 +188,20 @@ FocusScope {
             rightMargin: root.platformStyle.paddingRight
             verticalCenterOffset: root.platformStyle.baselineOffset
         }
-
         font: root.platformStyle.textFont
         color: root.platformStyle.promptTextColor
         elide: Text.ElideRight
-
-        // opacity for default state
         opacity: 0.0
 
         states: [
             State {
                 name: "unfocused"
-                // memory allocation optimization: cursorPosition is checked to minimize displayText evaluations
-                when: !root.activeFocus && textInput.cursorPosition === 0 && !textInput.text && prompt.text && !textInput.inputMethodComposing
+                when: !root.activeFocus && actualTextInput.cursorPosition === 0 && !actualTextInput.text && prompt.text && !actualTextInput.inputMethodComposing
                 PropertyChanges { target: prompt; opacity: 1.0; }
             },
             State {
                 name: "focused"
-                // memory allocation optimization: cursorPosition is checked to minimize displayText evaluations
-                when: root.activeFocus && textInput.cursorPosition === 0 && !textInput.text && prompt.text && !textInput.inputMethodComposing
+                when: root.activeFocus && actualTextInput.cursorPosition === 0 && !actualTextInput.text && prompt.text && !actualTextInput.inputMethodComposing
                 PropertyChanges { target: prompt; opacity: 0.6; }
             }
         ]
@@ -307,21 +227,20 @@ FocusScope {
     }
 
     MouseArea {
-        enabled: !textInput.activeFocus
+        enabled: !actualTextInput.activeFocus
         z: enabled?1:0
         anchors.fill: parent
         anchors.margins: UI.TOUCH_EXPANSION_MARGIN
         onClicked: {
-            if (!textInput.activeFocus) {
-                textInput.forceActiveFocus();
+            if (!actualTextInput.activeFocus) {
+                actualTextInput.forceActiveFocus();
 
-                // activate to preedit and/or move the cursor
                 var preeditDisabled = root.inputMethodHints &
                                       root.__preeditDisabledMask
                 var injectionSucceeded = false;
-                var newCursorPosition = textInput.positionAt(mapToItem(textInput, mouseX, mouseY).x,TextInput.CursorOnCharacter);
+                var newCursorPosition = actualTextInput.positionAt(mapToItem(actualTextInput, mouseX, mouseY).x,TextInput.CursorOnCharacter);
                 if (!preeditDisabled) {
-                    var beforeText = textInput.text
+                    var beforeText = actualTextInput.text
                     if (!TextAreaHelper.atSpace(newCursorPosition, beforeText)
                         && newCursorPosition !== beforeText.length
                         && !(newCursorPosition === 0 || TextAreaHelper.atSpace(newCursorPosition - 1, beforeText))) {
@@ -330,21 +249,21 @@ FocusScope {
                     }
                 }
                 if (!injectionSucceeded) {
-                    textInput.cursorPosition=newCursorPosition;
+                    actualTextInput.cursorPosition=newCursorPosition;
                 }
             }
         }
     }
 
     TextInput {
-        id: textInput
+        id: actualTextInput
+        clip: true
+        activeFocusOnPress: !(root.platformEnableEditBubble || root.platformEnableMagnifier)
 
         property alias preedit: inputMethodObserver.preedit
         property alias preeditCursorPosition: inputMethodObserver.preeditCursorPosition
 
-        // this properties are evaluated by the input method framework
         property bool westernNumericInputEnforced: false
-        property bool suppressInputMethod: !activeFocusOnPress
 
         onWesternNumericInputEnforcedChanged: {
             inputContext.update();
@@ -361,12 +280,13 @@ FocusScope {
         selectByMouse: false
         selectedTextColor: root.platformStyle.selectedTextColor
         selectionColor: root.platformStyle.selectionColor
-        //mouseSelectionMode: TextInput.SelectWords
         focus: true
 
         Component.onDestruction: {
-            SelectionHandles.close(textInput);
-            Popup.close(textInput);
+            // --- CHANGE: Use SelectionHandlesJS alias ---
+            SelectionHandlesJS.close(actualTextInput);
+            Popup.close(root);
+            // --- END CHANGE ---
         }
 
         Connections {
@@ -399,14 +319,10 @@ FocusScope {
             }
         }
 
-        // FIXME: HACK: this is working around QTBUG-25644, FocusScope's signals
-        // aren't correctly emitted
         onFocusChanged: {
             root.focusChanged(root.focus)
         }
 
-        // FIXME: HACK: this is working around QTBUG-25644, FocusScope's signals
-        // aren't correctly emitted
         onActiveFocusChanged: {
             root.activeFocusChanged(root.activeFocus)
         }
@@ -416,51 +332,57 @@ FocusScope {
                 TextAreaHelper.repositionFlickable(contentMovingAnimation)
             }
 
-            if (Popup.isOpened(textInput)) {
+            if (Popup.isOpened(root)) {
                 if (Popup.hasPastingText()) {
                     inputContext.clearClipboard();
                     Popup.clearPastingText();
                 }
                 if (!Popup.isChangingInput()) {
-                    Popup.close(textInput);
+                    Popup.close(root);
                 }
             }
-            SelectionHandles.close(textInput);
+            // --- CHANGE: Use SelectionHandlesJS alias ---
+            SelectionHandlesJS.close(actualTextInput);
+            // --- END CHANGE ---
         }
 
         onCursorPositionChanged: {
-            if (MagnifierPopup.isOpened() &&
-                Popup.isOpened()) {
-                Popup.close(textInput);
-            } else if (!mouseFilter.attemptToActivate ||
-                textInput.cursorPosition === textInput.text.length) {
-                if ( Popup.isOpened(textInput) &&
-                !Popup.isChangingInput() && platformEnableEditBubble) {
-                    Popup.close(textInput);
-                    Popup.open(textInput,
-                        textInput.positionToRectangle(textInput.cursorPosition));
+            if (MagnifierPopup.isOpened() && Popup.isOpened()) {
+                Popup.close(root);
+            } else if (!mouseFilter.attemptToActivate || actualTextInput.cursorPosition === actualTextInput.text.length) {
+                if (platformEnableEditBubble) {
+                    Popup.close(root);
+                    var cursorRect = actualTextInput.positionToRectangle(actualTextInput.cursorPosition);
+                    var mappedPos = actualTextInput.mapToItem(Popup.popup.parent, cursorRect.x + cursorRect.width / 2, cursorRect.y + cursorRect.height / 2);
+                    var popupOpened = Popup.open(root, mappedPos); // Pass root as the TextField instance
+                    if (!popupOpened) {
+                        console.warn("Popup.open failed in onCursorPositionChanged.");
+                    }
                 }
-                if ( SelectionHandles.isOpened(textInput) && textInput.selectedText === "") {
-                    SelectionHandles.close( textInput );
+                // --- CHANGE: Use SelectionHandlesJS alias ---
+                if (SelectionHandlesJS.isOpened(actualTextInput) && actualTextInput.selectedText === "") {
+                    SelectionHandlesJS.close(actualTextInput);
                 }
-                if ( !SelectionHandles.isOpened(textInput) && textInput.selectedText !== ""
-                     && platformEnableEditBubble === true ) {
-                    SelectionHandles.open( textInput );
+                if (!SelectionHandlesJS.isOpened(actualTextInput) && actualTextInput.selectedText !== "" && platformEnableEditBubble === true) {
+                    SelectionHandlesJS.open(actualTextInput);
                 }
-                SelectionHandles.adjustPosition();
+                SelectionHandlesJS.adjustPosition();
+                // --- END CHANGE ---
             }
         }
 
         onSelectedTextChanged: {
-            if ( !platformSelectable )
-                textInput.deselect(); // enforce deselection in all cases we didn't think of
+            if (!platformSelectable)
+                actualTextInput.deselect();
 
-            if (Popup.isOpened(textInput) && !Popup.isChangingInput()) {
-                Popup.close(textInput);
+            if (Popup.isOpened(root) && !Popup.isChangingInput()) {
+                Popup.close(root);
             }
-            if ( SelectionHandles.isOpened(textInput) && textInput.selectedText === "") {
-                SelectionHandles.close( textInput )
+            // --- CHANGE: Use SelectionHandlesJS alias ---
+            if (SelectionHandlesJS.isOpened(actualTextInput) && actualTextInput.selectedText === "") {
+                SelectionHandlesJS.close(actualTextInput)
             }
+            // --- END CHANGE ---
         }
 
         InputMethodObserver {
@@ -471,8 +393,8 @@ FocusScope {
                     TextAreaHelper.repositionFlickable(contentMovingAnimation)
                 }
 
-                if (Popup.isOpened(textInput) && !Popup.isChangingInput()) {
-                    Popup.close(textInput);
+                if (Popup.isOpened(root) && !Popup.isChangingInput()) {
+                    Popup.close(root);
                 }
             }
         }
@@ -508,42 +430,26 @@ FocusScope {
             property variant editBubblePosition: null
 
             onPressed: mouse=> {
-                var mousePosition = textInput.positionAt(mouse.x,TextInput.CursorOnCharacter);
-                pressOnPreedit = textInput.cursorPosition===mousePosition
-                oldCursorPosition = textInput.cursorPosition;
+                var mousePosition = actualTextInput.positionAt(mouse.x, mouse.y);
+                pressOnPreedit = actualTextInput.cursorPosition===mousePosition
+                oldCursorPosition = actualTextInput.cursorPosition;
                 var preeditDisabled = root.inputMethodHints &
                                       root.__preeditDisabledMask
 
                 attemptToActivate = !pressOnPreedit && !root.readOnly && !preeditDisabled && root.activeFocus &&
                                     !(mousePosition === 0 || TextAreaHelper.atSpace(mousePosition - 1) || TextAreaHelper.atSpace(mousePosition));
                 mouse.filtered = true;
-
-                // my code
-                /*const pos = textInput.positionAt(mouse.x, mouse.y)
-                const text = textInput.text
-
-                let start = pos
-                let end = pos
-
-                while (start > 0 && /\w/.test(text[start - 1]))
-                    start--
-                while (end < text.length && /\w/.test(text[end]))
-                    end++
-
-                textInput.forceActiveFocus()
-                textInput.select(start, end)*/
             }
 
             onDelayedPressSent:  {
-                if (textInput.preedit) {
-                    textInput.cursorPosition = oldCursorPosition;
+                if (actualTextInput.preedit) {
+                    actualTextInput.cursorPosition = oldCursorPosition;
                 }
             }
 
             onHorizontalDrag: {
-                // possible pre-edit word have to be commited before selection
                 if (root.activeFocus || root.readOnly) {
-                    inputContext.reset()                    
+                    inputContext.reset()
                     if( platformSelectable )
                         parent.selectByMouse = true
                     attemptToActivate = false
@@ -551,23 +457,28 @@ FocusScope {
             }
 
             onPressAndHold: mouse=> {
-                // possible pre-edit word have to be commited before showing the magnifier
                 if (platformEnableMagnifier &&
                     (root.text !== "" || inputMethodObserver.preedit !== "") && root.activeFocus) {
                     inputContext.reset()
                     attemptToActivate = false
-                    MagnifierPopup.open(root);
-                    var magnifier = MagnifierPopup.popup;
-                    var cursorPos = textInput.positionToRectangle(0);
-                    var mappedPosMf = mapFromItem(parent,mouse.x,cursorPos.y+cursorPos.height/2+4);
-                    magnifier.xCenter = mapToItem(magnifier.sourceItem,mappedPosMf.x,0).x;
-                    var mappedPos =  mapToItem(magnifier.parent, mappedPosMf.x - magnifier.width / 2,
-                                               textInput.y - 120 - UI.MARGIN_XLARGE - (height / 2));
-                    var yAdjustment = -mapFromItem(magnifier.__rootElement, 0, 0).y < magnifier.height / 2.5 ? magnifier.height / 2.5 + mapFromItem(magnifier.__rootElement, 0,0).y : 0
-                    magnifier.x = mappedPos.x;
-                    magnifier.y = mappedPos.y + yAdjustment;
-                    magnifier.yCenter = Math.round(mapToItem(magnifier.sourceItem,0,mappedPosMf.y).y);
-                    parent.cursorPosition = textInput.positionAt(mouse.x)
+                    var magnifierOpened = MagnifierPopup.open(root);
+                    if (magnifierOpened) {
+                        var magnifier = MagnifierPopup.popup;
+                        var mappedMousePosToTextInput = mouseFilter.mapToItem(actualTextInput, mouse.x, mouse.y);
+                        magnifier.xCenter = mappedMousePosToTextInput.x;
+                        magnifier.yCenter = mappedMousePosToTextInput.y;
+
+                        var magnifierWidth = magnifier.width || 200;
+                        var magnifierHeight = magnifier.height || 100;
+                        var mappedPosToParent = mouseFilter.mapToItem(MagnifierPopup.popup.parent, mouse.x - magnifierWidth / 2, mouse.y - magnifierHeight - UI.MARGIN_XLARGE);
+
+                        magnifier.x = mappedPosToParent.x;
+                        magnifier.y = mappedPosToParent.y;
+
+                        parent.cursorPosition = actualTextInput.positionAt(mouse.x)
+                    } else {
+                        console.warn("MagnifierPopup.open failed in onPressAndHold because component not ready or other issue.");
+                    }
                 }
             }
 
@@ -579,14 +490,14 @@ FocusScope {
                 if (attemptToActivate)
                     inputContext.reset();
 
-                var newCursorPosition = textInput.positionAt(mouse.x,TextInput.CursorOnCharacter); 
-                if (textInput.preedit.length === 0)
-                    editBubblePosition = textInput.positionToRectangle(newCursorPosition);
+                var newCursorPosition = actualTextInput.positionAt(mouse.x, mouse.y);
+                if (actualTextInput.preedit.length === 0)
+                    editBubblePosition = actualTextInput.positionToRectangle(newCursorPosition);
 
                 if (attemptToActivate) {
-                    var beforeText = textInput.text;
+                    var beforeText = actualTextInput.text;
 
-                    textInput.cursorPosition = newCursorPosition;
+                    actualTextInput.cursorPosition = newCursorPosition;
                     var injectionSucceeded = false;
 
                     if (!TextAreaHelper.atSpace(newCursorPosition, beforeText)
@@ -595,54 +506,66 @@ FocusScope {
                     }
                     if (injectionSucceeded) {
                         mouse.filtered=true;
-                        if (textInput.preedit.length >=1 && textInput.preedit.length <= 4)
-                            editBubblePosition = textInput.positionToRectangle(textInput.cursorPosition+1)
+                        if (actualTextInput.preedit.length >=1 && actualTextInput.preedit.length <= 4)
+                            editBubblePosition = actualTextInput.positionToRectangle(actualTextInput.cursorPosition+1)
                     } else {
-                        textInput.text=beforeText;
-                        textInput.cursorPosition=newCursorPosition;
+                        actualTextInput.text=beforeText;
+                        actualTextInput.cursorPosition=newCursorPosition;
                     }
                 } else if (!parent.selectByMouse) {
                     if (!pressOnPreedit) inputContext.reset();
-                    textInput.cursorPosition = textInput.positionAt(mouse.x,TextInput.CursorOnCharacter);
+                    actualTextInput.cursorPosition = actualTextInput.positionAt(mouse.x, mouse.y);
                 }
                 parent.selectByMouse = false;
             }
 
             onFinished: {
                 if (root.activeFocus && platformEnableEditBubble) {
-                    if (textInput.preedit.length === 0)
-                        editBubblePosition = textInput.positionToRectangle(textInput.cursorPosition);
+                    if (actualTextInput.preedit.length === 0) {
+                        editBubblePosition = actualTextInput.positionToRectangle(actualTextInput.cursorPosition);
+                    }
                     if (editBubblePosition != null) {
-                        Popup.open(textInput,editBubblePosition);
+                        var bubbleRectCenter = Qt.point(editBubblePosition.x + editBubblePosition.width / 2, editBubblePosition.y + editBubblePosition.height / 2);
+                        var mappedBubblePos = actualTextInput.mapToItem(Popup.popup.parent, bubbleRectCenter.x, bubbleRectCenter.y);
+
+                        var popupOpened = Popup.open(root, mappedBubblePos);
+                        if (!popupOpened) {
+                            console.warn("Popup.open failed in onFinished because component not ready or other issue.");
+                        }
                         editBubblePosition = null
                     }
-                    if (textInput.selectedText !== "")
-                        SelectionHandles.open( textInput );
-                    SelectionHandles.adjustPosition();
+                    // --- CHANGE: Use SelectionHandlesJS alias ---
+                    if (actualTextInput.selectedText !== "")
+                        SelectionHandlesJS.open(actualTextInput);
+                    SelectionHandlesJS.adjustPosition();
+                    // --- END CHANGE ---
                 }
                 attemptToActivate = false
             }
 
             onMousePositionChanged: mouse=> {
                 if (MagnifierPopup.isOpened() && !parent.selectByMouse) {
-                    textInput.cursorPosition = textInput.positionAt(mouse.x)
+                    actualTextInput.cursorPosition = actualTextInput.positionAt(mouse.x, mouse.y);
                     var magnifier = MagnifierPopup.popup;
-                    var mappedPosMf = mapFromItem(parent,mouse.x,0);
-                    var mappedPos =  mapToItem(magnifier.parent,mappedPosMf.x - magnifier.width / 2.0, 0);
-                    magnifier.xCenter = mapToItem(magnifier.sourceItem,mappedPosMf.x,0).x;
-                    magnifier.x = mappedPos.x;
+                    var mappedMousePosToTextInput = mouseFilter.mapToItem(actualTextInput, mouse.x, mouse.y);
+                    magnifier.xCenter = mappedMousePosToTextInput.x;
+                    magnifier.yCenter = mappedMousePosToTextInput.y;
+
+                    var magnifierWidth = magnifier.width || 200;
+                    var mappedPosToParent = mouseFilter.mapToItem(MagnifierPopup.popup.parent, mouse.x - magnifierWidth / 2, mouse.y - magnifier.height - UI.MARGIN_XLARGE);
+                    magnifier.x = mappedPosToParent.x;
                 }
-                SelectionHandles.adjustPosition();
+                // --- CHANGE: Use SelectionHandlesJS alias ---
+                SelectionHandlesJS.adjustPosition();
+                // --- END CHANGE ---
             }
 
             onDoubleClicked: mouse=> {
-                // possible pre-edit word have to be commited before selection
                 inputContext.reset()
-                // Ignore doubleclicks which occur outside the smallest rectangle around the full text of the textfield
-                if (typeof showStatusBar !== "undefined" && locale.directionForText(textInput.text) === 1 /* RightToLef */) {
-                    if ( platformSelectable && mouse.x > width - textInput.positionToRectangle( textInput.text.length ).x )
+                if (typeof showStatusBar !== "undefined" && actualTextInput.effectiveLayoutDirection === Qt.RightToLeft) {
+                    if ( platformSelectable && mouse.x > width - actualTextInput.positionToRectangle( actualTextInput.text.length ).x )
                         parent.selectByMouse = true;
-                } else if ( platformSelectable && mouse.x <= textInput.positionToRectangle( textInput.text.length ).x )
+                } else if ( platformSelectable && mouse.x <= actualTextInput.positionToRectangle( actualTextInput.text.length ).x )
                     parent.selectByMouse = true;
                 attemptToActivate = false
             }
@@ -652,15 +575,17 @@ FocusScope {
     InverseMouseArea {
         anchors.fill: parent
         anchors.margins: UI.TOUCH_EXPANSION_MARGIN
-        enabled: textInput.activeFocus
+        enabled: actualTextInput.activeFocus
         onClickedOutside: {
-            if (Popup.isOpened(textInput) && ((mouseX > Popup.geometry().left && mouseX < Popup.geometry().right) &&
+            // --- CHANGE: Use SelectionHandlesJS alias in Popup.geometry() call ---
+            if (Popup.isOpened(root) && ((mouseX > Popup.geometry().left && mouseX < Popup.geometry().right) &&
                                            (mouseY > Popup.geometry().top && mouseY < Popup.geometry().bottom))) {
                 return;
             }
+            // --- END CHANGE ---
             root.parent.focus = true;
         }
     }
 
-    Component.onCompleted: textInput.accepted.connect(accepted)
+    Component.onCompleted: actualTextInput.accepted.connect(accepted)
 }
