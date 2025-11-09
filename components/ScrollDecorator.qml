@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import com.meego.components 1.0
 import "."
@@ -24,7 +36,7 @@ Item {
     property bool __hasPageHeight: false
 
     // These can also be modified (but probably shouldn't)
-    property int __minIndicatorSize: parseInt(20 * ScaleFactor)
+    property int __minIndicatorSize: 20
     property int __hideTimeout: 500
 
     property bool __alwaysShowIndicator: true
@@ -42,12 +54,12 @@ Item {
         var p = flickableItem.parent
         while (p) {
             if (p.hasOwnProperty("__isPage")) {
-                __hasPageHeight = function() { return p.height == flickableItem.height }
-                __hasPageWidth = function() { return p.width == flickableItem.width }
-                __topPageMargin = function() { return p.anchors.topMargin }
-                __bottomPageMargin = function() { return p.anchors.bottomMargin }
-                __leftPageMargin = function() { return p.anchors.leftMargin }
-                __rightPageMargin = function() { return p.anchors.rightMargin }
+                __hasPageHeight = p.height === flickableItem.height
+                __hasPageWidth = p.width === flickableItem.width
+                __topPageMargin = p.anchors.topMargin
+                __bottomPageMargin = p.anchors.bottomMargin
+                __leftPageMargin = p.anchors.leftMargin
+                __rightPageMargin = p.anchors.rightMargin
                 return;
             } else {
                 p = p.parent;

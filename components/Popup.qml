@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import com.meego.components 1.0
 import "."
@@ -35,9 +47,14 @@ Item {
     function close() {
         if (status === DialogStatus.Open) {
             status = DialogStatus.Closing;
-            root.visible = false
+            //root.visible = false
         }
     }
+
+    //fader.onAnimationEnded: console.log("animation ended")
+
+
+
 
     signal privateClicked
 
@@ -49,6 +66,8 @@ Item {
         id: parentCache
         property QtObject oldParent: null
     }
+
+
 
     Component.onCompleted: {
         parentCache.oldParent = parent;
@@ -85,6 +104,10 @@ Item {
             anchors.fill: parent
             enabled: root.status === DialogStatus.Opening || root.status === DialogStatus.Closing
             z: Number.MAX_VALUE
+        }
+        onAnimationEnded: {
+            root.visible = false;
+            root.status = DialogStatus.Closed;
         }
     }
 

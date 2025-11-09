@@ -1,6 +1,18 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 // MenuItem is a component that is used in menus.
 
-import QtQuick 2.1
+import QtQuick
 import com.meego.components 1.0
 import "UIConstants.js" as UI
 
@@ -76,8 +88,8 @@ Item {
         (root.platformStyle.__colorString === "") ? root.platformStyle.pressedBackground : root.platformStyle.selectedBackground;
     */
        anchors.fill : root
-       border { left: parseInt(22 * ScaleFactor); top: parseInt(22 * ScaleFactor);
-                right: parseInt(22 * ScaleFactor); bottom: parseInt(22 * ScaleFactor) }
+       border { left: 22; top: 22;
+                right: 22; bottom: 22 }
     }
 
     Text {

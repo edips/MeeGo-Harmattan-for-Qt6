@@ -1,4 +1,16 @@
-import QtQuick 2.1
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+import QtQuick
 import com.meego.components 1.0
 
 Item {
@@ -51,7 +63,7 @@ Item {
 
     property bool __isVertical: orientationSlider === Qt.Vertical
 
-    property int impWidth: parseInt(400 * ScaleFactor)
+    property int impWidth: 400
     property int impHeight: handle.height
 
     width: __isVertical ? impHeight : impWidth
@@ -208,7 +220,7 @@ Item {
 
             transform: Translate {
                 x: - handle.width / 2;
-                y: __isVertical? -(__valueIndicatorItem.width/2)+20 : y ;
+                y: __isVertical? - ( __valueIndicatorItem.width/2) + 20 : y ;
             }
 
             rotation: __isVertical ? 90 : 0
@@ -227,10 +239,8 @@ Item {
                     return "Right";
                 if (valueIndicatorPosition == "Bottom")
                     return "Left";
-
                 return "Top";
             }
-
             anchors.margins: valueIndicatorMargin
 
             states: [

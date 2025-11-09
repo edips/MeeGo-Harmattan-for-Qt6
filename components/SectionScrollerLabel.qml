@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 
 Item {
@@ -28,8 +40,8 @@ Item {
             property bool up: true
             property int shift: 30
 
-            height: parseInt(60 * ScaleFactor)
-            width: parent.width - parseInt(40 * ScaleFactor)
+            height: 60
+            width: parent.width - 40
             text: ""
             x: 20
             color: root.highlighted ? root.platformStyle.textColorHighlighted : root.platformStyle.textColor
@@ -43,7 +55,7 @@ Item {
             }
             onTextChanged: {
                 var w = paintedWidth
-                parent.width = w + parseInt(40 * ScaleFactor);
+                parent.width = w + 40;
             }
 
             Behavior on current {

@@ -6,6 +6,7 @@
 #include <QRectF> // For microFocus() return type
 #include <QQmlComponent> // For customSoftwareInputPanelComponent
 #include <QVariant> // For sipEvent
+#include <QRect> // For QRect return type
 
 class MDeclarativeInputContextPrivate; // Forward declaration for PIMPL
 
@@ -15,31 +16,33 @@ class MDeclarativeInputContext : public QObject
 
 public:
     // Constructor and Destructor
-    explicit MDeclarativeInputContext(QQuickItem *parent = nullptr); // Use nullptr for modern C++
+    explicit MDeclarativeInputContext(QObject *parent = nullptr); // Use nullptr for modern C++
     virtual ~MDeclarativeInputContext();
 
-    // Q_PROPERTY declarations (updated for Qt 6 syntax)
+    // Static method to get the singleton instance
+    static MDeclarativeInputContext* instance();
+
+    // Q_PROPERTY declarations
     Q_PROPERTY(bool softwareInputPanelVisible READ softwareInputPanelVisible NOTIFY softwareInputPanelVisibleChanged FINAL)
     Q_PROPERTY(QRect softwareInputPanelRect READ softwareInputPanelRect NOTIFY softwareInputPanelRectChanged FINAL)
-    // microFocus is still useful for text input, keep it for now.
     Q_PROPERTY(QRectF microFocus READ microFocus NOTIFY microFocusChanged FINAL)
     Q_PROPERTY(QVariant softwareInputPanelEvent READ softwareInputPanelEvent WRITE setSoftwareInputPanelEvent NOTIFY softwareInputPanelEventChanged FINAL)
     Q_PROPERTY(QQmlComponent* customSoftwareInputPanelComponent READ customSoftwareInputPanelComponent WRITE setCustomSoftwareInputPanelComponent NOTIFY customSoftwareInputPanelComponentChanged FINAL)
-    Q_PROPERTY(QQuickItem* customSoftwareInputPanelTextField READ customSoftwareInputPanelTextField WRITE setCustomSoftwareInputPanelTextField NOTIFY customSoftwareInputPanelTextFieldChanged FINAL)
     Q_PROPERTY(bool customSoftwareInputPanelVisible READ customSoftwareInputPanelVisible WRITE setCustomSoftwareInputPanelVisible NOTIFY customSoftwareInputPanelVisibleChanged FINAL)
+    Q_PROPERTY(QQuickItem* customSoftwareInputPanelTextField READ customSoftwareInputPanelTextField WRITE setCustomSoftwareInputPanelTextField NOTIFY customSoftwareInputPanelTextFieldChanged FINAL)
 
-    // Public methods (READ functions for properties)
-    QRectF microFocus() const;
+    // Accessor methods for Q_PROPERTY (READ functions)
     bool softwareInputPanelVisible() const;
     QRect softwareInputPanelRect() const;
+    QRectF microFocus() const;
     QVariant softwareInputPanelEvent() const;
-    QQmlComponent *customSoftwareInputPanelComponent() const;
+    QQmlComponent* customSoftwareInputPanelComponent() const;
     bool customSoftwareInputPanelVisible() const;
-    QQuickItem *customSoftwareInputPanelTextField() const;
+    QQuickItem* customSoftwareInputPanelTextField() const;
 
-    // Public methods (WRITE functions for properties)
+    // Mutator methods for Q_PROPERTY (WRITE functions)
     void setSoftwareInputPanelEvent(const QVariant& event);
-    void setCustomSoftwareInputPanelComponent(QQmlComponent *component);
+    void setCustomSoftwareInputPanelComponent(QQmlComponent * component);
     void setCustomSoftwareInputPanelVisible(bool visible);
     void setCustomSoftwareInputPanelTextField(QQuickItem *item);
 
@@ -52,6 +55,7 @@ public:
     Q_INVOKABLE void simulateSipOpen(); // Custom simulation, keep
     Q_INVOKABLE void simulateSipClose(); // Custom simulation, keep
     Q_INVOKABLE void clearClipboard();
+    Q_INVOKABLE void setActiveFocusItem(); // Slot to be connected to QQuickWindow::activeFocusItemChanged
 
 Q_SIGNALS:
     // Signals (updated for Qt 6 syntax - no FINAL keyword here)
@@ -69,10 +73,8 @@ private:
     // PIMPL idiom to hide private implementation details
     MDeclarativeInputContextPrivate *d;
 
-    // --- CHANGE START ---
 private Q_SLOTS: // New private slot to act as a bridge
     void _q_onKeyboardRectangleChanged();
-    // --- CHANGE END ---
 };
 
 #endif // MDECLARATIVEINPUTCONTEXT_H

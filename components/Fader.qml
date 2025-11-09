@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 
 // Background dimming
@@ -18,6 +30,7 @@ Rectangle {
 
     property Item visualParent: null
     property Item originalParent: parent
+    signal animationEnded // New signal: Emitted when any animation (fade-in or fade-out) completes
 
     // widen the edges to avoid artefacts during rotation
     anchors.topMargin:    -1
@@ -151,9 +164,9 @@ Rectangle {
                 }
                 ScriptAction {script: {
                         faderBackground.parent = originalParent;
+                        faderBackground.animationEnded();
                     }
                 }
-                onFinished: faderBackground.parent.visible = false
             }
         }
     ]

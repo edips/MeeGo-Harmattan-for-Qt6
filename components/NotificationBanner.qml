@@ -1,4 +1,16 @@
-import QtQuick 2.1
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+import QtQuick
 import com.meego.components 1.0
 
 /*
@@ -54,7 +66,7 @@ Item {
         parent = __findParent();
 
         var window = __findWindow();
-        if(window !== null) root.pos.y = 8 + window.__statusBarHeight;
+        if(window !== null) root.pos.y = 8
 
         animationShow.running = true;
         if (root.timerEnabled)
@@ -90,7 +102,7 @@ Item {
 
     width: internal.getBannerHeight()
     height: internal.getBannerWidth()
-    x:parseInt(8 * ScaleFactor); y:parseInt(8 * ScaleFactor)
+    x: 8; y: 8
     scale: 0
 
     Behavior on y {NumberAnimation {easing.type:Easing.InOutExpo;duration:500}}
@@ -100,13 +112,13 @@ Item {
         anchors.fill: root
         horizontalTileMode: BorderImage.Stretch
         verticalTileMode: BorderImage.Stretch
-        border { left: parseInt(10 * ScaleFactor); top: parseInt(10 * ScaleFactor); right: parseInt(10 * ScaleFactor); bottom: parseInt(10 * ScaleFactor) }
+        border { left: 10; top: 10; right: 10; bottom: 10 }
         opacity: 1
     }
 
     Image {
         id: image
-        anchors { left: parent.left; leftMargin: parseInt(16 * ScaleFactor); top: parent.top; topMargin: parseInt(16 * ScaleFactor) }
+        anchors { left: parent.left; leftMargin: 16; top: parent.top; topMargin: 16 }
         source: root.iconSource
         visible: root.iconSource != ""
     }
@@ -132,16 +144,16 @@ Item {
         function getBannerHeight() {
             if (image.visible) {
                 if (text.lineCount <= 2)
-                    return parseInt(80 * ScaleFactor);
+                    return 80;
                 else
-                    return parseInt(80 * ScaleFactor); //106
+                    return 80; //106
             } else {
                 if (text.lineCount <= 1)
-                    return parseInt(80 * ScaleFactor); //64
+                    return 80; //64
                 else if (text.lineCount <= 2)
-                    return parseInt(80 * ScaleFactor);
+                    return (80);
                 else
-                    return parseInt(80 * ScaleFactor); //106
+                    return 80; //106
             }
         }
 
@@ -222,15 +234,5 @@ Item {
     NumberAnimation {
         id: animationHide
         target: root; property: "scale"; to: 0; duration: 200; easing.type: Easing.InExpo
-    }
-
-    Component.onCompleted: {
-        //__owner = parent;
-        var window = __findWindow();
-        if(window !== null) {
-            window.showStatusBarChanged.connect(function() {
-                root.topMargin = parseInt(8 * ScaleFactor) + window.__statusBarHeight;
-            });
-        }
     }
 }

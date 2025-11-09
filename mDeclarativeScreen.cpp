@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 #include <QDebug>
 #include <QGuiApplication>
 #include <QScreen> // For QScreen and screen orientation
@@ -30,7 +42,6 @@ public:
     void updateIsCovered(); // Placeholder for isCovered
     void updateIsKeyboardOpen(); // Placeholder for isKeyboardOpen
     void updateIsTvConnected(); // Placeholder for isTvConnected
-    void updateWindowStateAnimation(); // Handles MWindowState animatingChanged
 
     qreal dpi() const; // Calculates DPI
     int rotation() const; // Calculates rotation angle based on orientation
@@ -130,10 +141,6 @@ void MDeclarativeScreenPrivate::initContextSubscriber()
     } else {
         qWarning() << "No valid QScreen found, orientation and display size updates may not work!";
     }
-
-    // Connect to MWindowState's animatingChanged signal
-    QObject::connect(MWindowState::instance(), &MWindowState::animatingChanged,
-                     q, &MDeclarativeScreen::_q_onWindowStateAnimatingChanged); // Connect to public slot
 
     // Initial updates
     updateScreenSize();
@@ -277,15 +284,6 @@ MDeclarativeScreen::Orientation MDeclarativeScreenPrivate::physicalOrientation()
     return o;
 }
 
-// This function is now called when MWindowState::animatingChanged emits
-void MDeclarativeScreenPrivate::updateWindowStateAnimation()
-{
-    // If MWindowState reports animation finished and target orientation is different, set it.
-    if (!MWindowState::instance()->animating() && finalOrientation != orientation) {
-        q->setOrientation(finalOrientation);
-    }
-}
-
 // Moved implementation to MDeclarativeScreenPrivate
 void MDeclarativeScreenPrivate::setMinimized(bool m) {
     if(minimized == m)
@@ -374,9 +372,6 @@ void MDeclarativeScreen::setOrientation(Orientation o)
 {
     d->finalOrientation = o;
     MDeclarativeScreen::Direction oldDirection = d->rotationDirection;
-
-    if (d->orientation == o || MWindowState::instance()->animating())
-        return;
 
     // Determine rotation direction
     if ( (d->orientation == MDeclarativeScreen::LandscapeInverted && o == MDeclarativeScreen::Portrait) ||
@@ -594,11 +589,7 @@ MDeclarativeScreen::Density MDeclarativeScreen::density() const {
         return ExtraHigh;
 }
 
-void MDeclarativeScreen::updatePlatformStatusBarRect(QQuickItem * statusBar)
-{
-    Q_UNUSED(statusBar);
-    qDebug() << "updatePlatformStatusBarRect is a no-op for Qt6 Android.";
-}
+
 
 bool MDeclarativeScreen::allowSwipe() const
 {
@@ -628,10 +619,4 @@ void MDeclarativeScreen::setAllowSwipe(bool enabled)
         emit allowSwipeChanged();
         qDebug() << "setAllowSwipe is a no-op for system-level swipe on Qt6 Android.";
     }
-}
-
-// Implementation of the new private slot
-void MDeclarativeScreen::_q_onWindowStateAnimatingChanged()
-{
-    d->updateWindowStateAnimation(); // Call the private implementation method
 }

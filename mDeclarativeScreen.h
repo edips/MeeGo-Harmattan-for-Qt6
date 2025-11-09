@@ -112,9 +112,6 @@ public:
     static MDeclarativeScreen* instance();
     virtual ~MDeclarativeScreen();
 
-    // Q_INVOKABLE methods
-    Q_INVOKABLE void updatePlatformStatusBarRect(QQuickItem * statusBar);
-
     // Public API READ methods
     Orientation currentOrientation() const;
     Orientations allowedOrientations() const;
@@ -148,7 +145,8 @@ public:
     virtual bool eventFilter(QObject *o, QEvent *e) Q_DECL_OVERRIDE; // Use Q_DECL_OVERRIDE
 
 public Q_SLOTS:
-    void setAllowedOrientations(Orientations orientation); // Q_SLOT
+    // Make this invokable to ensure it's accessible from QML
+    Q_INVOKABLE void setAllowedOrientations(Orientations orientation);
 
 Q_SIGNALS:
     // Signals (no FINAL keyword here)
@@ -178,9 +176,6 @@ private:
 
     void setOrientation(Orientation o); // Private helper
     Orientation physicalOrientation() const; // Private helper
-
-private Q_SLOTS: // New private slot to act as a bridge for MWindowState signals
-    void _q_onWindowStateAnimatingChanged();
 };
 
 // QML_DECLARE_TYPE is still used for singleton types registered via C++

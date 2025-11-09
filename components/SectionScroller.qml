@@ -1,6 +1,19 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import "."
 import "SectionScroller.js" as Sections
+import com.meego.components 1.0 // Ensure this import is present if using DialogStatus or other components
 
 Item {
     id: root
@@ -27,10 +40,10 @@ Item {
     Rectangle {
         id: container
         color: "transparent"
-        width: parseInt(35 * ScaleFactor)
+        width: 35
         height: listView.height
         x: listView.x + listView.width - width
-        property bool dragging: false
+        property bool dragging: false // Correctly defined on container
 
         MouseArea {
             id: dragArea
@@ -46,7 +59,7 @@ Item {
             }
 
             onReleased: {
-                container.dragging = false;
+                container.dragging = false; // Correctly referencing container.dragging
                 mouseDownTimer.stop()
             }
 
@@ -59,7 +72,7 @@ Item {
                 interval: 150
 
                 onTriggered: {
-                    container.dragging = true;
+                    container.dragging = true; // Correctly referencing container.dragging
                     internal.adjustContentPosition(dragArea.mouseY);
                     tooltip.positionAtY(dragArea.mouseY);
                 }
@@ -70,7 +83,7 @@ Item {
             objectName: "popup"
             opacity: container.dragging ? 1 : 0
             anchors.right: parent.right
-            anchors.rightMargin: parseInt(50 * ScaleFactor)
+            anchors.rightMargin: 50
             width: childrenRect.width
             height: childrenRect.height
 
@@ -135,28 +148,29 @@ Item {
             Image {
                 id: arrow
                 objectName: "arrow"
-                width: parseInt(8 * ScaleFactor)
-                height: parseInt(16 * ScaleFactor)
+                width: 8
+                height: 16
                 anchors.left: background.right
-                property int threshold: currentSectionLabel.height
+                property int threshold: currentSectionLabel.height // Correctly defined on arrow
                 property int yInitial: background.y + background.height/2 - height/2
                 y: getYPosition()
                 source: platformStyle.arrowImage
 
                 function getYPosition() {
                     var v = internal.curPos;
-                    var adjust = v === "first" ? -threshold :
-                                v === "last" ? threshold : 0;
+                    var adjust = v === "first" ? -arrow.threshold : // Use arrow.threshold
+                                 v === "last" ? arrow.threshold : 0; // Use arrow.threshold
 
-                    return yInitial + adjust;
+                    return arrow.yInitial + adjust; // Use arrow.yInitial
                 }
 
                 states: [
                     State {
-                        when: root.dragging && dragArea.mouseY < (root.listView.y + threshold)
+                        // FIX: Corrected references to container.dragging, root.listView, and arrow.threshold
+                        when: container.dragging && root.listView && dragArea.mouseY < (root.listView.y + arrow.threshold)
                         PropertyChanges {
                             target: arrow
-                            y: yInitial - threshold
+                            y: arrow.yInitial - arrow.threshold // Use arrow.yInitial and arrow.threshold
                         }
                     }
                 ]
@@ -171,7 +185,7 @@ Item {
             states: [
                 State {
                     name: "visible"
-                    when: container.dragging
+                    when: container.dragging // Correctly referencing container.dragging
                 },
 
                 State {
@@ -229,7 +243,9 @@ Item {
 
     Connections {
         target: root.listView
-        onCurrentSectionChanged: internal.curSect = container.dragging ? internal.curSect : ""
+        function onCurrentSectionChanged(){
+            internal.curSect = container.dragging ? internal.curSect : "" // Correctly referencing container.dragging
+        }
     }
 
     QtObject {
@@ -286,6 +302,5 @@ Item {
                 listView.positionViewAtIndex(idx, ListView.Beginning);
             }
         }
-
     }
 }

@@ -1,12 +1,31 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import com.meego.components 1.0
+import meego
 import "."
 import "UIConstants.js" as UI
 
 Dialog {
     id: root
     objectName: "queryDialog"
-
+    // Close the dialog with back button
+    Connections {
+        target: GlobalSettings
+        function onDialogFocusChanged(dialogFocus) {
+            close()
+        }
+    }
     property string titleText
     property string message
 
@@ -101,8 +120,8 @@ Dialog {
     content: Item {
         id: queryContentWrapper
 
-        property int upperBound: visualParent ? visualParent.height - titleField.height - buttonColFiller.height - parseInt(64 * ScaleFactor)
-                                                : root.parent.height - titleField.height - buttonColFiller.height - parseInt(64 * ScaleFactor)
+        property int upperBound: visualParent ? visualParent.height - titleField.height - buttonColFiller.height - 64
+                                                : root.parent.height - titleField.height - buttonColFiller.height - 64
         property int __sizeHint: Math.min(Math.max(root.platformStyle.contentFieldMinSize, queryText.height), upperBound)
 
         height: __sizeHint + root.platformStyle.contentTopMargin
@@ -145,7 +164,7 @@ Dialog {
             ScrollDecorator {
                 id: scrollDecorator
                 flickableItem: queryFlickable
-                anchors.rightMargin: - UI.SCROLLDECORATOR_LONG_MARGIN - parseInt(10 * ScaleFactor) //ToDo: Don't use a hard-coded gap
+                anchors.rightMargin: - UI.SCROLLDECORATOR_LONG_MARGIN - 10 //ToDo: Don't use a hard-coded gap
             }
 
         }

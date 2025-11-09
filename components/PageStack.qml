@@ -1,7 +1,20 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 // The PageStack item defines a container for pages and a stack-based
 // navigation model. Pages can be defined as QML items or components.
 
 import QtQuick
+import com.meego.components 1.0
 import "."
 import "PageStack.js" as Engine
 
@@ -25,7 +38,17 @@ Item {
 
     // The number of ongoing transitions.
     property int __ongoingTransitionCount: 0
-
+    // Opens a sheet.
+    // The sheet can be defined as a component, item or string.
+    // If an item is used then the sheet will get re-parented.
+    // If a string is used then it is interpreted as a url that is used to load
+    // a sheet component.
+    //
+    // The properties argument is optional and allows defining a map of properties to set on the sheet.
+    // Returns the sheet instance.
+    function openSheet(sheet, properties) {
+        return Engine.openSheet(sheet, properties)
+    }
     // Pushes a page on the stack.
     // The page can be defined as a component, item or string.
     // If an item is used then the page will get re-parented.
@@ -125,9 +148,9 @@ Item {
                 }
                 state = "";
                 page.visible = true;
-                /*if (root.visible && immediate) {
+                if (root.visible && immediate) {
                     __setPageStatus(page, PageStatus.Active);
-                }*/
+                }
             }
 
             // Performs a push exit transition.

@@ -1,11 +1,23 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import com.meego.components 1.0
-
+import meego
 Popup {
     id: root
-
     // Common API
     default property alias content: contentField.children
+
 
     // Common API inherited from Popup:
     /*
@@ -24,9 +36,7 @@ Popup {
     property alias __footer: footerBar.children
 
     // private api
-    property int __statusBarDelta: visualParent ? 0 :
-                 __findItem( "appWindowContent") !== null ? 0 :
-                 __findItem( "pageStackWindow") !== null && __findItem( "pageStackWindow").showStatusBar ? 36 * ScaleFactor : 0
+    property int __statusBarDelta: 0
 
     property string __animationChief: "abstractMenu"
     property int __pressDelay: platformStyle.pressDelay
@@ -79,7 +89,7 @@ Popup {
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.bottom: parent.bottom
-        height: parent.height - __statusBarDelta - parseInt(2 * ScaleFactor)
+        height: parent.height - __statusBarDelta - 2
         z: 10001
 
         // compensate for the widening of the edges of the fader (which avoids artefacts during rotation)
@@ -165,7 +175,7 @@ Popup {
            anchors.fill : parent
            verticalTileMode : BorderImage.Repeat
            //border { left: 22; top: theme.inverted ? 124 : 22; right: 22; bottom: theme.inverted ? 2 : 22 }
-           border { left: parseInt(ScaleFactor * 22); top: parseInt(ScaleFactor * 22); right: parseInt(ScaleFactor * 22); bottom: parseInt(ScaleFactor * 22) }
+           border { left: 22; top: 22; right: 22; bottom: 22 }
         }
 
         // this item contains the whole menu (content rectangle)
@@ -197,7 +207,7 @@ Popup {
                                              : root.parent
                                                      ? root.parent.height - platformStyle.topMargin - __statusBarDelta
                                                        - footerBar.height - titleBar.height
-                                                     : parseInt(ScaleFactor * 350)
+                                                     : 350
 
                     height: contentField.childrenRect.height + platformStyle.topPadding + platformStyle.bottomPadding < maxHeight
                             ? contentField.childrenRect.height + platformStyle.topPadding + platformStyle.bottomPadding

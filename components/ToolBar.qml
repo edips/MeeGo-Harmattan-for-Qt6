@@ -1,26 +1,55 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 // The ToolBar is a container for toolbar items such as ToolItem or ToolButton.
 
 import QtQuick
 import "UIConstants.js" as UI
+import com.meego.components 1.0
 import "."
 
 Item {
     id: root
-    property int baseHeight: 72 // Pixel size of the border image source
+
+    property int baseHeight: Device.gridUnit// Pixel size of the border image source
+    Component.onCompleted: console.log("toolbar height is ", Device.gridUnit )
 
     width: parent ? parent.width : 0
-    height: parseInt(baseHeight * ScaleFactor)
+    height: baseHeight
+
+    Connections {
+        target: orientation
+        function onOrientationChanged() {
+            baseHeight = Device.gridUnit
+        }
+    }
 
     // Dummy property to allow qt component deprecated API clients to fail more gracefully
     property bool __hidden: false
 
-    property int privateVisibility: 0//ToolBarVisibility.Visible
+    property int privateVisibility: ToolBarVisibility.Visible
 
     // Styling for the ToolBar
     property Style platformStyle: ToolBarStyle {}
 
-    // Deprecated, TODO remove
-    property alias style: root.platformStyle
+    readonly property bool hasFocus: {
+        var item = activeFocusItem;
+        while (item) {
+            if (item === root)
+                return true;
+            item = item.parent;
+        }
+        return false;
+    }
 
     // Shadows:
     Image {
@@ -48,66 +77,54 @@ Item {
         source: "qrc:/images/meegotouch-menu-shadow-bottom.png"
     }
     // Toolbar background.
-    BorderImage {
-        id: bgImage
-        width: root.width
-        height: root.baseHeight * ScaleFactor
-        border.left: parseInt(10 * ScaleFactor)
-        border.right: parseInt(10 * ScaleFactor)
-        border.top: parseInt(10 * ScaleFactor)
-        border.bottom: parseInt(10 * ScaleFactor)
-        source: "qrc:/images/meegotouch-toolbar-portrait-background.png"
+        BorderImage {
+            id: bgImage
+            height: baseHeight
+            width: root.width
+            border.left: 2
+            border.right: 2
+            border.top: 2
+            border.bottom: 2
+            source: platformStyle.background
 
-        // Mousearea that eats clicks so they don't go through the toolbar to content
-        // that may exist below it in z-order, such as unclipped listview items.
-        MouseArea {
-            anchors.fill: parent
+            // Mousearea that eats clicks so they don't go through the toolbar to content
+            // that may exist below it in z-order, such as unclipped listview items.
+            MouseArea { anchors.fill: parent; }///z: 0 }
         }
-    }
 
     states: [
         // Inactive state.
         State {
             name: "hidden"
-            when: tools == null
-            PropertyChanges {
-                target: root
-                height: 0
-            }
+            when: privateVisibility === ToolBarVisibility.Hidden || tools === null
+            PropertyChanges { target: root; height: 0; visible: false; }
         },
         State {
             name: "HiddenImmediately"
-            when: false
-            PropertyChanges {
-                target: root
-                height: 0
-            }
+            when: privateVisibility === ToolBarVisibility.HiddenImmediately
+            PropertyChanges { target: root; height: 0; visible: false; }
         },
         State {
-            name: ""
-            when: true
-            PropertyChanges {
-                target: root
-                height: parseInt(root.baseHeight * ScaleFactor)
-            }
+            name: "visible"
+            when: (privateVisibility === ToolBarVisibility.Visible && tools !== null)
+            PropertyChanges { target: root; height: bgImage.height; visible: true; }
         }
     ]
 
-    transitions: [
-        // Transition between active and inactive states.
-        Transition {
-            from: ""
-            to: "hidden"
-            reversible: true
-            ParallelAnimation {
-                PropertyAnimation {
-                    properties: "height"
-                    easing.type: Easing.InOutExpo
-                    duration: platformStyle.visibilityTransitionDuration
-                }
+    // Transition between active and inactive states.
+    transitions: Transition {
+        from: "visible"; to: "hidden"; reversible: true;
+        SequentialAnimation {
+            PropertyAnimation {
+                properties: "height";
+                easing.type: Easing.InOutExpo;
+                duration: platformStyle.visibilityTransitionDuration;
+            }
+            PropertyAction {
+                properties: "visible";
             }
         }
-    ]
+    }
 
     // The current set of tools.
     property Item tools: null
@@ -157,22 +174,10 @@ Item {
 
         // select container states based on the transition animation
         var transitions = {
-            "set": {
-                "new": "",
-                "old": "hidden"
-            },
-            "push": {
-                "new": "right",
-                "old": "left"
-            },
-            "pop": {
-                "new": "left",
-                "old": "right"
-            },
-            "replace": {
-                "new": "front",
-                "old": "back"
-            }
+            "set":      { "new": "default",        "old": "hidden" },
+            "push":     { "new": "right",   "old": "left" },
+            "pop":      { "new": "left",    "old": "right" },
+            "replace":  { "new": "front",   "old": "back" }
         };
         var animation = transitions[transition];
 
@@ -190,8 +195,9 @@ Item {
         __currentContainer.state = animation["old"];
         if (tools) {
             container.state = animation["new"];
-            container.state = "";
+            container.state = "default";
         }
+
         __currentContainer = container;
     }
 
@@ -201,6 +207,7 @@ Item {
 
         Item {
             id: container
+            //z: 1 // Add z: 1 to ensure this is above the background MouseArea
 
             width: parent ? parent.width : 0
             height: parent ? parent.height : 0
@@ -213,22 +220,38 @@ Item {
             // The owner of the tools.
             property Item owner: null
 
+            // re-parent back to original owner and reset the container
+            function __transformToHidden() {
+                if (container.tools) {
+                    tools.visible = false;
+                    tools.parent = owner;
+                    container.tools = container.owner = null;
+                }
+            }
+
             states: [
                 // Start state for pop entry, end state for push exit.
                 State {
                     name: "left"
                     PropertyChanges {
-                        target: container
-                        x: -30
-                        opacity: 0.0
+                        target: container;
+                        visible: true
+                    }
+                    PropertyChanges {
+                        target: container;
+                        x: -30; opacity: 0.0
                     }
                 },
                 // Start state for push entry, end state for pop exit.
                 State {
                     name: "right"
                     PropertyChanges {
-                        target: container
-                        x: 30
+                        target: container;
+                        visible: true
+                    }
+                    PropertyChanges {
+                        target: container;
+                        x: 30;
                         opacity: 0.0
                     }
                 },
@@ -236,8 +259,11 @@ Item {
                 State {
                     name: "front"
                     PropertyChanges {
-                        target: container
-                        scale: 1.25
+                        target: container;
+                        visible: true
+                    }
+                    PropertyChanges { target: container;
+                        scale: 1.25;
                         opacity: 0.0
                     }
                 },
@@ -245,29 +271,35 @@ Item {
                 State {
                     name: "back"
                     PropertyChanges {
-                        target: container
-                        scale: 0.85
+                        target: container;
+                        visible: true
+                    }
+                    PropertyChanges {
+                        target: container;
+                        scale: 0.85;
                         opacity: 0.0
+                    }
+                },
+                State {
+                    name: "default"
+                    PropertyChanges {
+                        target: container;
+                        visible: true
+                    }
+                    PropertyChanges {
+                        target: container;
+                        scale: 1.0;
+                        opacity: 1.0; x: 0.0
                     }
                 },
                 // Inactive state.
                 State {
                     name: "hidden"
-                    PropertyChanges {
-                        target: container
+                    PropertyChanges { target: container;
                         visible: false
                     }
                     StateChangeScript {
-                        script: {
-                            if (container.tools) {
-                                // re-parent back to original owner
-                                tools.visible = false;
-                                tools.parent = owner;
-
-                                // reset container
-                                container.tools = container.owner = null;
-                            }
-                        }
+                        script: __transformToHidden()
                     }
                 }
             ]
@@ -275,13 +307,13 @@ Item {
             transitions: [
                 // Pop entry and push exit transition.
                 Transition {
-                    from: ""
-                    to: "left"
+                    from: "default";
+                    to: "left";
                     reversible: true
                     SequentialAnimation {
                         PropertyAnimation {
-                            properties: "x,opacity"
-                            easing.type: Easing.InCubic
+                            properties: "x,opacity";
+                            easing.type: Easing.InCubic;
                             duration: platformStyle.contentTransitionDuration / 2
                         }
                         PauseAnimation {
@@ -289,19 +321,19 @@ Item {
                         }
                         ScriptAction {
                             script: if (state == "left")
-                                state = "hidden"
+                                        state = "hidden"
                         }
                     }
                 },
                 // Push entry and pop exit transition.
                 Transition {
-                    from: ""
-                    to: "right"
+                    from: "default";
+                    to: "right";
                     reversible: true
                     SequentialAnimation {
                         PropertyAnimation {
-                            properties: "x,opacity"
-                            easing.type: Easing.InCubic
+                            properties: "x,opacity";
+                            easing.type: Easing.InCubic;
                             duration: platformStyle.contentTransitionDuration / 2
                         }
                         PauseAnimation {
@@ -309,35 +341,34 @@ Item {
                         }
                         ScriptAction {
                             script: if (state == "right")
-                                state = "hidden"
+                                        state = "hidden"
                         }
                     }
                 },
                 Transition {
                     // Replace entry transition.
-                    from: "front"
-                    to: ""
+                    from: "front";
+                    to: "default";
                     SequentialAnimation {
                         PropertyAnimation {
-                            properties: "scale,opacity"
-                            easing.type: Easing.InOutExpo
+                            properties: "scale,opacity";
+                            easing.type: Easing.InOutExpo;
                             duration: platformStyle.contentTransitionDuration
                         }
                     }
                 },
                 Transition {
                     // Replace exit transition.
-                    from: ""
-                    to: "back"
+                    from: "default";
+                    to: "back";
                     SequentialAnimation {
-                        PropertyAnimation {
-                            properties: "scale,opacity"
-                            easing.type: Easing.InOutExpo
+                        PropertyAnimation { properties: "scale,opacity";
+                            easing.type: Easing.InOutExpo;
                             duration: platformStyle.contentTransitionDuration
                         }
                         ScriptAction {
                             script: if (state == "back")
-                                state = "hidden"
+                                        state = "hidden"
                         }
                     }
                 }

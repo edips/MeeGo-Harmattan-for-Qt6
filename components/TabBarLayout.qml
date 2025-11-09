@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import "."
 
@@ -33,18 +45,17 @@ Item {
             }
         }
         // Check if last item is a tab button and set appropriate position
-        tabCount && (children[children[0].tab ? tabCount - 1 : tabCount].platformStyle.position = "horizontal-right");
+        tabCount && (children[children.tab ? tabCount - 1 : tabCount].platformStyle.position = "horizontal-right");
 
-        widthOthers += children[0].tab ? padding : 0;
+        widthOthers += children.tab ? padding : 0;
         widthOthers += children[childCount - 1].tab ? padding : 0;
 
         var tabWidth = Math.round((width - widthOthers) / tabCount),
-            offset = children[0].tab ? padding : children[0].width;
+            offset = children.tab ? padding : children.width;
 
-        for (var i = children[0].tab ? 0 : 1, index = 0; i < childCount; i++, index++) {
+        for (var i = children.tab ? 0 : 1, index = 0; i < childCount; i++, index++) {
             children[i].x = tabWidth * index + offset;
             children[i].tab && (children[i].width = tabWidth);
         }
     }
 }
-

@@ -1,4 +1,17 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
+import com.meego.components 1.0
 import "UIConstants.js" as UI
 
 Style {
@@ -19,6 +32,7 @@ Style {
     // Dimensions
     property int buttonWidth: UI.BUTTON_WIDTH
     property int buttonHeight: UI.BUTTON_HEIGHT
+    property int iconSize: Device.gridUnit <= 48 ? 20 : 24
 
     // Mouse
     property real mouseMarginRight: 0.0
@@ -27,10 +41,10 @@ Style {
     property real mouseMarginBottom: 0.0
 
     // Background
-    property int backgroundMarginRight: parseInt(22 * ScaleFactor)
-    property int backgroundMarginLeft: parseInt(22 * ScaleFactor)
-    property int backgroundMarginTop: parseInt(22 * ScaleFactor)
-    property int backgroundMarginBottom: parseInt(22 * ScaleFactor)
+    property int backgroundMarginRight: 25
+    property int backgroundMarginLeft: 25
+    property int backgroundMarginTop: 0
+    property int backgroundMarginBottom: 0
 
     /* The position property can take one of the following values:
 
@@ -42,11 +56,20 @@ Style {
      */
     property string position: ""
 
-    property url background: "qrc:/images/meegotouch-button" + __invertedString + "-background.png" + (position ? "-" + position : "")
-    property url pressedBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-pressed.png" + (position ? "-" + position : "")
-    property url disabledBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-disabled.png" + (position ? "-" + position : "")
-    property url checkedBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-selected.png" + (position ? "-" + position : "")
-    property url checkedDisabledBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-disabled-selected.png" + (position ? "-" + position : "")
+    property url background: "qrc:/images/meegotouch-button" + __invertedString + "-background" + (position ? "-" + position : "") + ".png"
+    property url pressedBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-pressed" + (position ? "-" + position : "") + ".png"
+    property url disabledBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-disabled" + (position ? "-" + position : "") + ".png"
+    property url checkedBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-selected" + (position ? "-" + position : "") + ".png"
+    property url checkedDisabledBackground: "qrc:/images/meegotouch-button" + __invertedString + "-background-disabled-selected" + (position ? "-" + position : "") + ".png"
     property url dialog: "qrc:/images/meegotouch-dialog-button-negative.png"
     property url pressedDialog: "qrc:/images/meegotouch-dialog-button-negative-pressed.png"
+
+
+
+    property url positiveDialog: "qrc:/images/meegotouch-dialog-button-positive"
+    property url pressedPositiveDialog:  "qrc:/images/meegotouch-dialog-button-positive-pressed"
+    property url negativeDialog: "qrc:/images/meegotouch-dialog-button-negative"
+    property url pressedNegativeDialog:  "qrc:/images/meegotouch-dialog-button-negative-pressed"
 }
+
+

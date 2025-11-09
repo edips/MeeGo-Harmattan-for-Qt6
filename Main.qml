@@ -1,176 +1,77 @@
-import QtQuick 2.15
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+import QtQuick
 import com.meego.components 1.0
-import "components"
+import "components/"
 
 PageStackWindow {
     id: rootWindow
-    initialPage : mainPage
-    showStatusBar : false
-    showToolBar : true
+    //showToolBar: false
+    width: 400
+    height: 800
 
-    /* trigger notification
-       with a given message */
-    function notify(text) {
-        notification.text = text;
-        notification.show()
+    platformStyle: defaultStyle;
+
+    property bool enableSwipe: true
+
+    PageStackWindowStyle { id: defaultStyle }
+    PageStackWindowStyle {
+        id: customStyle;
+        background: "qrc:/images/meegotouch-wallpaper-portrait.jpg";
+        backgroundFillMode: Image.PreserveAspectCrop
     }
 
-    QueryDialog {
-        id: quDialog
-        onPrivateClicked: {}
-        anchors.centerIn: parent
-        titleText: "Modal Dialog"
-        rejectButtonText: "Cancel"
-        onRejected: { console.log ("Rejected");}
-    }
+    // ListPage is what we see when the app starts, it links to the component specific pages
+    initialPage: ListPage { }
 
-    /** Grey background **/
-
-    Page {
-        /** Window content **/
-        id : mainPage
-        anchors.fill : parent
-        tools : commonTools
-        Flickable {
-            anchors.topMargin : 10
-            anchors.fill : parent
-            //anchors.centerIn : parent
-            Column {
-                anchors.fill : parent
-                spacing : 16
-                Text {
-                    id: orientationText
-                    text: orientation.orientation
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-                Text {
-                    text: "hahhahahahaaaaa"
-                    font.pixelSize : 25
-                    anchors.horizontalCenter: parent.horizontalCenter
-                }
-                TextField {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    id : entryField
-                    width : 180
-                    height : 52
-                    text : "image caption"
-                }
-                Image {
-                    id : pysideImage
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width : 300
-                    height : 157
-                    smooth : true
-                    // NOTE: the image provider name in the Image.source URL is automatically lower-cased !!
-                    source : "qrc:/images/NokiaN9.jpg"
-                    opacity: 0
-                }
-                Button {
-                    anchors.horizontalCenter: parent.horizontalCenter
-                    width : 200
-                    id : startButton
-                    text : "notification"
-                    onClicked : {
-                        rootWindow.notify("entry field content:<br><b>" + entryField.text + "</b>")
-                    }
-                }
-            }
-        }
-    }
-
-
+    // These tools are shared by most sub-pages by assigning the id to a page's tools property
     ToolBarLayout {
         id: commonTools
-        visible: true
-        ToolIcon {
-            iconId: "icon-m-toolbar-back"
-            onClicked: {
-                console.log("Back clicked")
-                Qt.callLater(Qt.quit)
-            }
-        }
-        ToolIcon { iconId: "icon-m-toolbar-refresh" }
-        ToolIcon {
-            iconId: "icon-m-toolbar-add"
-            onClicked: {
-                console.log("Add clicked")
-                //rootWindow.notify("entry field content:<br><b>" + entryField.text + "</b>")
-                quDialog.open()
-            }
-        }
-        ToolIcon { iconId: "icon-m-toolbar-image-edit-dimmed-white"
-            onClicked : toolsMenu.open()
-            Menu {
-                id: toolsMenu
-                visualParent: pageStack
-                MenuLayout {
-                    Label {
-                        text : "Image rotation"
-                    }
-                    Slider {
-                        stepSize : 1
-                        minimumValue : 0
-                        maximumValue : 360
-                        valueIndicatorVisible : true
-                        value : pysideImage.rotation
-                        onValueChanged : {
-                            pysideImage.rotation = value
-                        }
-
-
-                    }
-                    Label {
-                        text : "Image opacity"
-                    }
-                    Slider {
-                        stepSize : 0.01
-                        minimumValue : 0.0
-                        maximumValue : 1.0
-                        valueIndicatorVisible : true
-                        value : pysideImage.opacity
-                        onValueChanged : {
-                            pysideImage.opacity = value
-                        }
-                    }
-                }
-            }
-        }
-        ToolIcon {
-            platformIconId: "icon-m-toolbar-view-menu"
-            anchors.right: (parent === undefined) ? undefined : parent.right
-            onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close()
-        }
+        visible: false
+        ToolIcon { iconId: "toolbar-back"; onClicked: { myMenu.close(); pageStack.pop(); } }
+        ToolIcon { iconId: "toolbar-view-menu"; onClicked: (myMenu.status == DialogStatus.Closed) ? myMenu.open() : myMenu.close() }
     }
+    SelectionHandles{}
+
     Menu {
         id: myMenu
         visualParent: pageStack
-        MenuLayout {
-            MenuItem { text: qsTr("Sample menu item 1") }
-            MenuItem { text: qsTr("Sample menu item 2") }
-            MenuItem { text: qsTr("Sample menu item 3") }
-            MenuItem { text: qsTr("Sample menu item 4") }
-            MenuItem { text: qsTr("Sample menu item 5") }
-            MenuItem { text: qsTr("Sample menu item 1") }
-            MenuItem { text: qsTr("Sample menu item 2") }
-            MenuItem { text: qsTr("Sample menu item 3") }
-            MenuItem { text: qsTr("Sample menu item 4") }
-            MenuItem { text: qsTr("Sample menu item 5") }
-            MenuItem { text: qsTr("Sample menu item 1") }
-            MenuItem { text: qsTr("Sample menu item 2") }
-            MenuItem { text: qsTr("Sample menu item 3") }
-            MenuItem { text: qsTr("Sample menu item 4") }
-            MenuItem { text: qsTr("Sample menu item 5") }
+        onStatusChanged: {
+            if (status === DialogStatus.Closing) {
+                screen.allowSwipe = enableSwipe;
+            }
         }
-    }
-
-    /** Notification banner **/
-
-    InfoBanner {
-        id: notification
-        //timerShowTime : 5000
-        height : rootWindow.height/5.0
-        // prevent overlapping with status bar
-        y : 8
-
+        MenuLayout {
+            MenuItem { text: "Theme color default"; }//onClicked: theme.colorScheme = 1 }
+            MenuItem { text: "Theme color lightGreen";} //onClicked: theme.colorScheme = 2 }
+            MenuItem { text: "Theme color green";} //onClicked: theme.colorScheme = 3 }
+            MenuItem { text: "Theme color darkGreen";} //onClicked: theme.colorScheme = 4 }
+            MenuItem { text: "Theme color darkestGreen";} //onClicked: theme.colorScheme = 5 }
+            MenuItem { text: "Theme color lightBlue";} //onClicked: theme.colorScheme = 6 }
+            MenuItem { text: "Theme color blue";}// onClicked: theme.colorScheme = 7 }
+            MenuItem { text: "Theme color darkBlue";}//  onClicked: theme.colorScheme = 8 }
+            MenuItem { text: "Theme color darkestBlue";}//  onClicked: theme.colorScheme = 9 }
+            MenuItem { text: "Theme color darkPurple";}//  onClicked: theme.colorScheme = 10 }
+            MenuItem { text: "Theme color purple";}//  onClicked: theme.colorScheme = 11 }
+            MenuItem { text: "Theme color pink";}//  onClicked: theme.colorScheme = 12 }
+            MenuItem { text: "Theme color lightPink";}//  onClicked: theme.colorScheme = 13 }
+            MenuItem { text: "Theme color lightOrange";}//  onClicked: theme.colorScheme = 14 }
+            MenuItem { text: "Theme color orange";}//  onClicked: theme.colorScheme = 15 }
+            MenuItem { text: "Theme color darkOrange";}//  onClicked: theme.colorScheme = 16 }
+            MenuItem { text: "Theme color darkYellow";}//  onClicked: theme.colorScheme = 17 }
+            MenuItem { text: "Theme color yellow";}//  onClicked: theme.colorScheme = 18 }
+            MenuItem { text: "Theme color lightYellow";}//  onClicked: theme.colorScheme = 19 }
+            MenuItem { text: "Very long and extremely verbose ListTitle #20" }
+        }
     }
 }

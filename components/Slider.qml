@@ -1,4 +1,16 @@
-import QtQuick 2.1
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+import QtQuick
 import com.meego.components 1.0
 import "UIConstants.js" as UI
 
@@ -13,14 +25,15 @@ SliderTemplate {
     opacity: enabled ? UI.OPACITY_ENABLED : UI.OPACITY_DISABLED
 
     __handleItem: Image {
+        height: 48
+        width: 48
         source: pressed? platformStyle.handleBackgroundPressed : platformStyle.handleBackground;
     }
 
     __grooveItem: BorderImage {
             source: platformStyle.grooveItemBackground
-            border { left: parseInt(6 * ScaleFactor); top: parseInt(4 * ScaleFactor); right: parseInt(6 * ScaleFactor); bottom: parseInt(4* ScaleFactor) }
-            height: parseInt(10 * ScaleFactor)
-
+            border { left: 6; top: 4; right: 6; bottom: 4 }
+            height: 10
             anchors.verticalCenter: parent.verticalCenter
             anchors.left: parent.left
             anchors.right: parent.right
@@ -28,8 +41,8 @@ SliderTemplate {
 
     __valueTrackItem: BorderImage {
         source: platformStyle.grooveItemElapsedBackground
-        border { left: parseInt(6 * ScaleFactor); top: parseInt(4 * ScaleFactor); right: parseInt(6 * ScaleFactor); bottom: parseInt(4 * ScaleFactor) }
-        height: parseInt(10 * ScaleFactor)
+        border { left: 6; top: 4; right: 6; bottom: 4 }
+        height: 10
 
         anchors.verticalCenter: parent.verticalCenter
         anchors.left: parent.left
@@ -39,10 +52,10 @@ SliderTemplate {
     __valueIndicatorItem: BorderImage {
         id: indicatorBackground
         source: platformStyle.valueBackground
-        border { left: parseInt(12 * ScaleFactor); top: parseInt(12 * ScaleFactor); right: parseInt(12 * ScaleFactor); bottom: parseInt(12 * ScaleFactor) }
+        border { left: 12; top: 12; right: 12; bottom: 12 }
 
-        width: label.width + parseInt(28 * ScaleFactor)
-        height: parseInt(40 * ScaleFactor)
+        width: label.width + 28
+        height: 40
 
         Image {
             id: arrow

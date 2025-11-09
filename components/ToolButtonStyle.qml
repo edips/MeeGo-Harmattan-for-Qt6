@@ -1,45 +1,32 @@
-import QtQuick 2.1
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+import QtQuick
 import "UIConstants.js" as UI
 
 ButtonStyle {
-    /*
-    buttonWidth: 50
-    buttonHeight: 42
-
+    buttonWidth: 186
+    buttonHeight: 40
     // Font
-    fontPixelSize: 14
+    fontPixelSize: 22
     fontCapitalization: Font.MixedCase
     fontWeight: Font.Bold
     horizontalAlignment: Text.AlignHCenter
-
     // Background
-    backgroundMarginRight: 8
-    backgroundMarginLeft: 8
-    backgroundMarginTop: 8
-    backgroundMarginBottom: 8
+    backgroundMarginRight: 15
+    backgroundMarginLeft: 15
+    backgroundMarginTop: 15
+    backgroundMarginBottom: 15
     property bool backgroundVisible: true
-    */
-
-
-
-    buttonWidth: parseInt(186 * ScaleFactor)
-    buttonHeight: parseInt(42 * ScaleFactor)
-    
-    // Font
-    fontPixelSize: parseInt(22 * ScaleFactor)
-    fontCapitalization: Font.MixedCase
-    fontWeight: Font.Bold
-    horizontalAlignment: Text.AlignHCenter
-
-    // Background
-    backgroundMarginRight: parseInt(15 * ScaleFactor)
-    backgroundMarginLeft: parseInt(15 * ScaleFactor)
-    backgroundMarginTop: parseInt(15 * ScaleFactor)
-    backgroundMarginBottom: parseInt(15 * ScaleFactor)
-    property bool backgroundVisible: true
-
-
-    
     background: backgroundVisible ? "qrc:/images/meegotouch-button-navigationbar-button" + __invertedString + "-background.png" : ""
     pressedBackground: backgroundVisible ? "qrc:/images/meegotouch-button-navigationbar-button" + __invertedString + "-background-pressed.png" : ""
     disabledBackground: backgroundVisible ? "qrc:/images/meegotouch-button-navigationbar-button" + __invertedString + "-background-disabled.png" : ""

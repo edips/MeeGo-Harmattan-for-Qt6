@@ -1,40 +1,12 @@
 /****************************************************************************
 **
-** Copyright (C) 2011 Nokia Corporation and/or its subsidiary(-ies).
-** All rights reserved.
-** Contact: Nokia Corporation (qt-info@nokia.com)
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
 **
-** This file is part of the Qt Components project.
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
 **
-** $QT_BEGIN_LICENSE:BSD$
-** You may use this file under the terms of the BSD license as follows:
-**
-** "Redistribution and use in source and binary forms, with or without
-** modification, are permitted provided that the following conditions are
-** met:
-**   * Redistributions of source code must retain the above copyright
-**     notice, this list of conditions and the following disclaimer.
-**   * Redistributions in binary form must reproduce the above copyright
-**     notice, this list of conditions and the following disclaimer in
-**     the documentation and/or other materials provided with the
-**     distribution.
-**   * Neither the name of Nokia Corporation and its Subsidiary(-ies) nor
-**     the names of its contributors may be used to endorse or promote
-**     products derived from this software without specific prior written
-**     permission.
-**
-** THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
-** "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
-** LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
-** A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
-** OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
-** SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
-** LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
-** DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
-** THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-** (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
-** OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
-** $QT_END_LICENSE$
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
 **
 ****************************************************************************/
 
@@ -63,7 +35,7 @@ function remove(container, obj)
 // This is needed to remove connectens on a reparent
 Function.prototype.bind = function() {
     var func = this;
-    var thisObject = arguments[0];
+    var thisObject = arguments;
     var args = Array.prototype.slice.call(arguments, 1);
     return function() {
         return func.apply(thisObject, args);
@@ -72,96 +44,87 @@ Function.prototype.bind = function() {
 
 // Called whenever a child is added or removed in the toolbar
 function childrenChanged() {
-    for (var i = 0; i < children.length; i++) {
-        if (!contains(connectedItems, children[i])) {
-            connectedItems.push(children[i]);
-            children[i].visibleChanged.connect(layout);
-            children[i].parentChanged.connect(cleanup.bind(children[i]));
+    for (var i = 0; i < toolbarLayout.children.length; i++) {
+        if (!contains(connectedItems, toolbarLayout.children[i])) {
+            var child = toolbarLayout.children[i];
+            connectedItems.push(child);
+            child.visibleChanged.connect(function() { Qt.callLater(layout); });
+            child.heightChanged.connect(function() { Qt.callLater(layout); });
+            child.parentChanged.connect(cleanup.bind(child));
         }
     }
+    Qt.callLater(layout);
 }
 
 // Disconnects signals connected by this layout
 function cleanup() {
-    remove(connectedItems, this);
-    this.visibleChanged.disconnect(layout);
-    this.parentChanged.disconnect(arguments.callee);
+    var child = this;
+    remove(connectedItems, child);
+    child.visibleChanged.disconnect(layout);
+    child.heightChanged.disconnect(layout);
+    child.parentChanged.disconnect(arguments.callee);
+    Qt.callLater(layout);
 }
 
 // Main layout function
 function layout() {
-    if (parent === null || toolbarLayout.width === 0 || children === undefined)
+    if (toolbarLayout.parent === null || toolbarLayout.width === 0 || toolbarLayout.children === undefined)
         return;
 
     var i;
-    var items = [];          // Keep track of visible items
-    var expandingItems = []; // Keep track of expandingItems for tabs
+    var items = [];
+    var expandingItems = [];
+    var nonExpandingItems = [];
     var widthOthers = 0;
+    var width = toolbarLayout.width;
 
-    for (i = 0; i < children.length; i++) {
-        var child = children[i];
-
+    for (i = 0; i < toolbarLayout.children.length; i++) {
+        var child = toolbarLayout.children[i];
         if (child.visible) {
-            // Center all items vertically
-            child.anchors.verticalCenter = verticalCenter;
-
-            // Find out which items are expanding
+            items.push(child);
             if (child.__expanding) {
-                expandingItems.push(child)
+                expandingItems.push(child);
             } else {
-                // Calculate the space that fixed size items take
+                nonExpandingItems.push(child);
                 widthOthers += child.width;
             }
-
-            items.push(child);
         }
     }
 
-    if (items.length === 0)
-        return;
+    if (items.length === 0) return;
 
-    // Extra padding is applied if the leftMost or rightmost widget is expanding (note** removed on new design)
-    var leftPadding = 0
-    var rightPadding = 0
-
-    // In LandScape mode we add extra margin to keep contents centered
-    // for two basic cases
-    if (items.length === 2 && screen.currentOrientation === Screen.Landscape) {
-        // expanding item on left
-        if (expandingItems.length > 0 && items[0].__expanding && !items[items.length-1].__expanding)
-            leftPadding += items[items.length-1].width
-
-        // expanding item is on right
-        if (expandingItems.length > 0 && items[items.length-1].__expanding && !items[0].__expanding)
-            rightPadding += items[0].width
+    // Check if non-expanding items alone are too wide
+    if (widthOthers > width) {
+        var shrinkRatio = width / widthOthers;
+        widthOthers = 0;
+        for (i = 0; i < nonExpandingItems.length; i++) {
+            var item = nonExpandingItems[i];
+            item.width *= shrinkRatio;
+            widthOthers += item.width;
+        }
     }
 
-    var width = toolbarLayout.width - leftPadding - rightPadding
+    // Now, deal with expanding items
+    var expandingWidth = 0;
+    if (expandingItems.length > 0) {
+        var remainingWidth = width - widthOthers;
+        expandingWidth = Math.max(0, remainingWidth / expandingItems.length);
+        for (i = 0; i < expandingItems.length; i++) {
+            expandingItems[i].width = expandingWidth;
+        }
+    }
 
-    // Calc expandingItems and tabrows
-    for (i = 0; i < expandingItems.length; i++)
-        expandingItems[i].width = (width - widthOthers) / expandingItems.length
+    // Final layout with spacing
+    var totalItemWidth = widthOthers + (expandingItems.length * expandingWidth);
+    var spacing = 0;
+    if (items.length > 1 && totalItemWidth < width) {
+        spacing = (width - totalItemWidth) / (items.length - 1);
+    }
 
-    var lastItem = items[items.length-1] ? items[items.length-1] : undefined;
-
-    // Space to be divided between first and last items
-    var toolBox = width - (items[0] ? items[0].width : 0) -
-        (lastItem ? lastItem.width : 0);
-
-    // |X  X  X| etc.
-    var spacingBetween = toolBox;
-    for (i = 1; i < items.length - 1; i++)
-        spacingBetween -= items[i].width;
-    items[0].x = leftPadding
-
-    // Calculate spacing between items
-    spacingBetween /= items.length - 1;
-
-    // Starting after first item
-    var dX = items[0].width + spacingBetween;
-    for (i = 1; i < items.length; i++) {
-        items[i].x = dX + leftPadding;
-        dX += spacingBetween + items[i].width;
+    var currentX = 0;
+    for (i = 0; i < items.length; i++) {
+        items[i].y = (toolbarLayout.height - items[i].height) / 2;
+        items[i].x = currentX;
+        currentX += items[i].width + spacing;
     }
 }
-

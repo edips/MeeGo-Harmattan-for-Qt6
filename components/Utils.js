@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 .pragma library
 
 /*
@@ -15,6 +27,34 @@ function findFlickable(item)
     }
 
     return null;
+}
+
+/*
+  Get the root item given an element and root item's name.
+  If root item name is not given, default is 'windowContent'.
+*/
+function findRootItem(item, objectName)
+{
+    var next = item;
+
+    var rootItemName = "windowContent";
+    if (typeof(objectName) != 'undefined') {
+        rootItemName = objectName;
+        console.log("objectName found from first step! : ", objectName)
+    }
+
+    if (next) {
+        while (next.parent) {
+            next = next.parent;
+
+            if (rootItemName === next.objectName) {
+                console.log("objectName found from second step! : ", objectName)
+                break;
+            }
+        }
+    }
+
+    return next;
 }
 
 /*
@@ -100,15 +140,7 @@ function findMainApplicationWindow(item)
 }
 
 
-/*
-  Get the height that is actually covered by the statusbar (0 if the statusbar is not shown.
-*/
-function statusBarCoveredHeight(item) {
-    var pageStackWindow = findItemInHierarchy(item, "pageStackWindow"); // Changed to use findItemInHierarchy
-    if ( pageStackWindow && pageStackWindow.objectName === "pageStackWindow" ) // Added null check for pageStackWindow
-        return pageStackWindow.__statusBarHeight;
-    return 0
-}
+
 
 /*
   Get the height that is actually covered by the statusbar (0 if the statusbar is not shown.

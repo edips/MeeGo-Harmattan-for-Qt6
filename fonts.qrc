@@ -1,0 +1,6 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+<qresource prefix="/assets">
+    <file alias="NokiaPureText_Rg.ttf">assets/NokiaPureText_Rg.ttf</file>
+</qresource>
+</RCC>

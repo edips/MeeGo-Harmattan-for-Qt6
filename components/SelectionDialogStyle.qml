@@ -1,25 +1,36 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import "UIConstants.js" as UI
 
 DialogStyle {
     property alias titleBarFont: titleText.font
-    property int titleBarHeight: parseInt(44 * ScaleFactor)
+    property int titleBarHeight: 44
     property color titleBarColor: "white"
-    property int titleBarIndent: parseInt(17 * ScaleFactor)
-    property int titleBarLineMargin: parseInt(10 * ScaleFactor)
+    property int titleBarIndent: 17
+    property int titleBarLineMargin: 10
 
-    property bool __portrait: (screen.currentOrientation === 1) || (screen.currentOrientation === 4)
-
-    property int leftMargin:  __portrait ? parseInt(11 * ScaleFactor) : parseInt(160 * ScaleFactor)
-    property int rightMargin: __portrait ? parseInt(11 * ScaleFactor) : parseInt(160 * ScaleFactor)
+    // Removed __portrait conditional and set a small, consistent margin
+    property int leftMargin:  5 // Adjusted to match the tighter margin in the image
+    property int rightMargin: 5 // Adjusted to match the tighter margin in the image
 
     property alias itemFont: itemText.font
-    property int fontXLarge: parseInt(32 * ScaleFactor)
-    property int fontLarge: parseInt(28 * ScaleFactor)
-    property int fontDefault: parseInt(24 * ScaleFactor)
-    property int fontSmall: parseInt(20 * ScaleFactor)
-    property int fontXSmall: parseInt(18 * ScaleFactor)
-    property int fontXXSmall: parseInt(16 * ScaleFactor)
+    property int fontXLarge: 32
+    property int fontLarge: 28
+    property int fontDefault: 24
+    property int fontSmall: 20
+    property int fontXSmall: 18
+    property int fontXXSmall: 16
 
     property color colorForeground: "#191919"
     property color colorSecondaryForeground: "#8c8c8c"
@@ -28,15 +39,15 @@ DialogStyle {
 
     property color commonLabelColor: "white"
 
-    property int itemHeight: parseInt(64 * ScaleFactor)
+    property int itemHeight: 64
     property color itemTextColor: "white"
     property color itemSelectedTextColor: "white"
-    property int itemLeftMargin: parseInt(16 * ScaleFactor)
-    property int itemRightMargin: parseInt(16 * ScaleFactor)
+    property int itemLeftMargin: 16
+    property int itemRightMargin: 16
 
-    property int contentSpacing: parseInt(10 * ScaleFactor)
+    property int contentSpacing: 10
 
-    property int pressDelay: parseInt(350 * ScaleFactor) // ms
+    property int pressDelay: 350 // ms
 
     // Background
     property string itemBackground: ""
@@ -45,7 +56,7 @@ DialogStyle {
     property string itemSelectedBackground: "" // "qrc:/images/meegotouch-list-fullwidth-background-selected"
     property string itemPressedBackground: "qrc:/images/meegotouch-panel-inverted-background-pressed.png"
 
-    property int buttonsTopMargin: parseInt(30 * ScaleFactor) // ToDo: evaluate correct value
+    property int buttonsTopMargin: 30 // ToDo: evaluate correct value
 
     Text {
         id: titleText
@@ -62,4 +73,4 @@ DialogStyle {
         font.capitalization: Font.MixedCase
         font.bold: true
     }
-  }
+}

@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 // Page stack. Items are page containers.
 var pageStack = [];
 
@@ -159,8 +171,14 @@ function initPage(page, properties) {
 
 // Pops a page off the stack.
 function pop(page, immediate) {
+    if (!immediate && __ongoingTransitionCount > 0)
+        return;
     // make sure there are enough pages in the stack to pop
     if (pageStack.length > 1) {
+        // Force focus to the root to ensure the active text field loses focus
+        // and cleans up its popups BEFORE the page is popped.
+        root.forceActiveFocus();
+
         // pop the current container off the stack and get the next container
         var oldContainer = pageStack.pop();
         var container = pageStack[pageStack.length - 1];
@@ -195,9 +213,8 @@ function pop(page, immediate) {
 // Clears the page stack.
 function clear() {
     var container;
-    while (container === pageStack.pop()) {
+    while (container === pageStack.pop())
         container.cleanup();
-    }
     depth = 0;
     currentPage = null;
 }

@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 // The Page item is intended for use as a root item in QML items that make
 // up pages to use with the PageStack.
 
@@ -34,10 +46,10 @@ Item {
     //      PageStatus.Active - the page is the current active page
     //      PageStatus.Deactivating - the page is transitioning into becoming inactive
     property int status: 0//PageStatus.Inactive
-    
+
     // Defines the tools for the page; null for none.
     property Item tools: null
-    
+
     // The page stack that the page is in.
     property PageStack pageStack
 

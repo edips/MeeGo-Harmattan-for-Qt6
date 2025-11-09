@@ -1,11 +1,38 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
 import com.meego.components 1.0
+import meego
 import "."
 import "UIConstants.js" as UI
 
 CommonDialog {
     id: root
+
+
+    // Close the dialog with back button
+    Connections {
+        target: GlobalSettings
+        function onDialogFocusChanged(dialogFocus) {
+            close()
+        }
+    }
+
+
     visible: status === DialogStatus.Open || status === DialogStatus.Opening
+    // Set the width of the dialog to fill its parent
+    width: parent.width
+
     function accept() {
             root.close()
             root.accepted()
@@ -13,11 +40,11 @@ CommonDialog {
     // Common API
     //property ListModel model: ListModel{}
     property alias model: selectionListView.model
-    property int deselectedIndex: -1   // read & write
-    property int selectedIndex: -1   // read & write
+    property int deselectedIndex: -1    // read & write
+    property int selectedIndex: -1    // read & write
     //property string titleText: "Selection Dialog"
 
-    property Component delegate:          // Note that this is the default delegate for the list
+    property Component delegate:            // Note that this is the default delegate for the list
         Component {
             id: defaultDelegate
 
@@ -26,8 +53,8 @@ CommonDialog {
                 property bool selected: index == selectedIndex;
 
                 height: root.platformStyle.itemHeight
-                anchors.left: parent.left
-                anchors.right: parent.right
+                // Fix: Changed from anchors.left/right to width: selectionListView.width for robustness
+                width: selectionListView.width // Explicitly bind to the ListView's width
 
                 // Legacy. "name" used to be the role which was used by delegate
                 // "modelData" available for JS array and for models with one role
@@ -68,8 +95,8 @@ CommonDialog {
                     anchors.fill: parent
                     border { left: UI.CORNER_MARGINS; top: UI.CORNER_MARGINS; right: UI.CORNER_MARGINS; bottom: UI.CORNER_MARGINS }
                     source: delegateMouseArea.pressed ? root.platformStyle.itemPressedBackground :
-                            delegateItem.selected ? root.platformStyle.itemSelectedBackground :
-                            root.platformStyle.itemBackground
+                                delegateItem.selected ? root.platformStyle.itemSelectedBackground :
+                                root.platformStyle.itemBackground
                 }
 
                 Text {
@@ -116,12 +143,12 @@ CommonDialog {
         id: selectionContent
         property int listViewHeight
         property int maxListViewHeight : visualParent
-        ? visualParent.height * 0.87
-                - root.platformStyle.titleBarHeight - root.platformStyle.contentSpacing - parseInt(50 * ScaleFactor)
-        : root.parent
-                ? root.parent.height * 0.87
-                        - root.platformStyle.titleBarHeight - root.platformStyle.contentSpacing - parseInt(50 * ScaleFactor)
-                : parseInt(350 * ScaleFactor)
+                                            ? visualParent.height * 0.87
+                                                - root.platformStyle.titleBarHeight - root.platformStyle.contentSpacing - 50
+                                            : root.parent
+                                                ? root.parent.height * 0.87
+                                                    - root.platformStyle.titleBarHeight - root.platformStyle.contentSpacing - 50
+                                                : 350
         height: listViewHeight > maxListViewHeight ? maxListViewHeight : listViewHeight
         width: root.width
         y : root.platformStyle.contentSpacing
@@ -148,5 +175,3 @@ CommonDialog {
 
     }
 }
-
-

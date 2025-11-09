@@ -1,8 +1,40 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
+import meego
 import com.meego.components 1.0
 
 AbstractMenu {
   id: root
+  // Close the dialog with back button
+  // Back key handling
+  focus: GlobalSettings.menuFocus
+  onStatusChanged: {
+      if(root.status === DialogStatus.Open || root.status === DialogStatus.Opening) {
+          GlobalSettings.menuFocus = true
+      } else {
+          GlobalSettings.menuFocus = false
+      }
+  }
+  // RESTORED: This handler is necessary for the menu to intercept the back button
+  // and prevent the event from propagating to the PageStackWindow.
+  Keys.onReleased: (event) => {
+      if (event.key === Qt.Key_Back && DialogStatus.Open) {
+          GlobalSettings.menuFocus = false
+          close()
+          event.accepted = true // IMPORTANT: This stops the event from reaching the PageStackWindow
+      }
+  }
 /*
     platformTitle: BorderImage {
         id: topDivider
@@ -25,6 +57,8 @@ AbstractMenu {
         __menuPane.anchors.rightMargin = 0;
         __menuPane.anchors.bottomMargin = 0;
     }
+
+
 
     __statesWrapper.transitions: [
         Transition {

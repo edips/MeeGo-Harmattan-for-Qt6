@@ -1,20 +1,42 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
+
 var FONT_FAMILY = "Nokia Pure Text";
 var FONT_FAMILY_LIGHT = "Nokia Pure Text Light";
-var FONT_DEFAULT_SIZE = Math.round(24 * ScaleFactor); // DEPRECATED
+var FONT_DEFAULT_SIZE = 14; // DEPRECATED
 
+var DefaultMargin = 16;
 
-var DefaultFontFamilyLight = "Open Sans";
+var DefaultFontFamilyLight = "Nokia Pure Text";
 var DefaultFontFamily = "Nokia Pure Text";
 var DefaultFontFamilyBold = "Nokia Pure Text Bold"
 
-var FONT_XLARGE  = parseInt(32 * ScaleFactor);
-var FONT_LARGE   = parseInt(28 * ScaleFactor);
-var FONT_SLARGE  = parseInt(26 * ScaleFactor);
-var FONT_DEFAULT = parseInt(24 * ScaleFactor);
-var FONT_LSMALL  = parseInt(22 * ScaleFactor);
-var FONT_SMALL   = parseInt(20 * ScaleFactor);
-var FONT_XSMALL  = parseInt(18 * ScaleFactor);
-var FONT_XXSMALL = parseInt(16 * ScaleFactor);
+
+// --- MATERIAL DESIGN TYPE SCALE ---
+
+// Display/Headline styles
+var FONT_XLARGE  = 32; // Headline Large
+var FONT_LARGE   = 28; // Headline Medium
+var FONT_SLARGE  = 24; // Headline Small (changed from 26)
+
+// Title/Body styles
+var FONT_DEFAULT = 16; // Body Large (Correct)
+var FONT_LSMALL  = 22; // Title Large
+var FONT_SMALL   = 20; // Dialog Title (A specific but common size)
+var FONT_XSMALL  = 14; // Body Medium / Title Small (changed from 18)
+var FONT_XXSMALL = 12; // Body Small (changed from 16)
+
+
 
 var COLOR_FOREGROUND = "#191919"; // Text color
 var COLOR_SECONDARY_FOREGROUND = "#a6a8ab"; // Secondary text
@@ -33,56 +55,56 @@ var COLOR_BUTTON_SECONDARY_FOREGROUND  = "#8c8c8c" //secondary text
 var COLOR_BUTTON_DISABLED_FOREGROUND   = "#B2B2B4" //disabled text
 var COLOR_BUTTON_BACKGROUND            = "#000000" //background
 
-var SIZE_ICON_DEFAULT = parseInt(32 * ScaleFactor);
-var SIZE_ICON_LARGE = parseInt(48 * ScaleFactor);
+var SIZE_ICON_DEFAULT = 32;
+var SIZE_ICON_LARGE = 48;
 
-var CORNER_MARGINS = parseInt(22 * ScaleFactor);
+var CORNER_MARGINS = 22;
 
 var MARGIN_DEFAULT = 0;
-var MARGIN_XLARGE = parseInt(16 * ScaleFactor);
+var MARGIN_XLARGE = 10;
+var MARGIN_ICONBUTTON = 8;
 
 // Distance in pixels from the widget bounding box inside which a release
 // event would still be accepted and trigger the widget
-var RELEASE_MISS_DELTA = parseInt(30 * ScaleFactor);
+var RELEASE_MISS_DELTA = 30;
 
 var OPACITY_ENABLED = 1.0;
 var OPACITY_DISABLED = 0.5;
-var SIZE_BUTTON = parseInt(64 * ScaleFactor);
+var SIZE_BUTTON = 64;
 
-var PADDING_XSMALL  = parseInt(2 * ScaleFactor);
-var PADDING_SMALL   = parseInt(4 * ScaleFactor);
-var PADDING_MEDIUM  = parseInt(6 * ScaleFactor);
-var PADDING_LARGE   = parseInt(8 * ScaleFactor);
-var PADDING_DOUBLE  = parseInt(12 * ScaleFactor);
-var PADDING_XLARGE  = parseInt(16 * ScaleFactor);
-var PADDING_XXLARGE = parseInt(24 * ScaleFactor);
+var FieldLabelColor = "#505050";
+var FieldLabelFont = "Nokia Pure Text"
 
-var SCROLLDECORATOR_SHORT_MARGIN = parseInt(8 * ScaleFactor);
-var SCROLLDECORATOR_LONG_MARGIN = parseInt(4 * ScaleFactor);
+var PADDING_XSMALL  = 2;
+var PADDING_SMALL   = 4;
+var PADDING_MEDIUM  = 6;
+var PADDING_LARGE   = 8;
+var PADDING_DOUBLE  = 12;
+var PADDING_XLARGE  = 16;
+var PADDING_XXLARGE = 24;
 
-var TOUCH_EXPANSION_MARGIN = parseInt(-12 * ScaleFactor);
+var SCROLLDECORATOR_SHORT_MARGIN = 8;
+var SCROLLDECORATOR_LONG_MARGIN = 4;
 
-var BUTTON_WIDTH = parseInt(322 * ScaleFactor);
-var BUTTON_HEIGHT = parseInt(51 * ScaleFactor);
+var TOUCH_EXPANSION_MARGIN = -12;
+
+var BUTTON_WIDTH = 120;
+var BUTTON_HEIGHT = 40;
 
 
-var BUTTON_LABEL_MARGIN = parseInt(10 * ScaleFactor);
+var BUTTON_LABEL_MARGIN = 10;
 
-var FIELD_DEFAULT_HEIGHT = parseInt(52 * ScaleFactor);
+var FIELD_DEFAULT_HEIGHT = 52;
 
 //Common UI layouts
-var DEFAULT_MARGIN = parseInt(16 * ScaleFactor);
-var BUTTON_SPACING = parseInt(6 * ScaleFactor);
-var HEADER_DEFAULT_HEIGHT_PORTRAIT = parseInt(72 * ScaleFactor);
-var HEADER_DEFAULT_HEIGHT_LANDSCAPE = parseInt(46 * ScaleFactor);
-var HEADER_DEFAULT_TOP_SPACING_PORTRAIT = parseInt(20 * ScaleFactor);
-var HEADER_DEFAULT_BOTTOM_SPACING_PORTRAIT = parseInt(20 * ScaleFactor);
-var HEADER_DEFAULT_TOP_SPACING_LANDSCAPE = parseInt(16 * ScaleFactor);
-var HEADER_DEFAULT_BOTTOM_SPACING_LANDSCAPE = parseInt(14 * ScaleFactor);
-var LIST_ITEM_HEIGHT_SMALL = parseInt(64 * ScaleFactor);
-var LIST_ITEM_HEIGHT_DEFAULT = parseInt(80 * ScaleFactor);
+var DEFAULT_MARGIN = 16;
+var BUTTON_SPACING = 6;
+var HEADER_DEFAULT_HEIGHT_PORTRAIT = 72;
+var HEADER_DEFAULT_HEIGHT_LANDSCAPE = 46;
+var HEADER_DEFAULT_TOP_SPACING_PORTRAIT = 20;
+var HEADER_DEFAULT_BOTTOM_SPACING_PORTRAIT = 20;
+var HEADER_DEFAULT_TOP_SPACING_LANDSCAPE = 16;
+var HEADER_DEFAULT_BOTTOM_SPACING_LANDSCAPE = 14;
+var LIST_ITEM_HEIGHT_SMALL = 64;
+var LIST_ITEM_HEIGHT_DEFAULT = 80;
 
-// Fremantle values
-var COLOR_STATUSBAR_FOREGROUND           = "#ffffff" // text color
-var COLOR_STATUSBAR_INVERTED_FOREGROUND  = "#ffffff" // inverted text color
-var STATUS_BAR_Z_INDEX = 1;

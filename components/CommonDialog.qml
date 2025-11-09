@@ -1,23 +1,41 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
-import "." 1.0
+import meego
+import com.meego.components 1.0
 
 Dialog {
     id: genericDialog
 
+    // Close the dialog with back button
+    Connections {
+        target: GlobalSettings
+        function onDialogFocusChanged(dialogFocus) {
+            close()
+        }
+    }
+
+
     property string titleText: ""
-
     property Style platformStyle: SelectionDialogStyle {}
-
     //Deprecated, TODO Remove this on w13
     property alias style: genericDialog.platformStyle
-
     //private
     property bool __drawFooterLine: false
 
     title: Item {
         id: header
         height: genericDialog.platformStyle.titleBarHeight
-
         anchors.left: parent.left
         anchors.right: parent.right
         anchors.top: parent.top

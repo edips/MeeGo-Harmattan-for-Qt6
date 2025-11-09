@@ -1,9 +1,41 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick
+import meego
 import com.meego.components 1.0
-import "."
 Popup {
     id: root
     objectName: "baseDialog"
+
+    // Back key handling
+    focus: GlobalSettings.dialogFocus
+    onStatusChanged: {
+        if(root.status === DialogStatus.Open || root.status === DialogStatus.Opening) {
+            GlobalSettings.dialogFocus = true
+        } else {
+            GlobalSettings.dialogFocus = false
+        }
+    }
+    // RESTORED: This handler is necessary for the menu to intercept the back button
+    // and prevent the event from propagating to the PageStackWindow.
+    Keys.onReleased: (event) => {
+        if (event.key === Qt.Key_Back && DialogStatus.Open) {
+            GlobalSettings.dialogFocus = false
+            close()
+            event.accepted = true // IMPORTANT: This stops the event from reaching the PageStackWindow
+        }
+    }
+
 
     // API
     property alias title: titleBar.children

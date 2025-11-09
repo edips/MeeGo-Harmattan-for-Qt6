@@ -1,4 +1,15 @@
-#include <QGuiApplication> // For QGuiApplication::inputMethod()
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+#include <QGuiApplication> // For QGuiApplication::inputMethod() and QGuiApplication::instance()
 #include <QInputMethod> // Use QInputMethod for SIP interaction
 #include <QClipboard>
 #include <QDebug>
@@ -6,6 +17,7 @@
 #include <QQmlComponent> // For QQmlComponent*
 #include <QRect> // For QRect
 #include <QRectF> // For QRectF
+#include <QWindow> // For QWindow and focus object
 
 #include "mDeclarativeInputContext.h"
 
@@ -85,7 +97,20 @@ void MDeclarativeInputContextPrivate::sipChanged(const QRect &rect)
 }
 
 // Public API implementation
-MDeclarativeInputContext::MDeclarativeInputContext(QQuickItem *parent)
+// Static method to get the singleton instance
+MDeclarativeInputContext* MDeclarativeInputContext::instance()
+{
+    static MDeclarativeInputContext* s_instance = nullptr;
+    if (!s_instance) {
+        // Create the instance with QGuiApplication as its parent.
+        // This ensures it's cleaned up automatically when the application exits.
+        s_instance = new MDeclarativeInputContext(QGuiApplication::instance());
+    }
+    return s_instance;
+}
+
+// Constructor - now takes QObject* parent
+MDeclarativeInputContext::MDeclarativeInputContext(QObject *parent)
     : QObject(parent),
     d(new MDeclarativeInputContextPrivate(this)) // Initialize PIMPL
 {
@@ -105,11 +130,7 @@ void MDeclarativeInputContext::_q_onKeyboardRectangleChanged()
     d->updateKeyboardRectangle(); // Call the private implementation method
 }
 
-QRectF MDeclarativeInputContext::microFocus() const
-{
-    return d->microFocus;
-}
-
+// Accessor methods for Q_PROPERTY (READ functions)
 bool MDeclarativeInputContext::softwareInputPanelVisible() const
 {
     return d->sipVisible;
@@ -120,43 +141,38 @@ QRect MDeclarativeInputContext::softwareInputPanelRect() const
     return d->sipRect;
 }
 
-void MDeclarativeInputContext::reset()
+QRectF MDeclarativeInputContext::microFocus() const
 {
-    QGuiApplication::inputMethod()->reset();
+    return d->microFocus;
 }
-
-void MDeclarativeInputContext::update()
-{
-    QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
-}
-
-// --- CHANGE START ---
-// Missing implementation for updateMicroFocus()
-void MDeclarativeInputContext::updateMicroFocus()
-{
-    // This function typically updates the input method's knowledge of the cursor position.
-    // It's crucial for correct magnifier and selection handle positioning.
-    // Qt's QInputMethod::update(Qt::ImQueryInput) is the standard way to do this.
-    QGuiApplication::inputMethod()->update(Qt::ImQueryInput);
-}
-// --- CHANGE END ---
 
 QVariant MDeclarativeInputContext::softwareInputPanelEvent() const
 {
     return d->sipEvent;
 }
 
+QQmlComponent *MDeclarativeInputContext::customSoftwareInputPanelComponent() const
+{
+    return d->sipVkbComponent;
+}
+
+bool MDeclarativeInputContext::customSoftwareInputPanelVisible() const
+{
+    return d->customSoftwareInputPanelVisible;
+}
+
+QQuickItem *MDeclarativeInputContext::customSoftwareInputPanelTextField() const
+{
+    return d->sipVkbTextField;
+}
+
+// Mutator methods for Q_PROPERTY (WRITE functions)
 void MDeclarativeInputContext::setSoftwareInputPanelEvent(const QVariant& event)
 {
     if (d->sipEvent != event) { // Check for actual change
         d->sipEvent = event;
         emit softwareInputPanelEventChanged();
     }
-}
-
-QQmlComponent *MDeclarativeInputContext::customSoftwareInputPanelComponent() const
-{
-    return d->sipVkbComponent;
 }
 
 void MDeclarativeInputContext::setCustomSoftwareInputPanelComponent(QQmlComponent * component)
@@ -167,11 +183,6 @@ void MDeclarativeInputContext::setCustomSoftwareInputPanelComponent(QQmlComponen
     }
 }
 
-bool MDeclarativeInputContext::customSoftwareInputPanelVisible() const
-{
-    return d->customSoftwareInputPanelVisible;
-}
-
 void MDeclarativeInputContext::setCustomSoftwareInputPanelVisible(bool visible)
 {
     if(d->customSoftwareInputPanelVisible != visible) {
@@ -180,17 +191,32 @@ void MDeclarativeInputContext::setCustomSoftwareInputPanelVisible(bool visible)
     }
 }
 
-QQuickItem *MDeclarativeInputContext::customSoftwareInputPanelTextField() const
-{
-    return d->sipVkbTextField;
-}
-
 void MDeclarativeInputContext::setCustomSoftwareInputPanelTextField(QQuickItem *item)
 {
     if(d->sipVkbTextField != item) {
         d->sipVkbTextField = item; // No need for static_cast if item is QQuickItem*
         emit customSoftwareInputPanelTextFieldChanged();
     }
+}
+
+
+// Implementation of updateMicroFocus()
+void MDeclarativeInputContext::updateMicroFocus()
+{
+    // This function typically updates the input method's knowledge of the cursor position.
+    // It's crucial for correct magnifier and selection handle positioning.
+    // Qt's QInputMethod::update(Qt::ImQueryInput) is the standard way to do this.
+    QGuiApplication::inputMethod()->update(Qt::ImQueryInput);
+}
+
+void MDeclarativeInputContext::reset()
+{
+    QGuiApplication::inputMethod()->reset();
+}
+
+void MDeclarativeInputContext::update()
+{
+    QGuiApplication::inputMethod()->update(Qt::ImQueryAll);
 }
 
 QQuickItem *MDeclarativeInputContext::targetInputFor(QQmlComponent *sipVkbComponent)
@@ -231,4 +257,21 @@ void MDeclarativeInputContext::clearClipboard()
 {
     if (QGuiApplication::clipboard()) // Use QGuiApplication::clipboard()
         QGuiApplication::clipboard()->clear();
+}
+
+// Implementation of the setActiveFocusItem slot - now takes no arguments
+void MDeclarativeInputContext::setActiveFocusItem()
+{
+    // Query the currently focused object from the QGuiApplication
+    QObject *focusedObject = QGuiApplication::focusObject();
+    QQuickItem *focusedItem = qobject_cast<QQuickItem*>(focusedObject);
+
+    if (focusedItem) {
+        qDebug() << "MDeclarativeInputContext: Active focus item changed to:" << focusedItem->objectName();
+        // You can now use focusedItem for any logic that depends on the currently active QQuickItem.
+        // For example, if you want to store it:
+        // d->m_activeFocusItem = focusedItem; // Assuming you add m_activeFocusItem to MDeclarativeInputContextPrivate
+    } else {
+        qDebug() << "MDeclarativeInputContext: Active focus item changed, but no QQuickItem has focus.";
+    }
 }

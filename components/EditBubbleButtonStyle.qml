@@ -1,3 +1,15 @@
+/****************************************************************************
+**
+** Originally part of the MeeGo Harmattan Qt Components project
+** © 2011 Nokia Corporation and/or its subsidiary(-ies). All rights reserved.
+**
+** Licensed under the BSD License.
+** See the original license text for redistribution and use conditions.
+**
+** Ported from MeeGo Harmattan (Qt 4.7) to Qt 6 by Edip Ahmet Taskin, 2025.
+**
+****************************************************************************/
+
 import QtQuick 2.1
 import "UIConstants.js" as UI
 
@@ -17,22 +29,22 @@ Style {
     property color textStyleColor: "#111111"
 
     // Dimensions
-    property int buttonWidth: parseInt(40 * ScaleFactor) // DEPRECATED
-    property int buttonPaddingLeft: parseInt(8 * ScaleFactor)
-    property int buttonPaddingRight: parseInt(8 * ScaleFactor)
-    property int buttonHeight: parseInt(56 * ScaleFactor)
+    property int buttonWidth: 40 // DEPRECATED
+    property int buttonPaddingLeft: 4
+    property int buttonPaddingRight: 4
+    property int buttonHeight: 48
 
     // Mouse
-    property real mouseMarginLeft: (position == "horizontal-left") ? 6  * ScaleFactor: 0
-    property real mouseMarginTop: 8 * ScaleFactor
-    property real mouseMarginRight: (position == "horizontal-right") ? 6 * ScaleFactor : 0
-    property real mouseMarginBottom: 10 * ScaleFactor
+    property real mouseMarginLeft: (position == "horizontal-left") ? 6 : 0
+    property real mouseMarginTop: 4
+    property real mouseMarginRight: (position == "horizontal-right") ? 6 : 0
+    property real mouseMarginBottom: 17
 
     // Background
-    property int backgroundMarginLeft: parseInt(19 * ScaleFactor)
-    property int backgroundMarginTop: parseInt(15 * ScaleFactor)
-    property int backgroundMarginRight: parseInt(19 * ScaleFactor)
-    property int backgroundMarginBottom: parseInt(15 * ScaleFactor)
+    property int backgroundMarginLeft: 19
+    property int backgroundMarginTop: 15
+    property int backgroundMarginRight: 19
+    property int backgroundMarginBottom: 15
 
     // Position can take one of the following values:
     // [horizontal-left] [horizontal-center] [horizontal-right]
