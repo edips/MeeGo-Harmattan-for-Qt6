@@ -11,8 +11,6 @@ Tested on Qt 6.6.3
 
 <img width="682" height="734" alt="image" src="https://github.com/user-attachments/assets/c3b8e33f-5fc2-4a14-8e75-84c5435039fa" />
 
-<img width="682" height="734" alt="image" src="https://github.com/user-attachments/assets/7bc7d368-33fb-4c4d-abef-6571b2993fc8" />
-
 <img width="682" height="734" alt="image" src="https://github.com/user-attachments/assets/4cf8c35b-677a-46a8-97e9-40017c2953c5" />
 
 <img width="682" height="734" alt="image" src="https://github.com/user-attachments/assets/89d49bf5-11b9-4a7e-9e87-7539eeec2c8d" />
