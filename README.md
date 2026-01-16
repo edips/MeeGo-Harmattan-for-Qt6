@@ -3,7 +3,7 @@ The goal of the project to run MeeGo Harmattan Components on all desktop and mob
 
 Tested on Qt 6.6.3
 
-Apps using this project:
+Apps using this project:  
 [Latlong & UTM on Google Play Store](https://play.google.com/store/apps/details?id=org.project.wgs84utm)
 
 
