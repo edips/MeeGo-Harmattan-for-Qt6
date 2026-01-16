@@ -3,6 +3,9 @@ The goal of the project to run MeeGo Harmattan Components on all desktop and mob
 
 Tested on Qt 6.6.3
 
+Apps using this project:
+[https://play.google.com/store/apps/details?id=org.project.wgs84utm](Latlong & UTM on Google Play Store)
+
 <img width="814" height="734" alt="image" src="https://github.com/user-attachments/assets/0b38c746-eb20-46de-9bd1-8d9bcb36b827" />
 
 <img width="682" height="734" alt="image" src="https://github.com/user-attachments/assets/c07bbfe6-afd1-44cd-abda-cbf01cd6c21b" />
